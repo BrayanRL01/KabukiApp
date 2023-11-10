@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1065363029512",
+    "project_id": "kabukidb-e0898",
+    "storage_bucket": "kabukidb-e0898.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1065363029512:android:086c9ec4a0b06bd3c59bbd",
+        "android_client_info": {
+          "package_name": "com.kabuki.kabukiapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuzxA7oqF4GMPmfBEpZmDfFwrfw5dflQU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
