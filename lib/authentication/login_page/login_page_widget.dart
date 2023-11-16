@@ -106,7 +106,9 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                     padding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                     child: Text(
-                      'Kabuki',
+                      FFLocalizations.of(context).getText(
+                        'b5egkd9t' /* Kabuki */,
+                      ),
                       style:
                           FlutterFlowTheme.of(context).headlineSmall.override(
                                 fontFamily: 'Outfit',
@@ -125,7 +127,9 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Text(
-                          'Bienvenida',
+                          FFLocalizations.of(context).getText(
+                            'h64my6oi' /* Bienvenida */,
+                          ),
                           style: FlutterFlowTheme.of(context)
                               .displaySmall
                               .override(
@@ -137,7 +141,9 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 12.0, 0.0, 24.0),
                           child: Text(
-                            'Descubre que tenemos para ti',
+                            FFLocalizations.of(context).getText(
+                              '5mfx1u2c' /* Descubre que tenemos para ti */,
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
@@ -154,7 +160,9 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                             focusNode: _model.txtEmailFocusNode,
                             obscureText: false,
                             decoration: InputDecoration(
-                              labelText: 'Correo Electrónico',
+                              labelText: FFLocalizations.of(context).getText(
+                                'lnk1yy94' /* Correo Electrónico */,
+                              ),
                               hintStyle: FlutterFlowTheme.of(context).bodyLarge,
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -211,11 +219,13 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                               }
 
                               context.goNamedAuth(
-                                  'sobreNosotros', context.mounted);
+                                  'cateMaquillaje', context.mounted);
                             },
                             obscureText: !_model.txtPasswordVisibility,
                             decoration: InputDecoration(
-                              labelText: 'Contraseña',
+                              labelText: FFLocalizations.of(context).getText(
+                                'vd992itv' /* Contraseña */,
+                              ),
                               hintStyle: FlutterFlowTheme.of(context).bodyLarge,
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -285,9 +295,11 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                               }
 
                               context.goNamedAuth(
-                                  'sobreNosotros', context.mounted);
+                                  'cateMaquillaje', context.mounted);
                             },
-                            text: 'Ingresar',
+                            text: FFLocalizations.of(context).getText(
+                              'dr94e0p6' /* Ingresar */,
+                            ),
                             options: FFButtonOptions(
                               width: 370.0,
                               height: 44.0,
@@ -314,7 +326,9 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                             onPressed: () {
                               print('Button pressed ...');
                             },
-                            text: 'Recuperar contraseña',
+                            text: FFLocalizations.of(context).getText(
+                              'b1zesyp0' /* Recuperar contraseña */,
+                            ),
                             options: FFButtonOptions(
                               width: 370.0,
                               height: 44.0,
@@ -342,7 +356,9 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 4.0, 0.0, 4.0),
                               child: Text(
-                                '¿No tienes cuenta?',
+                                FFLocalizations.of(context).getText(
+                                  'c7y84viy' /* ¿No tienes cuenta? */,
+                                ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
@@ -372,7 +388,9 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                   );
                                 },
                                 child: Text(
-                                  'Ingresa aqui',
+                                  FFLocalizations.of(context).getText(
+                                    'nlh8t64c' /* Ingresa aqui */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(

@@ -75,18 +75,22 @@ class _BsCreateProductWidgetState extends State<BsCreateProductWidget> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Text(
-              'Nuevo Producto',
+              FFLocalizations.of(context).getText(
+                '58gv6edl' /* Nuevo Producto */,
+              ),
               style: FlutterFlowTheme.of(context).bodyMedium,
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(8.0, 10.0, 8.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(8.0, 15.0, 8.0, 0.0),
               child: TextFormField(
                 controller: _model.txtNameController,
                 focusNode: _model.txtNameFocusNode,
                 autofocus: true,
                 obscureText: false,
                 decoration: InputDecoration(
-                  labelText: 'Nombre',
+                  labelText: FFLocalizations.of(context).getText(
+                    '9yeil2tp' /* Nombre */,
+                  ),
                   labelStyle: FlutterFlowTheme.of(context).labelMedium,
                   hintStyle: FlutterFlowTheme.of(context).labelMedium,
                   enabledBorder: UnderlineInputBorder(
@@ -94,28 +98,28 @@ class _BsCreateProductWidgetState extends State<BsCreateProductWidget> {
                       color: FlutterFlowTheme.of(context).alternate,
                       width: 2.0,
                     ),
-                    borderRadius: BorderRadius.circular(12.0),
+                    borderRadius: BorderRadius.circular(20.0),
                   ),
                   focusedBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
                       color: FlutterFlowTheme.of(context).primary,
                       width: 2.0,
                     ),
-                    borderRadius: BorderRadius.circular(12.0),
+                    borderRadius: BorderRadius.circular(20.0),
                   ),
                   errorBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
                       color: FlutterFlowTheme.of(context).error,
                       width: 2.0,
                     ),
-                    borderRadius: BorderRadius.circular(12.0),
+                    borderRadius: BorderRadius.circular(20.0),
                   ),
                   focusedErrorBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
                       color: FlutterFlowTheme.of(context).error,
                       width: 2.0,
                     ),
-                    borderRadius: BorderRadius.circular(12.0),
+                    borderRadius: BorderRadius.circular(20.0),
                   ),
                 ),
                 style: FlutterFlowTheme.of(context).bodyMedium,
@@ -131,7 +135,9 @@ class _BsCreateProductWidgetState extends State<BsCreateProductWidget> {
                 autofocus: true,
                 obscureText: false,
                 decoration: InputDecoration(
-                  labelText: 'Precio',
+                  labelText: FFLocalizations.of(context).getText(
+                    'mt7qvkfv' /* Precio */,
+                  ),
                   labelStyle: FlutterFlowTheme.of(context).labelMedium,
                   hintStyle: FlutterFlowTheme.of(context).labelMedium,
                   enabledBorder: UnderlineInputBorder(
@@ -139,28 +145,28 @@ class _BsCreateProductWidgetState extends State<BsCreateProductWidget> {
                       color: FlutterFlowTheme.of(context).alternate,
                       width: 2.0,
                     ),
-                    borderRadius: BorderRadius.circular(8.0),
+                    borderRadius: BorderRadius.circular(20.0),
                   ),
                   focusedBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
                       color: FlutterFlowTheme.of(context).primary,
                       width: 2.0,
                     ),
-                    borderRadius: BorderRadius.circular(8.0),
+                    borderRadius: BorderRadius.circular(20.0),
                   ),
                   errorBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
                       color: FlutterFlowTheme.of(context).error,
                       width: 2.0,
                     ),
-                    borderRadius: BorderRadius.circular(8.0),
+                    borderRadius: BorderRadius.circular(20.0),
                   ),
                   focusedErrorBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
                       color: FlutterFlowTheme.of(context).error,
                       width: 2.0,
                     ),
-                    borderRadius: BorderRadius.circular(8.0),
+                    borderRadius: BorderRadius.circular(20.0),
                   ),
                 ),
                 style: FlutterFlowTheme.of(context).bodyMedium,
@@ -176,7 +182,9 @@ class _BsCreateProductWidgetState extends State<BsCreateProductWidget> {
                 autofocus: true,
                 obscureText: false,
                 decoration: InputDecoration(
-                  labelText: 'Descripción',
+                  labelText: FFLocalizations.of(context).getText(
+                    'ic2xlscv' /* Descripción */,
+                  ),
                   labelStyle: FlutterFlowTheme.of(context).labelMedium,
                   hintStyle: FlutterFlowTheme.of(context).labelMedium,
                   enabledBorder: UnderlineInputBorder(
@@ -184,28 +192,28 @@ class _BsCreateProductWidgetState extends State<BsCreateProductWidget> {
                       color: FlutterFlowTheme.of(context).alternate,
                       width: 2.0,
                     ),
-                    borderRadius: BorderRadius.circular(8.0),
+                    borderRadius: BorderRadius.circular(20.0),
                   ),
                   focusedBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
                       color: FlutterFlowTheme.of(context).primary,
                       width: 2.0,
                     ),
-                    borderRadius: BorderRadius.circular(8.0),
+                    borderRadius: BorderRadius.circular(20.0),
                   ),
                   errorBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
                       color: FlutterFlowTheme.of(context).error,
                       width: 2.0,
                     ),
-                    borderRadius: BorderRadius.circular(8.0),
+                    borderRadius: BorderRadius.circular(20.0),
                   ),
                   focusedErrorBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
                       color: FlutterFlowTheme.of(context).error,
                       width: 2.0,
                     ),
-                    borderRadius: BorderRadius.circular(8.0),
+                    borderRadius: BorderRadius.circular(20.0),
                   ),
                 ),
                 style: FlutterFlowTheme.of(context).bodyMedium,
@@ -221,7 +229,9 @@ class _BsCreateProductWidgetState extends State<BsCreateProductWidget> {
                 autofocus: true,
                 obscureText: false,
                 decoration: InputDecoration(
-                  labelText: 'Marca',
+                  labelText: FFLocalizations.of(context).getText(
+                    '164vgmwj' /* Marca */,
+                  ),
                   labelStyle: FlutterFlowTheme.of(context).labelMedium,
                   hintStyle: FlutterFlowTheme.of(context).labelMedium,
                   enabledBorder: UnderlineInputBorder(
@@ -229,28 +239,28 @@ class _BsCreateProductWidgetState extends State<BsCreateProductWidget> {
                       color: FlutterFlowTheme.of(context).alternate,
                       width: 2.0,
                     ),
-                    borderRadius: BorderRadius.circular(8.0),
+                    borderRadius: BorderRadius.circular(20.0),
                   ),
                   focusedBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
                       color: FlutterFlowTheme.of(context).primary,
                       width: 2.0,
                     ),
-                    borderRadius: BorderRadius.circular(8.0),
+                    borderRadius: BorderRadius.circular(20.0),
                   ),
                   errorBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
                       color: FlutterFlowTheme.of(context).error,
                       width: 2.0,
                     ),
-                    borderRadius: BorderRadius.circular(8.0),
+                    borderRadius: BorderRadius.circular(20.0),
                   ),
                   focusedErrorBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
                       color: FlutterFlowTheme.of(context).error,
                       width: 2.0,
                     ),
-                    borderRadius: BorderRadius.circular(8.0),
+                    borderRadius: BorderRadius.circular(20.0),
                   ),
                 ),
                 style: FlutterFlowTheme.of(context).bodyMedium,
@@ -266,7 +276,9 @@ class _BsCreateProductWidgetState extends State<BsCreateProductWidget> {
                 autofocus: true,
                 obscureText: false,
                 decoration: InputDecoration(
-                  labelText: 'Categoría',
+                  labelText: FFLocalizations.of(context).getText(
+                    'uq994gfs' /* Categoría */,
+                  ),
                   labelStyle: FlutterFlowTheme.of(context).labelMedium,
                   hintStyle: FlutterFlowTheme.of(context).labelMedium,
                   enabledBorder: UnderlineInputBorder(
@@ -274,28 +286,28 @@ class _BsCreateProductWidgetState extends State<BsCreateProductWidget> {
                       color: FlutterFlowTheme.of(context).alternate,
                       width: 2.0,
                     ),
-                    borderRadius: BorderRadius.circular(8.0),
+                    borderRadius: BorderRadius.circular(20.0),
                   ),
                   focusedBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
-                      color: FlutterFlowTheme.of(context).primary,
+                      color: Colors.black,
                       width: 2.0,
                     ),
-                    borderRadius: BorderRadius.circular(8.0),
+                    borderRadius: BorderRadius.circular(20.0),
                   ),
                   errorBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
                       color: FlutterFlowTheme.of(context).error,
                       width: 2.0,
                     ),
-                    borderRadius: BorderRadius.circular(8.0),
+                    borderRadius: BorderRadius.circular(20.0),
                   ),
                   focusedErrorBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
                       color: FlutterFlowTheme.of(context).error,
                       width: 2.0,
                     ),
-                    borderRadius: BorderRadius.circular(8.0),
+                    borderRadius: BorderRadius.circular(20.0),
                   ),
                 ),
                 style: FlutterFlowTheme.of(context).bodyMedium,
@@ -323,7 +335,9 @@ class _BsCreateProductWidgetState extends State<BsCreateProductWidget> {
                             category: _model.txtCategoriaController.text,
                           ));
                     },
-                    text: 'Guardar',
+                    text: FFLocalizations.of(context).getText(
+                      'i158hw7c' /* Guardar */,
+                    ),
                     options: FFButtonOptions(
                       height: 40.0,
                       padding:
@@ -359,6 +373,8 @@ class _BsCreateProductWidgetState extends State<BsCreateProductWidget> {
                       final selectedMedia =
                           await selectMediaWithSourceBottomSheet(
                         context: context,
+                        maxWidth: 1080.00,
+                        maxHeight: 1920.00,
                         allowPhoto: true,
                       );
                       if (selectedMedia != null &&

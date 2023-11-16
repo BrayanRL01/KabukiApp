@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import '/backend/backend.dart';
+import '/backend/schema/structs/index.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
@@ -78,14 +79,15 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
-      errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? SobreNosotrosWidget() : LoginPageWidget(),
+      errorBuilder: (context, state) => appStateNotifier.loggedIn
+          ? CateMaquillajeWidget()
+          : LoginPageWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) => appStateNotifier.loggedIn
-              ? SobreNosotrosWidget()
+              ? CateMaquillajeWidget()
               : LoginPageWidget(),
         ),
         FFRoute(
@@ -147,6 +149,41 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'CalendarPage',
           path: '/calendarPage',
           builder: (context, params) => CalendarPageWidget(),
+        ),
+        FFRoute(
+          name: 'clasesAutomaquillaje',
+          path: '/clasesAutomaquillaje',
+          builder: (context, params) => ClasesAutomaquillajeWidget(),
+        ),
+        FFRoute(
+          name: 'asesoria',
+          path: '/asesoria',
+          builder: (context, params) => AsesoriaWidget(),
+        ),
+        FFRoute(
+          name: 'maquilajeEventos',
+          path: '/maquilajeEventos',
+          builder: (context, params) => MaquilajeEventosWidget(),
+        ),
+        FFRoute(
+          name: 'paquetesNovia',
+          path: '/paquetesNovia',
+          builder: (context, params) => PaquetesNoviaWidget(),
+        ),
+        FFRoute(
+          name: 'skinCare',
+          path: '/skinCare',
+          builder: (context, params) => SkinCareWidget(),
+        ),
+        FFRoute(
+          name: 'ventaMaquillaje',
+          path: '/ventaMaquillaje',
+          builder: (context, params) => VentaMaquillajeWidget(),
+        ),
+        FFRoute(
+          name: 'producto2',
+          path: '/producto2',
+          builder: (context, params) => Producto2Widget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

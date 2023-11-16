@@ -68,42 +68,11 @@ class _ProductoWidgetState extends State<ProductoWidget> {
                       child: Stack(
                         alignment: AlignmentDirectional(0.0, 0.0),
                         children: [
-                          StreamBuilder<List<ProductsRecord>>(
-                            stream: queryProductsRecord(
-                              singleRecord: true,
-                            ),
-                            builder: (context, snapshot) {
-                              // Customize what your widget looks like when it's loading.
-                              if (!snapshot.hasData) {
-                                return Center(
-                                  child: SizedBox(
-                                    width: 50.0,
-                                    height: 50.0,
-                                    child: CircularProgressIndicator(
-                                      valueColor: AlwaysStoppedAnimation<Color>(
-                                        FlutterFlowTheme.of(context).primary,
-                                      ),
-                                    ),
-                                  ),
-                                );
-                              }
-                              List<ProductsRecord> imageProductsRecordList =
-                                  snapshot.data!;
-                              // Return an empty Container when the item does not exist.
-                              if (snapshot.data!.isEmpty) {
-                                return Container();
-                              }
-                              final imageProductsRecord =
-                                  imageProductsRecordList.isNotEmpty
-                                      ? imageProductsRecordList.first
-                                      : null;
-                              return Image.network(
-                                imageProductsRecord!.productPhoto,
-                                width: double.infinity,
-                                height: double.infinity,
-                                fit: BoxFit.cover,
-                              );
-                            },
+                          Image.network(
+                            'https://hibeautycr.com/cdn/shop/products/image_3869c136-3af2-4e59-890e-8bacd46e0514_860x.jpg?v=1650560165',
+                            width: double.infinity,
+                            height: double.infinity,
+                            fit: BoxFit.cover,
                           ),
                           Align(
                             alignment: AlignmentDirectional(0.00, 0.00),
@@ -181,7 +150,10 @@ class _ProductoWidgetState extends State<ProductoWidget> {
                                                       .fromSTEB(
                                                           24.0, 20.0, 0.0, 0.0),
                                                   child: Text(
-                                                    'Base Beauty Creations Flawless Stay Foundation',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'g30fmqjw' /* Base Beauty Creations Flawless... */,
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .headlineSmall
@@ -243,11 +215,8 @@ class _ProductoWidgetState extends State<ProductoWidget> {
                                       ? textProductsRecordList.first
                                       : null;
                               return Text(
-                                formatNumber(
-                                  textProductsRecord!.productPrice,
-                                  formatType: FormatType.decimal,
-                                  decimalType: DecimalType.automatic,
-                                  currency: '₡',
+                                FFLocalizations.of(context).getText(
+                                  'bddhodx4' /* ₡ 8.900 */,
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .headlineMedium
@@ -303,7 +272,9 @@ class _ProductoWidgetState extends State<ProductoWidget> {
                                           ? textProductsRecordList.first
                                           : null;
                                   return Text(
-                                    textProductsRecord!.description,
+                                    FFLocalizations.of(context).getText(
+                                      'x67ipkgq' /* Base Beauty Creations Flawless... */,
+                                    ),
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .labelSmall

@@ -80,7 +80,9 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'Kabuki',
+                    FFLocalizations.of(context).getText(
+                      '9p4usmkv' /* Kabuki */,
+                    ),
                     style: FlutterFlowTheme.of(context).displayLarge.override(
                           fontFamily: 'Outfit',
                           color: Color(0xFFFF1493),
@@ -90,7 +92,9 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                     padding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 24.0),
                     child: Text(
-                      '¡Unete y sé parte de nuestra comunidad!',
+                      FFLocalizations.of(context).getText(
+                        'csy0pze2' /* ¡Unete y sé parte de nuestra c... */,
+                      ),
                       style: FlutterFlowTheme.of(context).labelLarge.override(
                             fontFamily: 'Readex Pro',
                             color: Color(0xFFFF1493),
@@ -105,7 +109,9 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                       focusNode: _model.txtNameFocusNode,
                       obscureText: false,
                       decoration: InputDecoration(
-                        labelText: 'Nombre Completo',
+                        labelText: FFLocalizations.of(context).getText(
+                          '0tc6okmd' /* Nombre Completo */,
+                        ),
                         hintStyle: FlutterFlowTheme.of(context).bodyLarge,
                         enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(
@@ -151,7 +157,9 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                       focusNode: _model.txtEmailFocusNode,
                       obscureText: false,
                       decoration: InputDecoration(
-                        labelText: 'Correo Electrónico',
+                        labelText: FFLocalizations.of(context).getText(
+                          'ukxqbilm' /* Correo Electrónico */,
+                        ),
                         hintStyle: FlutterFlowTheme.of(context).bodyLarge,
                         enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(
@@ -197,7 +205,9 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                       focusNode: _model.txtNumFocusNode,
                       obscureText: false,
                       decoration: InputDecoration(
-                        labelText: 'Número de Telefono',
+                        labelText: FFLocalizations.of(context).getText(
+                          'cwzme2ma' /* Número de Telefono */,
+                        ),
                         hintStyle: FlutterFlowTheme.of(context).bodyLarge,
                         enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(
@@ -257,7 +267,9 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                           });
                         }
                       },
-                      text: 'Fecha de Nacimiento',
+                      text: FFLocalizations.of(context).getText(
+                        '0381p578' /* Fecha de Nacimiento */,
+                      ),
                       options: FFButtonOptions(
                         width: 975.0,
                         height: 40.0,
@@ -265,7 +277,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                             24.0, 0.0, 24.0, 0.0),
                         iconPadding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        color: FlutterFlowTheme.of(context).primary,
+                        color: Color(0xFFFF1493),
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
                                   fontFamily: 'Readex Pro',
@@ -288,7 +300,9 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                       focusNode: _model.txtPasswordFocusNode,
                       obscureText: !_model.txtPasswordVisibility,
                       decoration: InputDecoration(
-                        labelText: 'Contraseña',
+                        labelText: FFLocalizations.of(context).getText(
+                          'trjeykq9' /* Contraseña */,
+                        ),
                         hintStyle: FlutterFlowTheme.of(context).bodyLarge,
                         enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(
@@ -348,7 +362,9 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                       focusNode: _model.txtConfirmFocusNode,
                       obscureText: !_model.txtConfirmVisibility,
                       decoration: InputDecoration(
-                        labelText: 'Confirmar Contraseña',
+                        labelText: FFLocalizations.of(context).getText(
+                          'ogulqqr1' /* Confirmar Contraseña */,
+                        ),
                         hintStyle: FlutterFlowTheme.of(context).bodyLarge,
                         enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(
@@ -435,9 +451,11 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                               birthday: _model.datePicked,
                             ));
 
-                        context.goNamedAuth('sobreNosotros', context.mounted);
+                        context.goNamedAuth('cateMaquillaje', context.mounted);
                       },
-                      text: 'Registrarse',
+                      text: FFLocalizations.of(context).getText(
+                        'a6nmvukk' /* Registrarse */,
+                      ),
                       options: FFButtonOptions(
                         width: 370.0,
                         height: 44.0,
@@ -464,7 +482,9 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                         padding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 4.0),
                         child: Text(
-                          '¿Ya tienes una cuenta? ',
+                          FFLocalizations.of(context).getText(
+                            'k2i5pmfw' /* ¿Ya tienes una cuenta?  */,
+                          ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Readex Pro',
@@ -493,7 +513,9 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                             );
                           },
                           child: Text(
-                            'Inicia Sesión',
+                            FFLocalizations.of(context).getText(
+                              'z6njv5a1' /* Inicia Sesión */,
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(

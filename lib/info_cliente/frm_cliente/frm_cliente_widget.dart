@@ -135,7 +135,9 @@ class _FrmClienteWidgetState extends State<FrmClienteWidget> {
                         padding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
                         child: Text(
-                          'Este formulario será de ayuda para conocer cuál \nproducto es mejor para vos. ',
+                          FFLocalizations.of(context).getText(
+                            'c72s9s1x' /* Este formulario será de ayuda ... */,
+                          ),
                           textAlign: TextAlign.center,
                           style: FlutterFlowTheme.of(context).bodyMedium,
                         ),
@@ -160,7 +162,10 @@ class _FrmClienteWidgetState extends State<FrmClienteWidget> {
                                   autofocus: true,
                                   obscureText: false,
                                   decoration: InputDecoration(
-                                    labelText: 'Nombre',
+                                    labelText:
+                                        FFLocalizations.of(context).getText(
+                                      '0hk4ixcd' /* Nombre */,
+                                    ),
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .labelMedium,
                                     hintStyle: FlutterFlowTheme.of(context)
@@ -209,7 +214,10 @@ class _FrmClienteWidgetState extends State<FrmClienteWidget> {
                                   autofocus: true,
                                   obscureText: false,
                                   decoration: InputDecoration(
-                                    labelText: 'Provincia',
+                                    labelText:
+                                        FFLocalizations.of(context).getText(
+                                      '67jeljc0' /* Provincia */,
+                                    ),
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .labelMedium,
                                     hintStyle: FlutterFlowTheme.of(context)
@@ -259,7 +267,10 @@ class _FrmClienteWidgetState extends State<FrmClienteWidget> {
                                   autofocus: true,
                                   obscureText: false,
                                   decoration: InputDecoration(
-                                    labelText: 'Edad',
+                                    labelText:
+                                        FFLocalizations.of(context).getText(
+                                      'k9xxihs7' /* Edad */,
+                                    ),
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .labelMedium,
                                     hintStyle: FlutterFlowTheme.of(context)
@@ -308,7 +319,10 @@ class _FrmClienteWidgetState extends State<FrmClienteWidget> {
                                   autofocus: true,
                                   obscureText: false,
                                   decoration: InputDecoration(
-                                    labelText: 'Tipo de Piel',
+                                    labelText:
+                                        FFLocalizations.of(context).getText(
+                                      'too1ebqh' /* Tipo de Piel */,
+                                    ),
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .labelMedium,
                                     hintStyle: FlutterFlowTheme.of(context)
@@ -357,7 +371,10 @@ class _FrmClienteWidgetState extends State<FrmClienteWidget> {
                                   autofocus: true,
                                   obscureText: false,
                                   decoration: InputDecoration(
-                                    labelText: 'Alergias',
+                                    labelText:
+                                        FFLocalizations.of(context).getText(
+                                      '6ukyjlbk' /* Alergias */,
+                                    ),
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .labelMedium,
                                     hintStyle: FlutterFlowTheme.of(context)
@@ -407,7 +424,10 @@ class _FrmClienteWidgetState extends State<FrmClienteWidget> {
                                   autofocus: true,
                                   obscureText: false,
                                   decoration: InputDecoration(
-                                    labelText: 'Color de Piel',
+                                    labelText:
+                                        FFLocalizations.of(context).getText(
+                                      'u78z1vy6' /* Color de Piel */,
+                                    ),
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .labelMedium,
                                     hintStyle: FlutterFlowTheme.of(context)
@@ -478,7 +498,9 @@ class _FrmClienteWidgetState extends State<FrmClienteWidget> {
                                 colorPiel: _model.txtColorController.text,
                               ));
                         },
-                        text: 'Guardar',
+                        text: FFLocalizations.of(context).getText(
+                          'fpvlcdxr' /* Guardar */,
+                        ),
                         options: FFButtonOptions(
                           height: 40.0,
                           padding: EdgeInsetsDirectional.fromSTEB(
@@ -507,7 +529,9 @@ class _FrmClienteWidgetState extends State<FrmClienteWidget> {
                         onPressed: () {
                           print('btnContinuar pressed ...');
                         },
-                        text: 'Continuar',
+                        text: FFLocalizations.of(context).getText(
+                          'bnogrqa2' /* Continuar */,
+                        ),
                         options: FFButtonOptions(
                           height: 40.0,
                           padding: EdgeInsetsDirectional.fromSTEB(

@@ -58,7 +58,9 @@ class _BsSideBarWidgetState extends State<BsSideBarWidget> {
                     onPressed: () {
                       print('Button pressed ...');
                     },
-                    text: 'Productos',
+                    text: FFLocalizations.of(context).getText(
+                      'tcdz07xm' /* Productos */,
+                    ),
                     icon: Icon(
                       Icons.shopping_bag,
                       size: 21.0,
@@ -98,7 +100,9 @@ class _BsSideBarWidgetState extends State<BsSideBarWidget> {
                   onPressed: () {
                     print('Button pressed ...');
                   },
-                  text: 'Servicios',
+                  text: FFLocalizations.of(context).getText(
+                    'syakb4tg' /* Servicios */,
+                  ),
                   icon: FaIcon(
                     FontAwesomeIcons.shoppingBag,
                     size: 21.0,
@@ -133,10 +137,12 @@ class _BsSideBarWidgetState extends State<BsSideBarWidget> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 FFButtonWidget(
-                  onPressed: () {
-                    print('Button pressed ...');
+                  onPressed: () async {
+                    context.pushNamed('CalendarPage');
                   },
-                  text: 'Agenda',
+                  text: FFLocalizations.of(context).getText(
+                    'vz9v5kdg' /* Agenda */,
+                  ),
                   icon: Icon(
                     Icons.calendar_month,
                     size: 21.0,
@@ -175,7 +181,9 @@ class _BsSideBarWidgetState extends State<BsSideBarWidget> {
                   onPressed: () {
                     print('Button pressed ...');
                   },
-                  text: 'Formulario',
+                  text: FFLocalizations.of(context).getText(
+                    '8rdqqyya' /* Formulario */,
+                  ),
                   icon: Icon(
                     Icons.shopping_bag,
                     size: 21.0,
@@ -214,10 +222,52 @@ class _BsSideBarWidgetState extends State<BsSideBarWidget> {
                   onPressed: () {
                     print('Button pressed ...');
                   },
-                  text: 'Videos',
+                  text: FFLocalizations.of(context).getText(
+                    'oj58krki' /* Videos */,
+                  ),
                   icon: Icon(
                     Icons.ondemand_video,
                     size: 21.0,
+                  ),
+                  options: FFButtonOptions(
+                    width: 150.0,
+                    height: 40.0,
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                    iconPadding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                    color: Color(0xFFFCDADF),
+                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                          fontFamily: 'Readex Pro',
+                          color: Colors.black,
+                        ),
+                    elevation: 3.0,
+                    borderSide: BorderSide(
+                      color: Colors.transparent,
+                      width: 1.0,
+                    ),
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 15.0),
+            child: Row(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                FFButtonWidget(
+                  onPressed: () async {
+                    context.pushNamed('infoPerfil');
+                  },
+                  text: FFLocalizations.of(context).getText(
+                    'iralra0i' /* Perfil */,
+                  ),
+                  icon: Icon(
+                    Icons.person,
+                    size: 15.0,
                   ),
                   options: FFButtonOptions(
                     width: 150.0,

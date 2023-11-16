@@ -104,39 +104,397 @@ class _CateMaquillajeWidgetState extends State<CateMaquillajeWidget> {
             mainAxisSize: MainAxisSize.max,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Align(
                       alignment: AlignmentDirectional(0.00, 0.00),
-                      child: Container(
-                        width: MediaQuery.sizeOf(context).width * 0.5,
-                        height: MediaQuery.sizeOf(context).height * 0.22,
-                        decoration: BoxDecoration(
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                          boxShadow: [
-                            BoxShadow(
-                              blurRadius: 4.0,
-                              color: Color(0x33000000),
-                              offset: Offset(0.0, 2.0),
-                            )
-                          ],
-                          borderRadius: BorderRadius.circular(15.0),
-                          shape: BoxShape.rectangle,
-                          border: Border.all(
-                            color: Color(0xFFE0E3E7),
+                      child: Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                        child: Container(
+                          width: MediaQuery.sizeOf(context).width * 0.45,
+                          height: MediaQuery.sizeOf(context).height * 0.2,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            boxShadow: [
+                              BoxShadow(
+                                blurRadius: 4.0,
+                                color: Color(0x33000000),
+                                offset: Offset(0.0, 2.0),
+                              )
+                            ],
+                            borderRadius: BorderRadius.circular(15.0),
+                            shape: BoxShape.rectangle,
+                            border: Border.all(
+                              color: Color(0xFFE0E3E7),
+                            ),
+                          ),
+                          child: Stack(
+                            children: [
+                              Opacity(
+                                opacity: 0.6,
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(8.0),
+                                  child: Image.asset(
+                                    'assets/images/Captura_de_pantalla_2023-11-14_125919.png',
+                                    width: 300.0,
+                                    height: 200.0,
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                              ),
+                              Align(
+                                alignment: AlignmentDirectional(0.00, 0.00),
+                                child: Text(
+                                  FFLocalizations.of(context).getText(
+                                    'xlgez939' /* Maquillaje para Eventos */,
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Readex Pro',
+                                        color: Color(0xFFF9F9F9),
+                                        fontSize: 13.0,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                ),
+                              ),
+                            ],
                           ),
                         ),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(8.0),
-                          child: Image.network(
-                            'https://picsum.photos/seed/318/600',
-                            width: 300.0,
-                            height: 200.0,
-                            fit: BoxFit.cover,
+                      ),
+                    ),
+                    Align(
+                      alignment: AlignmentDirectional(0.00, 0.00),
+                      child: Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
+                        child: Container(
+                          width: MediaQuery.sizeOf(context).width * 0.45,
+                          height: MediaQuery.sizeOf(context).height * 0.2,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            boxShadow: [
+                              BoxShadow(
+                                blurRadius: 4.0,
+                                color: Color(0x33000000),
+                                offset: Offset(0.0, 2.0),
+                              )
+                            ],
+                            borderRadius: BorderRadius.circular(15.0),
+                            shape: BoxShape.rectangle,
+                            border: Border.all(
+                              color: Color(0xFFE0E3E7),
+                            ),
+                          ),
+                          child: Stack(
+                            children: [
+                              Opacity(
+                                opacity: 0.6,
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(8.0),
+                                  child: Image.asset(
+                                    'assets/images/Captura_de_pantalla_2023-11-14_125752.png',
+                                    width: 300.0,
+                                    height: 200.0,
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                              ),
+                              Align(
+                                alignment: AlignmentDirectional(0.00, 0.00),
+                                child: Text(
+                                  FFLocalizations.of(context).getText(
+                                    '0atp2c3e' /* Clases de Automaquillaje */,
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Readex Pro',
+                                        color: Color(0xFFF9F9F9),
+                                        fontSize: 13.0,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Align(
+                      alignment: AlignmentDirectional(0.00, 0.00),
+                      child: Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                        child: Container(
+                          width: MediaQuery.sizeOf(context).width * 0.45,
+                          height: MediaQuery.sizeOf(context).height * 0.2,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            boxShadow: [
+                              BoxShadow(
+                                blurRadius: 4.0,
+                                color: Color(0x33000000),
+                                offset: Offset(0.0, 2.0),
+                              )
+                            ],
+                            borderRadius: BorderRadius.circular(15.0),
+                            shape: BoxShape.rectangle,
+                            border: Border.all(
+                              color: Color(0xFFE0E3E7),
+                            ),
+                          ),
+                          child: Stack(
+                            children: [
+                              Opacity(
+                                opacity: 0.6,
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(8.0),
+                                  child: Image.asset(
+                                    'assets/images/Captura_de_pantalla_2023-11-14_125608.png',
+                                    width: 300.0,
+                                    height: 200.0,
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                              ),
+                              Align(
+                                alignment: AlignmentDirectional(0.00, 0.00),
+                                child: Text(
+                                  FFLocalizations.of(context).getText(
+                                    'u2ic83n1' /* Paquetes de Novia */,
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Readex Pro',
+                                        color: Color(0xFFF9F9F9),
+                                        fontSize: 13.0,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    Align(
+                      alignment: AlignmentDirectional(0.00, 0.00),
+                      child: Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
+                        child: Container(
+                          width: MediaQuery.sizeOf(context).width * 0.45,
+                          height: MediaQuery.sizeOf(context).height * 0.2,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            boxShadow: [
+                              BoxShadow(
+                                blurRadius: 4.0,
+                                color: Color(0x33000000),
+                                offset: Offset(0.0, 2.0),
+                              )
+                            ],
+                            borderRadius: BorderRadius.circular(15.0),
+                            shape: BoxShape.rectangle,
+                            border: Border.all(
+                              color: Color(0xFFE0E3E7),
+                            ),
+                          ),
+                          child: Stack(
+                            children: [
+                              Opacity(
+                                opacity: 0.6,
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(8.0),
+                                  child: Image.asset(
+                                    'assets/images/Captura_de_pantalla_2023-11-14_122419.png',
+                                    width: 300.0,
+                                    height: 200.0,
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                              ),
+                              Align(
+                                alignment: AlignmentDirectional(0.00, 0.00),
+                                child: Text(
+                                  FFLocalizations.of(context).getText(
+                                    'ygbd6zby' /* Asesoría */,
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Readex Pro',
+                                        color: Color(0xFFF9F9F9),
+                                        fontSize: 13.0,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Align(
+                      alignment: AlignmentDirectional(0.00, 0.00),
+                      child: Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
+                        child: Container(
+                          width: MediaQuery.sizeOf(context).width * 0.45,
+                          height: MediaQuery.sizeOf(context).height * 0.2,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            boxShadow: [
+                              BoxShadow(
+                                blurRadius: 4.0,
+                                color: Color(0x33000000),
+                                offset: Offset(0.0, 2.0),
+                              )
+                            ],
+                            borderRadius: BorderRadius.circular(15.0),
+                            shape: BoxShape.rectangle,
+                            border: Border.all(
+                              color: Color(0xFFE0E3E7),
+                            ),
+                          ),
+                          child: Stack(
+                            children: [
+                              Opacity(
+                                opacity: 0.6,
+                                child: InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    context.pushNamed('skinCare');
+                                  },
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(8.0),
+                                    child: Image.asset(
+                                      'assets/images/Captura_de_pantalla_2023-11-14_130118.png',
+                                      width: 300.0,
+                                      height: 200.0,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Align(
+                                alignment: AlignmentDirectional(0.00, 0.00),
+                                child: Text(
+                                  FFLocalizations.of(context).getText(
+                                    'fxzhbiv9' /* Skincare */,
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Readex Pro',
+                                        color: Color(0xFFF9F9F9),
+                                        fontSize: 13.0,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    Align(
+                      alignment: AlignmentDirectional(0.00, 0.00),
+                      child: Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
+                        child: Container(
+                          width: MediaQuery.sizeOf(context).width * 0.45,
+                          height: MediaQuery.sizeOf(context).height * 0.2,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            boxShadow: [
+                              BoxShadow(
+                                blurRadius: 4.0,
+                                color: Color(0x33000000),
+                                offset: Offset(0.0, 2.0),
+                              )
+                            ],
+                            borderRadius: BorderRadius.circular(15.0),
+                            shape: BoxShape.rectangle,
+                            border: Border.all(
+                              color: Color(0xFFE0E3E7),
+                            ),
+                          ),
+                          child: Stack(
+                            children: [
+                              Opacity(
+                                opacity: 0.6,
+                                child: InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    context.pushNamed('ventaMaquillaje');
+                                  },
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(8.0),
+                                    child: Image.asset(
+                                      'assets/images/Captura_de_pantalla_2023-11-14_130417.png',
+                                      width: 300.0,
+                                      height: 200.0,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Align(
+                                alignment: AlignmentDirectional(0.00, 0.00),
+                                child: Text(
+                                  FFLocalizations.of(context).getText(
+                                    'lvgkrgj4' /* Venta de Maquillaje */,
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Readex Pro',
+                                        color: Color(0xFFF9F9F9),
+                                        fontSize: 13.0,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ),

@@ -149,7 +149,9 @@ class _ProductsHomeWidgetState extends State<ProductsHomeWidget>
                       padding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                       child: Text(
-                        'Lista de Productos',
+                        FFLocalizations.of(context).getText(
+                          'p1av52t5' /* Lista de Productos */,
+                        ),
                         style: FlutterFlowTheme.of(context).labelLarge.override(
                               fontFamily: 'Readex Pro',
                               fontSize: 26.0,
@@ -184,7 +186,9 @@ class _ProductsHomeWidgetState extends State<ProductsHomeWidget>
                                 },
                               ).then((value) => safeSetState(() {}));
                             },
-                            text: 'Crear Producto',
+                            text: FFLocalizations.of(context).getText(
+                              '4auty5kk' /* Crear Producto */,
+                            ),
                             options: FFButtonOptions(
                               height: 40.0,
                               padding: EdgeInsetsDirectional.fromSTEB(

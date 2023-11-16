@@ -113,9 +113,11 @@ class _SobreNosotrosWidgetState extends State<SobreNosotrosWidget> {
                       alignment: AlignmentDirectional(0.00, -1.00),
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 35.0, 0.0, 0.0),
                         child: Text(
-                          '     Descubre el poder que tienes para \ntransformarte y sentirte hermosa cada día.',
+                          FFLocalizations.of(context).getText(
+                            'vnxmfh6l' /*      Descubre el poder que tie... */,
+                          ),
                           style:
                               FlutterFlowTheme.of(context).labelMedium.override(
                                     fontFamily: 'Readex Pro',
@@ -130,7 +132,7 @@ class _SobreNosotrosWidgetState extends State<SobreNosotrosWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 32.0, 0.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -144,12 +146,17 @@ class _SobreNosotrosWidgetState extends State<SobreNosotrosWidget> {
                         context.pushNamed('productsHome');
                       },
                       child: Text(
-                        '¡Hola! \nSoy Ale, y me complace compartir\n un poco de mi vida contigo.',
+                        FFLocalizations.of(context).getText(
+                          'gnq4bk0q' /* ¡Hola! 
+Soy Ale, y me complace... */
+                          ,
+                        ),
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).labelSmall.override(
                               fontFamily: 'Readex Pro',
-                              color: Color(0xFFFF1493),
-                              fontSize: 14.0,
+                              color: Color(0xFFFA8FB1),
+                              fontSize: 15.0,
+                              fontWeight: FontWeight.w200,
                             ),
                       ),
                     ),
@@ -183,7 +190,7 @@ class _SobreNosotrosWidgetState extends State<SobreNosotrosWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -192,12 +199,15 @@ class _SobreNosotrosWidgetState extends State<SobreNosotrosWidget> {
                       padding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 2.0, 0.0, 0.0),
                       child: Text(
-                        'Desde el 2015, me dedico al mundo de la belleza,\n y en especial al maquillaje, ya que me encanta \nresaltar la belleza natural que cada persona tiene.',
+                        FFLocalizations.of(context).getText(
+                          'e0hhmfyb' /* Desde el 2015, me dedico al mu... */,
+                        ),
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).labelSmall.override(
                               fontFamily: 'Readex Pro',
-                              color: Color(0xFFFF1493),
-                              fontSize: 14.0,
+                              color: Color(0xFFFA8FB1),
+                              fontSize: 15.0,
+                              fontWeight: FontWeight.w300,
                             ),
                       ),
                     ),
@@ -205,53 +215,40 @@ class _SobreNosotrosWidgetState extends State<SobreNosotrosWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Soy una persona creativa, soñadora y \n muy trabajadora, disfruto mucho trabajar con personas.',
+                      FFLocalizations.of(context).getText(
+                        'ceu4z8vj' /* Quiero agradecerte por utiliza... */,
+                      ),
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.of(context).labelSmall.override(
                             fontFamily: 'Readex Pro',
-                            color: Color(0xFFFF1493),
+                            color: Color(0xFFFA8FB1),
                             fontSize: 14.0,
+                            fontWeight: FontWeight.w300,
                           ),
                     ),
                   ],
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Quiero agradecerte por utilizar esta aplicación y \n espero tener el placer de atenderte en lo que necesites.',
-                      textAlign: TextAlign.center,
-                      style: FlutterFlowTheme.of(context).labelSmall.override(
+                      FFLocalizations.of(context).getText(
+                        'mm8uozm0' /* ¡Un abrazo! */,
+                      ),
+                      style: FlutterFlowTheme.of(context).labelLarge.override(
                             fontFamily: 'Readex Pro',
-                            color: Color(0xFFFF1493),
-                            fontSize: 14.0,
-                          ),
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      '¡Un abrazo!',
-                      style: FlutterFlowTheme.of(context).labelSmall.override(
-                            fontFamily: 'Readex Pro',
-                            color: Color(0xFF5E5E69),
-                            fontSize: 14.0,
+                            fontSize: 18.0,
+                            fontWeight: FontWeight.w500,
                           ),
                     ),
                   ],

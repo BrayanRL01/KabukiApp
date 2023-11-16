@@ -95,7 +95,9 @@ class _BsEditProductWidgetState extends State<BsEditProductWidget> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Text(
-                'Editar Producto',
+                FFLocalizations.of(context).getText(
+                  'q6m1q3e5' /* Editar Producto */,
+                ),
                 style: FlutterFlowTheme.of(context).bodyMedium,
               ),
               Padding(
@@ -118,7 +120,9 @@ class _BsEditProductWidgetState extends State<BsEditProductWidget> {
                   autofocus: true,
                   obscureText: false,
                   decoration: InputDecoration(
-                    labelText: 'Nombre',
+                    labelText: FFLocalizations.of(context).getText(
+                      'uo9h38py' /* Nombre */,
+                    ),
                     labelStyle: FlutterFlowTheme.of(context).labelMedium,
                     hintStyle: FlutterFlowTheme.of(context).labelMedium,
                     enabledBorder: UnderlineInputBorder(
@@ -126,28 +130,28 @@ class _BsEditProductWidgetState extends State<BsEditProductWidget> {
                         color: FlutterFlowTheme.of(context).alternate,
                         width: 2.0,
                       ),
-                      borderRadius: BorderRadius.circular(12.0),
+                      borderRadius: BorderRadius.circular(20.0),
                     ),
                     focusedBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
                         color: FlutterFlowTheme.of(context).primary,
                         width: 2.0,
                       ),
-                      borderRadius: BorderRadius.circular(12.0),
+                      borderRadius: BorderRadius.circular(20.0),
                     ),
                     errorBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
                         color: FlutterFlowTheme.of(context).error,
                         width: 2.0,
                       ),
-                      borderRadius: BorderRadius.circular(12.0),
+                      borderRadius: BorderRadius.circular(20.0),
                     ),
                     focusedErrorBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
                         color: FlutterFlowTheme.of(context).error,
                         width: 2.0,
                       ),
-                      borderRadius: BorderRadius.circular(12.0),
+                      borderRadius: BorderRadius.circular(20.0),
                     ),
                   ),
                   style: FlutterFlowTheme.of(context).bodyMedium,
@@ -163,7 +167,9 @@ class _BsEditProductWidgetState extends State<BsEditProductWidget> {
                   autofocus: true,
                   obscureText: false,
                   decoration: InputDecoration(
-                    labelText: 'Precio',
+                    labelText: FFLocalizations.of(context).getText(
+                      'bbsl8att' /* Precio */,
+                    ),
                     labelStyle: FlutterFlowTheme.of(context).labelMedium,
                     hintStyle: FlutterFlowTheme.of(context).labelMedium,
                     enabledBorder: UnderlineInputBorder(
@@ -171,28 +177,28 @@ class _BsEditProductWidgetState extends State<BsEditProductWidget> {
                         color: FlutterFlowTheme.of(context).alternate,
                         width: 2.0,
                       ),
-                      borderRadius: BorderRadius.circular(8.0),
+                      borderRadius: BorderRadius.circular(20.0),
                     ),
                     focusedBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
                         color: FlutterFlowTheme.of(context).primary,
                         width: 2.0,
                       ),
-                      borderRadius: BorderRadius.circular(8.0),
+                      borderRadius: BorderRadius.circular(20.0),
                     ),
                     errorBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
                         color: FlutterFlowTheme.of(context).error,
                         width: 2.0,
                       ),
-                      borderRadius: BorderRadius.circular(8.0),
+                      borderRadius: BorderRadius.circular(20.0),
                     ),
                     focusedErrorBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
                         color: FlutterFlowTheme.of(context).error,
                         width: 2.0,
                       ),
-                      borderRadius: BorderRadius.circular(8.0),
+                      borderRadius: BorderRadius.circular(20.0),
                     ),
                   ),
                   style: FlutterFlowTheme.of(context).bodyMedium,
@@ -208,7 +214,9 @@ class _BsEditProductWidgetState extends State<BsEditProductWidget> {
                   autofocus: true,
                   obscureText: false,
                   decoration: InputDecoration(
-                    labelText: 'Descripción',
+                    labelText: FFLocalizations.of(context).getText(
+                      'zq32aym9' /* Descripción */,
+                    ),
                     labelStyle: FlutterFlowTheme.of(context).labelMedium,
                     hintStyle: FlutterFlowTheme.of(context).labelMedium,
                     enabledBorder: UnderlineInputBorder(
@@ -216,28 +224,28 @@ class _BsEditProductWidgetState extends State<BsEditProductWidget> {
                         color: FlutterFlowTheme.of(context).alternate,
                         width: 2.0,
                       ),
-                      borderRadius: BorderRadius.circular(8.0),
+                      borderRadius: BorderRadius.circular(20.0),
                     ),
                     focusedBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
                         color: FlutterFlowTheme.of(context).primary,
                         width: 2.0,
                       ),
-                      borderRadius: BorderRadius.circular(8.0),
+                      borderRadius: BorderRadius.circular(20.0),
                     ),
                     errorBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
                         color: FlutterFlowTheme.of(context).error,
                         width: 2.0,
                       ),
-                      borderRadius: BorderRadius.circular(8.0),
+                      borderRadius: BorderRadius.circular(20.0),
                     ),
                     focusedErrorBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
                         color: FlutterFlowTheme.of(context).error,
                         width: 2.0,
                       ),
-                      borderRadius: BorderRadius.circular(8.0),
+                      borderRadius: BorderRadius.circular(20.0),
                     ),
                   ),
                   style: FlutterFlowTheme.of(context).bodyMedium,
@@ -253,7 +261,9 @@ class _BsEditProductWidgetState extends State<BsEditProductWidget> {
                   autofocus: true,
                   obscureText: false,
                   decoration: InputDecoration(
-                    labelText: 'Marca',
+                    labelText: FFLocalizations.of(context).getText(
+                      'snzy726i' /* Marca */,
+                    ),
                     labelStyle: FlutterFlowTheme.of(context).labelMedium,
                     hintStyle: FlutterFlowTheme.of(context).labelMedium,
                     enabledBorder: UnderlineInputBorder(
@@ -261,28 +271,28 @@ class _BsEditProductWidgetState extends State<BsEditProductWidget> {
                         color: FlutterFlowTheme.of(context).alternate,
                         width: 2.0,
                       ),
-                      borderRadius: BorderRadius.circular(8.0),
+                      borderRadius: BorderRadius.circular(20.0),
                     ),
                     focusedBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
                         color: FlutterFlowTheme.of(context).primary,
                         width: 2.0,
                       ),
-                      borderRadius: BorderRadius.circular(8.0),
+                      borderRadius: BorderRadius.circular(20.0),
                     ),
                     errorBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
                         color: FlutterFlowTheme.of(context).error,
                         width: 2.0,
                       ),
-                      borderRadius: BorderRadius.circular(8.0),
+                      borderRadius: BorderRadius.circular(20.0),
                     ),
                     focusedErrorBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
                         color: FlutterFlowTheme.of(context).error,
                         width: 2.0,
                       ),
-                      borderRadius: BorderRadius.circular(8.0),
+                      borderRadius: BorderRadius.circular(20.0),
                     ),
                   ),
                   style: FlutterFlowTheme.of(context).bodyMedium,
@@ -298,7 +308,9 @@ class _BsEditProductWidgetState extends State<BsEditProductWidget> {
                   autofocus: true,
                   obscureText: false,
                   decoration: InputDecoration(
-                    labelText: 'Categoría',
+                    labelText: FFLocalizations.of(context).getText(
+                      'fu3x770l' /* Categoría */,
+                    ),
                     labelStyle: FlutterFlowTheme.of(context).labelMedium,
                     hintStyle: FlutterFlowTheme.of(context).labelMedium,
                     enabledBorder: UnderlineInputBorder(
@@ -306,28 +318,28 @@ class _BsEditProductWidgetState extends State<BsEditProductWidget> {
                         color: FlutterFlowTheme.of(context).alternate,
                         width: 2.0,
                       ),
-                      borderRadius: BorderRadius.circular(8.0),
+                      borderRadius: BorderRadius.circular(20.0),
                     ),
                     focusedBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
                         color: FlutterFlowTheme.of(context).primary,
                         width: 2.0,
                       ),
-                      borderRadius: BorderRadius.circular(8.0),
+                      borderRadius: BorderRadius.circular(20.0),
                     ),
                     errorBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
                         color: FlutterFlowTheme.of(context).error,
                         width: 2.0,
                       ),
-                      borderRadius: BorderRadius.circular(8.0),
+                      borderRadius: BorderRadius.circular(20.0),
                     ),
                     focusedErrorBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
                         color: FlutterFlowTheme.of(context).error,
                         width: 2.0,
                       ),
-                      borderRadius: BorderRadius.circular(8.0),
+                      borderRadius: BorderRadius.circular(20.0),
                     ),
                   ),
                   style: FlutterFlowTheme.of(context).bodyMedium,
@@ -354,7 +366,9 @@ class _BsEditProductWidgetState extends State<BsEditProductWidget> {
                         ));
                         Navigator.pop(context);
                       },
-                      text: 'Guardar',
+                      text: FFLocalizations.of(context).getText(
+                        '0m9xcu8u' /* Guardar */,
+                      ),
                       options: FFButtonOptions(
                         height: 40.0,
                         padding: EdgeInsetsDirectional.fromSTEB(

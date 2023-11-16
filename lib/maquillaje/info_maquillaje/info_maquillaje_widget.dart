@@ -111,7 +111,9 @@ class _InfoMaquillajeWidgetState extends State<InfoMaquillajeWidget> {
                     padding:
                         EdgeInsetsDirectional.fromSTEB(60.0, 20.0, 0.0, 0.0),
                     child: Text(
-                      'Skincare',
+                      FFLocalizations.of(context).getText(
+                        '0gdv6rei' /* Skincare */,
+                      ),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Readex Pro',
                             fontSize: 20.0,
@@ -147,13 +149,22 @@ class _InfoMaquillajeWidgetState extends State<InfoMaquillajeWidget> {
                             color: Color(0xFFE0E3E7),
                           ),
                         ),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(8.0),
-                          child: Image.network(
-                            'https://www.thegreensideofpink.com/wp-content/uploads/2021/05/skincare-routine.jpeg',
-                            width: 300.0,
-                            height: 200.0,
-                            fit: BoxFit.cover,
+                        child: InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            context.pushNamed('skinCare');
+                          },
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(8.0),
+                            child: Image.network(
+                              'https://www.thegreensideofpink.com/wp-content/uploads/2021/05/skincare-routine.jpeg',
+                              width: 300.0,
+                              height: 200.0,
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
                       ),
@@ -171,7 +182,9 @@ class _InfoMaquillajeWidgetState extends State<InfoMaquillajeWidget> {
                       padding:
                           EdgeInsetsDirectional.fromSTEB(60.0, 20.0, 0.0, 0.0),
                       child: Text(
-                        'Maquillaje',
+                        FFLocalizations.of(context).getText(
+                          'pwt9irhk' /* Maquillaje */,
+                        ),
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Readex Pro',
                               fontSize: 20.0,
@@ -208,13 +221,22 @@ class _InfoMaquillajeWidgetState extends State<InfoMaquillajeWidget> {
                             color: Color(0xFFE0E3E7),
                           ),
                         ),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(8.0),
-                          child: Image.network(
-                            'https://www.beautysided.com/wp-content/uploads/2022/11/Attractive-Young-Woman-Doing-Daily-Makeup-While-Standing-Near-Mirror-In-Bathroom.jpeg',
-                            width: 300.0,
-                            height: 200.0,
-                            fit: BoxFit.cover,
+                        child: InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            context.pushNamed('ventaMaquillaje');
+                          },
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(8.0),
+                            child: Image.network(
+                              'https://www.beautysided.com/wp-content/uploads/2022/11/Attractive-Young-Woman-Doing-Daily-Makeup-While-Standing-Near-Mirror-In-Bathroom.jpeg',
+                              width: 300.0,
+                              height: 200.0,
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
                       ),
@@ -232,7 +254,9 @@ class _InfoMaquillajeWidgetState extends State<InfoMaquillajeWidget> {
                       padding:
                           EdgeInsetsDirectional.fromSTEB(60.0, 20.0, 0.0, 0.0),
                       child: Text(
-                        'Tips',
+                        FFLocalizations.of(context).getText(
+                          'viv3fsun' /* Tips */,
+                        ),
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Readex Pro',
                               fontSize: 20.0,

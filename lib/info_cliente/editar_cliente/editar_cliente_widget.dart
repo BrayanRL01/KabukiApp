@@ -185,7 +185,10 @@ class _EditarClienteWidgetState extends State<EditarClienteWidget> {
                                   textCapitalization: TextCapitalization.none,
                                   obscureText: false,
                                   decoration: InputDecoration(
-                                    labelText: 'Cumpleaños',
+                                    labelText:
+                                        FFLocalizations.of(context).getText(
+                                      'svz1pwlk' /* Cumpleaños */,
+                                    ),
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .labelMedium,
                                     hintStyle: FlutterFlowTheme.of(context)
@@ -239,7 +242,10 @@ class _EditarClienteWidgetState extends State<EditarClienteWidget> {
                                   autofocus: true,
                                   obscureText: false,
                                   decoration: InputDecoration(
-                                    labelText: 'Número',
+                                    labelText:
+                                        FFLocalizations.of(context).getText(
+                                      'u1tav54m' /* Número */,
+                                    ),
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .labelMedium,
                                     hintStyle: FlutterFlowTheme.of(context)
@@ -288,7 +294,10 @@ class _EditarClienteWidgetState extends State<EditarClienteWidget> {
                                   autofocus: true,
                                   obscureText: false,
                                   decoration: InputDecoration(
-                                    labelText: 'Correo',
+                                    labelText:
+                                        FFLocalizations.of(context).getText(
+                                      'ea9lqnfq' /* Correo */,
+                                    ),
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .labelMedium,
                                     hintStyle: FlutterFlowTheme.of(context)
@@ -337,7 +346,7 @@ class _EditarClienteWidgetState extends State<EditarClienteWidget> {
                                   autofocus: true,
                                   obscureText: false,
                                   decoration: InputDecoration(
-                                    labelText: 'Alergias',
+                                    labelText: _model.txtCumpleController.text,
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .labelMedium,
                                     hintStyle: FlutterFlowTheme.of(context)
@@ -387,7 +396,10 @@ class _EditarClienteWidgetState extends State<EditarClienteWidget> {
                                   autofocus: true,
                                   obscureText: false,
                                   decoration: InputDecoration(
-                                    labelText: 'Color de Piel',
+                                    labelText:
+                                        FFLocalizations.of(context).getText(
+                                      'umvqpm78' /* Color de Piel */,
+                                    ),
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .labelMedium,
                                     hintStyle: FlutterFlowTheme.of(context)
@@ -455,7 +467,9 @@ class _EditarClienteWidgetState extends State<EditarClienteWidget> {
                             skinType: '',
                           ));
                         },
-                        text: 'Guardar',
+                        text: FFLocalizations.of(context).getText(
+                          'irgfi9my' /* Guardar */,
+                        ),
                         options: FFButtonOptions(
                           height: 40.0,
                           padding: EdgeInsetsDirectional.fromSTEB(
@@ -484,7 +498,9 @@ class _EditarClienteWidgetState extends State<EditarClienteWidget> {
                         onPressed: () {
                           print('btnContinuar pressed ...');
                         },
-                        text: 'Continuar',
+                        text: FFLocalizations.of(context).getText(
+                          'zs58r6lw' /* Continuar */,
+                        ),
                         options: FFButtonOptions(
                           height: 40.0,
                           padding: EdgeInsetsDirectional.fromSTEB(

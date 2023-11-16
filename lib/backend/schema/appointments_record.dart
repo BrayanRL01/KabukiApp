@@ -16,25 +16,19 @@ class AppointmentsRecord extends FirestoreRecord {
     _initializeFields();
   }
 
-  // "start_time" field.
-  DateTime? _startTime;
-  DateTime? get startTime => _startTime;
-  bool hasStartTime() => _startTime != null;
+  // "state" field.
+  String? _state;
+  String get state => _state ?? '';
+  bool hasState() => _state != null;
 
-  // "end_time" field.
-  DateTime? _endTime;
-  DateTime? get endTime => _endTime;
-  bool hasEndTime() => _endTime != null;
-
-  // "available" field.
-  bool? _available;
-  bool get available => _available ?? false;
-  bool hasAvailable() => _available != null;
+  // "appointment_date" field.
+  DateTime? _appointmentDate;
+  DateTime? get appointmentDate => _appointmentDate;
+  bool hasAppointmentDate() => _appointmentDate != null;
 
   void _initializeFields() {
-    _startTime = snapshotData['start_time'] as DateTime?;
-    _endTime = snapshotData['end_time'] as DateTime?;
-    _available = snapshotData['available'] as bool?;
+    _state = snapshotData['state'] as String?;
+    _appointmentDate = snapshotData['appointment_date'] as DateTime?;
   }
 
   static CollectionReference get collection =>
@@ -72,15 +66,13 @@ class AppointmentsRecord extends FirestoreRecord {
 }
 
 Map<String, dynamic> createAppointmentsRecordData({
-  DateTime? startTime,
-  DateTime? endTime,
-  bool? available,
+  String? state,
+  DateTime? appointmentDate,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
-      'start_time': startTime,
-      'end_time': endTime,
-      'available': available,
+      'state': state,
+      'appointment_date': appointmentDate,
     }.withoutNulls,
   );
 
@@ -93,14 +85,12 @@ class AppointmentsRecordDocumentEquality
 
   @override
   bool equals(AppointmentsRecord? e1, AppointmentsRecord? e2) {
-    return e1?.startTime == e2?.startTime &&
-        e1?.endTime == e2?.endTime &&
-        e1?.available == e2?.available;
+    return e1?.state == e2?.state && e1?.appointmentDate == e2?.appointmentDate;
   }
 
   @override
   int hash(AppointmentsRecord? e) =>
-      const ListEquality().hash([e?.startTime, e?.endTime, e?.available]);
+      const ListEquality().hash([e?.state, e?.appointmentDate]);
 
   @override
   bool isValidKey(Object? o) => o is AppointmentsRecord;
