@@ -147,7 +147,7 @@ class _FrmClienteWidgetState extends State<FrmClienteWidget> {
                       alignment: AlignmentDirectional(0.00, 0.00),
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 35.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
                         child: SingleChildScrollView(
                           child: Column(
                             mainAxisSize: MainAxisSize.max,

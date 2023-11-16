@@ -142,7 +142,7 @@ class _VentaMaquillajeWidgetState extends State<VentaMaquillajeWidget> {
                             20.0, 0.0, 20.0, 0.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
-                            's5evi25e' /* Estas buscando nuevo maquillaj... */,
+                            's5evi25e' /* ¿Buscans nuevo maquillaje? */,
                           ),
                           textAlign: TextAlign.center,
                           style:

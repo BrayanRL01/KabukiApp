@@ -160,7 +160,7 @@ class _InfoMaquillajeWidgetState extends State<InfoMaquillajeWidget> {
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(8.0),
                             child: Image.network(
-                              'https://www.thegreensideofpink.com/wp-content/uploads/2021/05/skincare-routine.jpeg',
+                              'https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw3fHxza2luY2FyZXxlbnwwfHx8fDE3MDAxNzQ4MTl8MA&ixlib=rb-4.0.3&q=80&w=1080',
                               width: 300.0,
                               height: 200.0,
                               fit: BoxFit.cover,

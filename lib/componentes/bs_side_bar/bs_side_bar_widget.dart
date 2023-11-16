@@ -55,8 +55,8 @@ class _BsSideBarWidgetState extends State<BsSideBarWidget> {
               children: [
                 Flexible(
                   child: FFButtonWidget(
-                    onPressed: () {
-                      print('Button pressed ...');
+                    onPressed: () async {
+                      context.pushNamed('productos');
                     },
                     text: FFLocalizations.of(context).getText(
                       'tcdz07xm' /* Productos */,
@@ -97,8 +97,8 @@ class _BsSideBarWidgetState extends State<BsSideBarWidget> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 FFButtonWidget(
-                  onPressed: () {
-                    print('Button pressed ...');
+                  onPressed: () async {
+                    context.pushNamed('cateMaquillaje');
                   },
                   text: FFLocalizations.of(context).getText(
                     'syakb4tg' /* Servicios */,
@@ -293,14 +293,14 @@ class _BsSideBarWidgetState extends State<BsSideBarWidget> {
             ),
           ),
           FlutterFlowIconButton(
-            borderColor: FlutterFlowTheme.of(context).primary,
+            borderColor: Color(0xFFF24A82),
             borderRadius: 20.0,
             borderWidth: 1.0,
             buttonSize: 40.0,
-            fillColor: Colors.black,
+            fillColor: FlutterFlowTheme.of(context).accent4,
             icon: Icon(
               Icons.keyboard_arrow_down,
-              color: Color(0xFFFCDADF),
+              color: Color(0xFFF24A82),
               size: 24.0,
             ),
             onPressed: () async {

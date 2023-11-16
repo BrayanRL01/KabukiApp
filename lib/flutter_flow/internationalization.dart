@@ -303,40 +303,20 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Agregar foto de perfil',
       'en': '',
     },
-    'x29hkbeb': {
-      'es': 'Nombre Completo:',
-      'en': '',
-    },
     'v30kgpiv': {
       'es': 'Digite su nombre',
       'en': '',
     },
-    'pxi6dm8p': {
-      'es': 'Correo Electrónico:',
-      'en': '',
-    },
     'mj4fqvt6': {
-      'es': 'Digite sus apellidos',
-      'en': '',
-    },
-    'u95zszzi': {
-      'es': 'Fecha de Nacimiento:',
+      'es': 'Digite su correo',
       'en': '',
     },
     '82hi21ts': {
-      'es': '',
-      'en': '',
-    },
-    'frupfanw': {
-      'es': 'Número de Teléfono:',
+      'es': 'Fecha de nacimiento',
       'en': '',
     },
     'wuu2ulhs': {
       'es': 'Digite su número de teléfono',
-      'en': '',
-    },
-    'bx4il38j': {
-      'es': 'Contraseña:',
       'en': '',
     },
     'itpbs5cf': {
@@ -565,7 +545,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'x06ysezj': {
-      'es': 'No dejes de lado tu piel, busca los mejores productos aqui',
+      'es': 'No dejes de lado tu piel, busca los mejores productos aqui.',
       'en': '',
     },
     'dgb2xpza': {
@@ -588,7 +568,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     's5evi25e': {
-      'es': 'Estas buscando nuevo maquillaje ?',
+      'es': '¿Buscans nuevo maquillaje?',
       'en': '',
     },
     'cn85esz6': {

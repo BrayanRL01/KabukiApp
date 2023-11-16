@@ -344,7 +344,7 @@ class _BsCreateProductWidgetState extends State<BsCreateProductWidget> {
                           EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                       iconPadding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: FlutterFlowTheme.of(context).primary,
+                      color: Color(0xFFF24A82),
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
                                 fontFamily: 'Readex Pro',
@@ -359,14 +359,14 @@ class _BsCreateProductWidgetState extends State<BsCreateProductWidget> {
                     ),
                   ),
                   FlutterFlowIconButton(
-                    borderColor: FlutterFlowTheme.of(context).primary,
+                    borderColor: FlutterFlowTheme.of(context).accent4,
                     borderRadius: 12.0,
                     borderWidth: 1.0,
                     buttonSize: 40.0,
-                    fillColor: FlutterFlowTheme.of(context).accent1,
+                    fillColor: FlutterFlowTheme.of(context).success,
                     icon: Icon(
                       Icons.image,
-                      color: FlutterFlowTheme.of(context).primaryText,
+                      color: FlutterFlowTheme.of(context).accent4,
                       size: 24.0,
                     ),
                     onPressed: () async {
