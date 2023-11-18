@@ -18,6 +18,7 @@ class InfoPerfilModel extends FlutterFlowModel<InfoPerfilWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
+  final formKey = GlobalKey<FormState>();
   bool isDataUploading = false;
   FFUploadedFile uploadedLocalFile =
       FFUploadedFile(bytes: Uint8List.fromList([]));
@@ -27,10 +28,52 @@ class InfoPerfilModel extends FlutterFlowModel<InfoPerfilWidget> {
   FocusNode? txtNombreFocusNode;
   TextEditingController? txtNombreController;
   String? Function(BuildContext, String?)? txtNombreControllerValidator;
+  String? _txtNombreControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        'n3zeok1v' /* Su nombre es requerido. */,
+      );
+    }
+
+    if (val.length < 10) {
+      return FFLocalizations.of(context).getText(
+        '18b5k3ks' /* El mínimo de caracteres es de ... */,
+      );
+    }
+    if (val.length > 30) {
+      return FFLocalizations.of(context).getText(
+        'c0zl13ap' /* El máximo de caracteres es de ... */,
+      );
+    }
+
+    return null;
+  }
+
   // State field(s) for txtCorreo widget.
   FocusNode? txtCorreoFocusNode;
   TextEditingController? txtCorreoController;
   String? Function(BuildContext, String?)? txtCorreoControllerValidator;
+  String? _txtCorreoControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        '3cj3f7n3' /* Su correo electrónico es reque... */,
+      );
+    }
+
+    if (val.length < 10) {
+      return 'Requires at least 10 characters.';
+    }
+    if (val.length > 40) {
+      return 'Maximum 40 characters allowed, currently ${val.length}.';
+    }
+    if (!RegExp(kTextValidatorEmailRegex).hasMatch(val)) {
+      return FFLocalizations.of(context).getText(
+        'edx0mrtk' /* Debe ser un correo válido. */,
+      );
+    }
+    return null;
+  }
+
   // State field(s) for txNacimiento widget.
   FocusNode? txNacimientoFocusNode;
   TextEditingController? txNacimientoController;
@@ -39,6 +82,23 @@ class InfoPerfilModel extends FlutterFlowModel<InfoPerfilWidget> {
   FocusNode? txtTelefonoFocusNode;
   TextEditingController? txtTelefonoController;
   String? Function(BuildContext, String?)? txtTelefonoControllerValidator;
+  String? _txtTelefonoControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        'stozcbbp' /* Su número telefónico es requer... */,
+      );
+    }
+
+    if (val.length < 8) {
+      return 'Requires at least 8 characters.';
+    }
+    if (val.length > 8) {
+      return 'Maximum 8 characters allowed, currently ${val.length}.';
+    }
+
+    return null;
+  }
+
   // State field(s) for txtContrasena widget.
   FocusNode? txtContrasenaFocusNode;
   TextEditingController? txtContrasenaController;
@@ -48,6 +108,9 @@ class InfoPerfilModel extends FlutterFlowModel<InfoPerfilWidget> {
   /// Initialization and disposal methods.
 
   void initState(BuildContext context) {
+    txtNombreControllerValidator = _txtNombreControllerValidator;
+    txtCorreoControllerValidator = _txtCorreoControllerValidator;
+    txtTelefonoControllerValidator = _txtTelefonoControllerValidator;
     txtContrasenaVisibility = false;
   }
 

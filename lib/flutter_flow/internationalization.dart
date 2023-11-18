@@ -221,6 +221,46 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Inicia Sesión',
       'en': '',
     },
+    'lef8ep6t': {
+      'es': 'Field is required',
+      'en': '',
+    },
+    'bh7o8vfd': {
+      'es': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'jexh7iqe': {
+      'es': 'Field is required',
+      'en': '',
+    },
+    'ikbh3rqa': {
+      'es': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'n3qqmcnc': {
+      'es': 'Field is required',
+      'en': '',
+    },
+    'zxtwx9nl': {
+      'es': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'lzth4xge': {
+      'es': 'Field is required',
+      'en': '',
+    },
+    'ly5wf492': {
+      'es': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'jt8ckn9x': {
+      'es': 'Field is required',
+      'en': '',
+    },
+    'g4lufpbc': {
+      'es': 'Please choose an option from the dropdown',
+      'en': '',
+    },
   },
   // producto
   {
@@ -325,6 +365,58 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'ndkyyuhg': {
       'es': 'Editar Perfil',
+      'en': '',
+    },
+    'n3zeok1v': {
+      'es': 'Su nombre es requerido.',
+      'en': '',
+    },
+    '18b5k3ks': {
+      'es': 'El mínimo de caracteres es de 10.',
+      'en': '',
+    },
+    'c0zl13ap': {
+      'es': 'El máximo de caracteres es de 30',
+      'en': '',
+    },
+    'zzmkk40h': {
+      'es': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    '3cj3f7n3': {
+      'es': 'Su correo electrónico es requerido.',
+      'en': '',
+    },
+    'edx0mrtk': {
+      'es': 'Debe ser un correo válido.',
+      'en': '',
+    },
+    'f1u15tti': {
+      'es': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'e2j2inz2': {
+      'es': 'Field is required',
+      'en': '',
+    },
+    'tymkm8ri': {
+      'es': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'stozcbbp': {
+      'es': 'Su número telefónico es requerido.',
+      'en': '',
+    },
+    'hse0zh67': {
+      'es': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'kirs2naw': {
+      'es': 'Field is required',
+      'en': '',
+    },
+    '4rg2563w': {
+      'es': 'Please choose an option from the dropdown',
       'en': '',
     },
     '1dh9zc2g': {

@@ -14,6 +14,7 @@ class RegisterModel extends FlutterFlowModel<RegisterWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
+  final formKey = GlobalKey<FormState>();
   // State field(s) for txtName widget.
   FocusNode? txtNameFocusNode;
   TextEditingController? txtNameController;
