@@ -1,8 +1,10 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/form_field_controller.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -53,14 +55,6 @@ class _BsEditProductWidgetState extends State<BsEditProductWidget> {
     _model.txtInfoController ??=
         TextEditingController(text: widget.productsData?.description);
     _model.txtInfoFocusNode ??= FocusNode();
-
-    _model.txtMarcaController ??=
-        TextEditingController(text: widget.productsData?.brand);
-    _model.txtMarcaFocusNode ??= FocusNode();
-
-    _model.txtCategoriaController ??=
-        TextEditingController(text: widget.productsData?.category);
-    _model.txtCategoriaFocusNode ??= FocusNode();
   }
 
   @override
@@ -255,96 +249,121 @@ class _BsEditProductWidgetState extends State<BsEditProductWidget> {
               ),
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(8.0, 10.0, 8.0, 0.0),
-                child: TextFormField(
-                  controller: _model.txtMarcaController,
-                  focusNode: _model.txtMarcaFocusNode,
-                  autofocus: true,
-                  obscureText: false,
-                  decoration: InputDecoration(
-                    labelText: FFLocalizations.of(context).getText(
-                      'snzy726i' /* Marca */,
-                    ),
-                    labelStyle: FlutterFlowTheme.of(context).labelMedium,
-                    hintStyle: FlutterFlowTheme.of(context).labelMedium,
-                    enabledBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(
-                        color: FlutterFlowTheme.of(context).alternate,
-                        width: 2.0,
-                      ),
-                      borderRadius: BorderRadius.circular(20.0),
-                    ),
-                    focusedBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(
-                        color: FlutterFlowTheme.of(context).primary,
-                        width: 2.0,
-                      ),
-                      borderRadius: BorderRadius.circular(20.0),
-                    ),
-                    errorBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(
-                        color: FlutterFlowTheme.of(context).error,
-                        width: 2.0,
-                      ),
-                      borderRadius: BorderRadius.circular(20.0),
-                    ),
-                    focusedErrorBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(
-                        color: FlutterFlowTheme.of(context).error,
-                        width: 2.0,
-                      ),
-                      borderRadius: BorderRadius.circular(20.0),
-                    ),
+                child: StreamBuilder<List<CategoriesRecord>>(
+                  stream: queryCategoriesRecord(
+                    queryBuilder: (categoriesRecord) =>
+                        categoriesRecord.orderBy('category_type'),
                   ),
-                  style: FlutterFlowTheme.of(context).bodyMedium,
-                  validator:
-                      _model.txtMarcaControllerValidator.asValidator(context),
+                  builder: (context, snapshot) {
+                    // Customize what your widget looks like when it's loading.
+                    if (!snapshot.hasData) {
+                      return Center(
+                        child: SizedBox(
+                          width: 50.0,
+                          height: 50.0,
+                          child: CircularProgressIndicator(
+                            valueColor: AlwaysStoppedAnimation<Color>(
+                              FlutterFlowTheme.of(context).primary,
+                            ),
+                          ),
+                        ),
+                      );
+                    }
+                    List<CategoriesRecord> ddCategoriesCategoriesRecordList =
+                        snapshot.data!;
+                    return FlutterFlowDropDown<String>(
+                      controller: _model.ddCategoriesValueController ??=
+                          FormFieldController<String>(
+                        _model.ddCategoriesValue ??=
+                            widget.productsData?.category,
+                      ),
+                      options: ddCategoriesCategoriesRecordList
+                          .map((e) => e.categoryType)
+                          .toList(),
+                      onChanged: (val) =>
+                          setState(() => _model.ddCategoriesValue = val),
+                      width: 307.0,
+                      height: 50.0,
+                      textStyle: FlutterFlowTheme.of(context).bodyMedium,
+                      hintText: FFLocalizations.of(context).getText(
+                        'yfa91cqv' /* Seleccione la categoría: */,
+                      ),
+                      icon: Icon(
+                        Icons.keyboard_arrow_down_rounded,
+                        color: FlutterFlowTheme.of(context).secondaryText,
+                        size: 24.0,
+                      ),
+                      fillColor:
+                          FlutterFlowTheme.of(context).secondaryBackground,
+                      elevation: 2.0,
+                      borderColor: FlutterFlowTheme.of(context).alternate,
+                      borderWidth: 2.0,
+                      borderRadius: 8.0,
+                      margin:
+                          EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 4.0),
+                      hidesUnderline: true,
+                      isSearchable: false,
+                      isMultiSelect: false,
+                    );
+                  },
                 ),
               ),
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(8.0, 10.0, 8.0, 0.0),
-                child: TextFormField(
-                  controller: _model.txtCategoriaController,
-                  focusNode: _model.txtCategoriaFocusNode,
-                  autofocus: true,
-                  obscureText: false,
-                  decoration: InputDecoration(
-                    labelText: FFLocalizations.of(context).getText(
-                      'fu3x770l' /* Categoría */,
-                    ),
-                    labelStyle: FlutterFlowTheme.of(context).labelMedium,
-                    hintStyle: FlutterFlowTheme.of(context).labelMedium,
-                    enabledBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(
-                        color: FlutterFlowTheme.of(context).alternate,
-                        width: 2.0,
-                      ),
-                      borderRadius: BorderRadius.circular(20.0),
-                    ),
-                    focusedBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(
-                        color: FlutterFlowTheme.of(context).primary,
-                        width: 2.0,
-                      ),
-                      borderRadius: BorderRadius.circular(20.0),
-                    ),
-                    errorBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(
-                        color: FlutterFlowTheme.of(context).error,
-                        width: 2.0,
-                      ),
-                      borderRadius: BorderRadius.circular(20.0),
-                    ),
-                    focusedErrorBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(
-                        color: FlutterFlowTheme.of(context).error,
-                        width: 2.0,
-                      ),
-                      borderRadius: BorderRadius.circular(20.0),
-                    ),
+                child: StreamBuilder<List<BrandsRecord>>(
+                  stream: queryBrandsRecord(
+                    queryBuilder: (brandsRecord) =>
+                        brandsRecord.orderBy('brand_name'),
                   ),
-                  style: FlutterFlowTheme.of(context).bodyMedium,
-                  validator: _model.txtCategoriaControllerValidator
-                      .asValidator(context),
+                  builder: (context, snapshot) {
+                    // Customize what your widget looks like when it's loading.
+                    if (!snapshot.hasData) {
+                      return Center(
+                        child: SizedBox(
+                          width: 50.0,
+                          height: 50.0,
+                          child: CircularProgressIndicator(
+                            valueColor: AlwaysStoppedAnimation<Color>(
+                              FlutterFlowTheme.of(context).primary,
+                            ),
+                          ),
+                        ),
+                      );
+                    }
+                    List<BrandsRecord> ddBrandsBrandsRecordList =
+                        snapshot.data!;
+                    return FlutterFlowDropDown<String>(
+                      controller: _model.ddBrandsValueController ??=
+                          FormFieldController<String>(
+                        _model.ddBrandsValue ??= widget.productsData?.brand,
+                      ),
+                      options: ddBrandsBrandsRecordList
+                          .map((e) => e.brandName)
+                          .toList(),
+                      onChanged: (val) =>
+                          setState(() => _model.ddBrandsValue = val),
+                      width: 307.0,
+                      height: 50.0,
+                      textStyle: FlutterFlowTheme.of(context).bodyMedium,
+                      hintText: widget.productsData?.brand,
+                      icon: Icon(
+                        Icons.keyboard_arrow_down_rounded,
+                        color: FlutterFlowTheme.of(context).secondaryText,
+                        size: 24.0,
+                      ),
+                      fillColor:
+                          FlutterFlowTheme.of(context).secondaryBackground,
+                      elevation: 2.0,
+                      borderColor: FlutterFlowTheme.of(context).alternate,
+                      borderWidth: 2.0,
+                      borderRadius: 8.0,
+                      margin:
+                          EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 4.0),
+                      hidesUnderline: true,
+                      isSearchable: false,
+                      isMultiSelect: false,
+                    );
+                  },
                 ),
               ),
               Padding(
@@ -361,8 +380,8 @@ class _BsEditProductWidgetState extends State<BsEditProductWidget> {
                           productPrice:
                               int.tryParse(_model.txtPrecioController.text),
                           description: _model.txtInfoController.text,
-                          category: _model.txtCategoriaController.text,
-                          brand: _model.txtMarcaController.text,
+                          category: _model.ddCategoriesValue,
+                          brand: _model.ddBrandsValue,
                         ));
                         Navigator.pop(context);
                       },

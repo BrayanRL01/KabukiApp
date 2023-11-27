@@ -8,25 +8,25 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'producto_model.dart';
-export 'producto_model.dart';
+import 'producto6_model.dart';
+export 'producto6_model.dart';
 
-class ProductoWidget extends StatefulWidget {
-  const ProductoWidget({Key? key}) : super(key: key);
+class Producto6Widget extends StatefulWidget {
+  const Producto6Widget({Key? key}) : super(key: key);
 
   @override
-  _ProductoWidgetState createState() => _ProductoWidgetState();
+  _Producto6WidgetState createState() => _Producto6WidgetState();
 }
 
-class _ProductoWidgetState extends State<ProductoWidget> {
-  late ProductoModel _model;
+class _Producto6WidgetState extends State<Producto6Widget> {
+  late Producto6Model _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => ProductoModel());
+    _model = createModel(context, () => Producto6Model());
   }
 
   @override
@@ -69,7 +69,7 @@ class _ProductoWidgetState extends State<ProductoWidget> {
                         alignment: AlignmentDirectional(0.0, 0.0),
                         children: [
                           Image.network(
-                            'https://hibeautycr.com/cdn/shop/products/image_3869c136-3af2-4e59-890e-8bacd46e0514_860x.jpg?v=1650560165',
+                            'https://beautycreationscol.com/cdn/shop/files/BEAUTYCREATIONSFOUNDATIONS7_5_3000x_jpg.webp?v=1683823240&width=1946',
                             width: double.infinity,
                             height: double.infinity,
                             fit: BoxFit.cover,
@@ -142,26 +142,36 @@ class _ProductoWidgetState extends State<ProductoWidget> {
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.start,
                                             children: [
-                                              Align(
-                                                alignment: AlignmentDirectional(
-                                                    0.00, 0.00),
-                                                child: Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          24.0, 20.0, 0.0, 0.0),
-                                                  child: Text(
-                                                    FFLocalizations.of(context)
-                                                        .getText(
-                                                      'g30fmqjw' /* Base Beauty Creations Flawless... */,
+                                              Expanded(
+                                                child: Align(
+                                                  alignment:
+                                                      AlignmentDirectional(
+                                                          0.00, 0.00),
+                                                  child: Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(
+                                                                24.0,
+                                                                20.0,
+                                                                24.0,
+                                                                0.0),
+                                                    child: Text(
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'iqipktb7' /* Base Flawless Stay Fundation */,
+                                                      ),
+                                                      textAlign:
+                                                          TextAlign.center,
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .headlineSmall
+                                                          .override(
+                                                            fontFamily:
+                                                                'Outfit',
+                                                            color: Colors.white,
+                                                          ),
                                                     ),
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .headlineSmall
-                                                        .override(
-                                                          fontFamily: 'Outfit',
-                                                          color: Colors.white,
-                                                          fontSize: 18.0,
-                                                        ),
                                                   ),
                                                 ),
                                               ),
@@ -216,7 +226,7 @@ class _ProductoWidgetState extends State<ProductoWidget> {
                                       : null;
                               return Text(
                                 FFLocalizations.of(context).getText(
-                                  'bddhodx4' /* ₡ 8.900 */,
+                                  'hcas4u6k' /* ₡ 8,800 */,
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .headlineMedium
@@ -273,7 +283,7 @@ class _ProductoWidgetState extends State<ProductoWidget> {
                                           : null;
                                   return Text(
                                     FFLocalizations.of(context).getText(
-                                      'x67ipkgq' /* Base Beauty Creations Flawless... */,
+                                      '54jnz6yl' /* Base Beauty Creations Flawless... */,
                                     ),
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)

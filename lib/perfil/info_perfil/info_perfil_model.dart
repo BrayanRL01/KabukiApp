@@ -31,18 +31,18 @@ class InfoPerfilModel extends FlutterFlowModel<InfoPerfilWidget> {
   String? _txtNombreControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'n3zeok1v' /* Su nombre es requerido. */,
+        'lukm8n9s' /* Su nombre es requerido. */,
       );
     }
 
     if (val.length < 10) {
       return FFLocalizations.of(context).getText(
-        '18b5k3ks' /* El mínimo de caracteres es de ... */,
+        'vi5vjzku' /* El mínimo de caracteres es de ... */,
       );
     }
     if (val.length > 30) {
       return FFLocalizations.of(context).getText(
-        'c0zl13ap' /* El máximo de caracteres es de ... */,
+        'oupyiyxg' /* El máximo de caracteres es de ... */,
       );
     }
 
@@ -56,7 +56,7 @@ class InfoPerfilModel extends FlutterFlowModel<InfoPerfilWidget> {
   String? _txtCorreoControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        '3cj3f7n3' /* Su correo electrónico es reque... */,
+        'j3ac1rqr' /* Su correo electrónico es reque... */,
       );
     }
 
@@ -68,7 +68,7 @@ class InfoPerfilModel extends FlutterFlowModel<InfoPerfilWidget> {
     }
     if (!RegExp(kTextValidatorEmailRegex).hasMatch(val)) {
       return FFLocalizations.of(context).getText(
-        'edx0mrtk' /* Debe ser un correo válido. */,
+        'd6zaaqwb' /* Debe ser un correo válido. */,
       );
     }
     return null;
@@ -85,7 +85,7 @@ class InfoPerfilModel extends FlutterFlowModel<InfoPerfilWidget> {
   String? _txtTelefonoControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'stozcbbp' /* Su número telefónico es requer... */,
+        'p2ifnsj7' /* Su número telefónico es requer... */,
       );
     }
 

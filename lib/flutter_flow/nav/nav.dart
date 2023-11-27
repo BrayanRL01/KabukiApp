@@ -106,9 +106,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => RegisterWidget(),
         ),
         FFRoute(
-          name: 'producto',
-          path: '/producto',
-          builder: (context, params) => ProductoWidget(),
+          name: 'producto1',
+          path: '/producto1',
+          builder: (context, params) => Producto1Widget(),
         ),
         FFRoute(
           name: 'frmCliente',
@@ -141,7 +141,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => CateMaquillajeWidget(),
         ),
         FFRoute(
-          name: 'productsHome',
+          name: 'ProductsHome',
           path: '/productsHome',
           builder: (context, params) => ProductsHomeWidget(),
         ),
@@ -184,6 +184,76 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'producto2',
           path: '/producto2',
           builder: (context, params) => Producto2Widget(),
+        ),
+        FFRoute(
+          name: 'producto3',
+          path: '/producto3',
+          builder: (context, params) => Producto3Widget(),
+        ),
+        FFRoute(
+          name: 'producto4',
+          path: '/producto4',
+          builder: (context, params) => Producto4Widget(),
+        ),
+        FFRoute(
+          name: 'producto5',
+          path: '/producto5',
+          builder: (context, params) => Producto5Widget(),
+        ),
+        FFRoute(
+          name: 'producto6',
+          path: '/producto6',
+          builder: (context, params) => Producto6Widget(),
+        ),
+        FFRoute(
+          name: 'producto7',
+          path: '/producto7',
+          builder: (context, params) => Producto7Widget(),
+        ),
+        FFRoute(
+          name: 'producto8',
+          path: '/producto8',
+          builder: (context, params) => Producto8Widget(),
+        ),
+        FFRoute(
+          name: 'producto9',
+          path: '/producto9',
+          builder: (context, params) => Producto9Widget(),
+        ),
+        FFRoute(
+          name: 'producto10',
+          path: '/producto10',
+          builder: (context, params) => Producto10Widget(),
+        ),
+        FFRoute(
+          name: 'producto11',
+          path: '/producto11',
+          builder: (context, params) => Producto11Widget(),
+        ),
+        FFRoute(
+          name: 'CategoriesPage',
+          path: '/categoriesPage',
+          builder: (context, params) => CategoriesPageWidget(),
+        ),
+        FFRoute(
+          name: 'BrandsPage',
+          path: '/brandsPage',
+          builder: (context, params) => BrandsPageWidget(),
+        ),
+        FFRoute(
+          name: 'producto1Copy',
+          path: '/producto1Copy',
+          asyncParams: {
+            'pProduct': getDoc(['products'], ProductsRecord.fromSnapshot),
+          },
+          builder: (context, params) => Producto1CopyWidget(
+            pProduct: params.getParam('pProduct', ParamType.Document),
+          ),
+        ),
+        FFRoute(
+          name: 'AppointmentPage',
+          path: '/appointmentPage',
+          builder: (context, params) => AppointmentPageWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

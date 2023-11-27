@@ -10,6 +10,8 @@ import 'schema/products_record.dart';
 import 'schema/videos_record.dart';
 import 'schema/frm_cliente_record.dart';
 import 'schema/appointments_record.dart';
+import 'schema/categories_record.dart';
+import 'schema/brands_record.dart';
 
 export 'dart:async' show StreamSubscription;
 export 'package:cloud_firestore/cloud_firestore.dart';
@@ -22,6 +24,8 @@ export 'schema/products_record.dart';
 export 'schema/videos_record.dart';
 export 'schema/frm_cliente_record.dart';
 export 'schema/appointments_record.dart';
+export 'schema/categories_record.dart';
+export 'schema/brands_record.dart';
 
 /// Functions to query UsersRecords (as a Stream and as a Future).
 Future<int> queryUsersRecordCount({
@@ -203,6 +207,80 @@ Future<List<AppointmentsRecord>> queryAppointmentsRecordOnce({
     queryCollectionOnce(
       AppointmentsRecord.collection,
       AppointmentsRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query CategoriesRecords (as a Stream and as a Future).
+Future<int> queryCategoriesRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      CategoriesRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<CategoriesRecord>> queryCategoriesRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      CategoriesRecord.collection,
+      CategoriesRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<CategoriesRecord>> queryCategoriesRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      CategoriesRecord.collection,
+      CategoriesRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query BrandsRecords (as a Stream and as a Future).
+Future<int> queryBrandsRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      BrandsRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<BrandsRecord>> queryBrandsRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      BrandsRecord.collection,
+      BrandsRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<BrandsRecord>> queryBrandsRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      BrandsRecord.collection,
+      BrandsRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,

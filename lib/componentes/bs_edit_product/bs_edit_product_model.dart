@@ -1,8 +1,10 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/form_field_controller.dart';
 import 'bs_edit_product_widget.dart' show BsEditProductWidget;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -25,14 +27,12 @@ class BsEditProductModel extends FlutterFlowModel<BsEditProductWidget> {
   FocusNode? txtInfoFocusNode;
   TextEditingController? txtInfoController;
   String? Function(BuildContext, String?)? txtInfoControllerValidator;
-  // State field(s) for txtMarca widget.
-  FocusNode? txtMarcaFocusNode;
-  TextEditingController? txtMarcaController;
-  String? Function(BuildContext, String?)? txtMarcaControllerValidator;
-  // State field(s) for txtCategoria widget.
-  FocusNode? txtCategoriaFocusNode;
-  TextEditingController? txtCategoriaController;
-  String? Function(BuildContext, String?)? txtCategoriaControllerValidator;
+  // State field(s) for ddCategories widget.
+  String? ddCategoriesValue;
+  FormFieldController<String>? ddCategoriesValueController;
+  // State field(s) for ddBrands widget.
+  String? ddBrandsValue;
+  FormFieldController<String>? ddBrandsValueController;
 
   /// Initialization and disposal methods.
 
@@ -47,12 +47,6 @@ class BsEditProductModel extends FlutterFlowModel<BsEditProductWidget> {
 
     txtInfoFocusNode?.dispose();
     txtInfoController?.dispose();
-
-    txtMarcaFocusNode?.dispose();
-    txtMarcaController?.dispose();
-
-    txtCategoriaFocusNode?.dispose();
-    txtCategoriaController?.dispose();
   }
 
   /// Action blocks are added here.

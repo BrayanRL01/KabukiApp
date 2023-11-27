@@ -319,6 +319,70 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                             ),
                           ),
                         ),
+                        Stack(
+                          alignment: AlignmentDirectional(0.0, 0.0),
+                          children: [
+                            Align(
+                              alignment: AlignmentDirectional(0.00, 0.00),
+                              child: FFButtonWidget(
+                                onPressed: () async {
+                                  GoRouter.of(context).prepareAuthEvent();
+                                  final user = await authManager
+                                      .signInWithGoogle(context);
+                                  if (user == null) {
+                                    return;
+                                  }
+
+                                  context.goNamedAuth(
+                                      'cateMaquillaje', context.mounted);
+                                },
+                                text: FFLocalizations.of(context).getText(
+                                  'xkoskyp0' /* Iniciar sesión con Google */,
+                                ),
+                                icon: Icon(
+                                  Icons.add,
+                                  color: Colors.transparent,
+                                  size: 20.0,
+                                ),
+                                options: FFButtonOptions(
+                                  width: 370.0,
+                                  height: 44.0,
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 8.0, 0.0),
+                                  color: Colors.white,
+                                  textStyle: GoogleFonts.getFont(
+                                    'Roboto',
+                                    color: Color(0xFF606060),
+                                    fontSize: 17.0,
+                                  ),
+                                  elevation: 4.0,
+                                  borderSide: BorderSide(
+                                    color: Colors.transparent,
+                                    width: 0.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(12.0),
+                                ),
+                              ),
+                            ),
+                            Align(
+                              alignment: AlignmentDirectional(-0.80, 0.00),
+                              child: Container(
+                                width: 35.0,
+                                height: 35.0,
+                                clipBehavior: Clip.antiAlias,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                ),
+                                child: Image.network(
+                                  'https://th.bing.com/th/id/R.0fa3fe04edf6c0202970f2088edea9e7?rik=joOK76LOMJlBPw&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fgoogle-logo-png-open-2000.png&ehk=0PJJlqaIxYmJ9eOIp9mYVPA4KwkGo5Zob552JPltDMw%3d&risl=&pid=ImgRaw&r=0',
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 16.0, 0.0, 16.0),

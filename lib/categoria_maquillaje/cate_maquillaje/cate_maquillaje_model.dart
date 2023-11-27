@@ -1,3 +1,4 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/componentes/bs_side_bar/bs_side_bar_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';

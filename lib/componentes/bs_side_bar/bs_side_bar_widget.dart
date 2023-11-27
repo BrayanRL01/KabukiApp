@@ -219,8 +219,8 @@ class _BsSideBarWidgetState extends State<BsSideBarWidget> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 FFButtonWidget(
-                  onPressed: () {
-                    print('Button pressed ...');
+                  onPressed: () async {
+                    context.pushNamed('CategoriesPage');
                   },
                   text: FFLocalizations.of(context).getText(
                     'oj58krki' /* Videos */,

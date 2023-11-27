@@ -69,7 +69,7 @@ class _Producto2WidgetState extends State<Producto2Widget> {
                         alignment: AlignmentDirectional(0.0, 0.0),
                         children: [
                           Image.network(
-                            'https://hibeautycr.com/cdn/shop/products/image_3869c136-3af2-4e59-890e-8bacd46e0514_860x.jpg?v=1650560165',
+                            'https://romanamx.com/cdn/shop/products/BeautyCreations-Browtime-Settinggel_1.jpg?v=1640191819&width=1080',
                             width: double.infinity,
                             height: double.infinity,
                             fit: BoxFit.cover,
@@ -142,26 +142,36 @@ class _Producto2WidgetState extends State<Producto2Widget> {
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.start,
                                             children: [
-                                              Align(
-                                                alignment: AlignmentDirectional(
-                                                    0.00, 0.00),
-                                                child: Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          24.0, 20.0, 0.0, 0.0),
-                                                  child: Text(
-                                                    FFLocalizations.of(context)
-                                                        .getText(
-                                                      'tvnyxs1w' /* Base Beauty Creations Flawless... */,
+                                              Expanded(
+                                                child: Align(
+                                                  alignment:
+                                                      AlignmentDirectional(
+                                                          0.00, 0.00),
+                                                  child: Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(
+                                                                24.0,
+                                                                20.0,
+                                                                20.0,
+                                                                0.0),
+                                                    child: Text(
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'tvnyxs1w' /* Gel Fijador de Cejas Beauty Cr... */,
+                                                      ),
+                                                      textAlign:
+                                                          TextAlign.center,
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .headlineSmall
+                                                          .override(
+                                                            fontFamily:
+                                                                'Outfit',
+                                                            color: Colors.white,
+                                                          ),
                                                     ),
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .headlineSmall
-                                                        .override(
-                                                          fontFamily: 'Outfit',
-                                                          color: Colors.white,
-                                                          fontSize: 18.0,
-                                                        ),
                                                   ),
                                                 ),
                                               ),
@@ -216,7 +226,7 @@ class _Producto2WidgetState extends State<Producto2Widget> {
                                       : null;
                               return Text(
                                 FFLocalizations.of(context).getText(
-                                  'qn8l86gj' /* ₡ 8.900 */,
+                                  'qn8l86gj' /* ₡ 3.400 */,
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .headlineMedium
@@ -273,7 +283,7 @@ class _Producto2WidgetState extends State<Producto2Widget> {
                                           : null;
                                   return Text(
                                     FFLocalizations.of(context).getText(
-                                      '2s7l88r3' /* Base Beauty Creations Flawless... */,
+                                      '2s7l88r3' /* De lo más nuevo de Beauty Crea... */,
                                     ),
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)

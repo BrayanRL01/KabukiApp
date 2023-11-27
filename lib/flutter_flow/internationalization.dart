@@ -162,6 +162,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Ingresar',
       'en': '',
     },
+    'xkoskyp0': {
+      'es': 'Iniciar sesión con Google',
+      'en': '',
+    },
     'b1zesyp0': {
       'es': 'Recuperar contraseña',
       'en': '',
@@ -197,10 +201,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Número de Telefono',
       'en': '',
     },
-    '0381p578': {
-      'es': 'Fecha de Nacimiento',
-      'en': '',
-    },
     'trjeykq9': {
       'es': 'Contraseña',
       'en': '',
@@ -221,48 +221,48 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Inicia Sesión',
       'en': '',
     },
-    'lef8ep6t': {
+    '720mj4c9': {
       'es': 'Field is required',
       'en': '',
     },
-    'bh7o8vfd': {
+    '91mcbacr': {
       'es': 'Please choose an option from the dropdown',
       'en': '',
     },
-    'jexh7iqe': {
+    'hp9ier30': {
       'es': 'Field is required',
       'en': '',
     },
-    'ikbh3rqa': {
+    'qw6xh8hu': {
       'es': 'Please choose an option from the dropdown',
       'en': '',
     },
-    'n3qqmcnc': {
+    't4c1gxt9': {
       'es': 'Field is required',
       'en': '',
     },
-    'zxtwx9nl': {
+    '1jtztxsv': {
       'es': 'Please choose an option from the dropdown',
       'en': '',
     },
-    'lzth4xge': {
+    '6ropmss9': {
       'es': 'Field is required',
       'en': '',
     },
-    'ly5wf492': {
+    '0pxde63k': {
       'es': 'Please choose an option from the dropdown',
       'en': '',
     },
-    'jt8ckn9x': {
+    '5i5xpqj3': {
       'es': 'Field is required',
       'en': '',
     },
-    'g4lufpbc': {
+    'ttypmrjy': {
       'es': 'Please choose an option from the dropdown',
       'en': '',
     },
   },
-  // producto
+  // producto1
   {
     'g30fmqjw': {
       'es': 'Base Beauty Creations Flawless Stay Foundation',
@@ -367,55 +367,55 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Editar Perfil',
       'en': '',
     },
-    'n3zeok1v': {
+    'lukm8n9s': {
       'es': 'Su nombre es requerido.',
       'en': '',
     },
-    '18b5k3ks': {
+    'vi5vjzku': {
       'es': 'El mínimo de caracteres es de 10.',
       'en': '',
     },
-    'c0zl13ap': {
+    'oupyiyxg': {
       'es': 'El máximo de caracteres es de 30',
       'en': '',
     },
-    'zzmkk40h': {
+    'o7dsnvg4': {
       'es': 'Please choose an option from the dropdown',
       'en': '',
     },
-    '3cj3f7n3': {
+    'j3ac1rqr': {
       'es': 'Su correo electrónico es requerido.',
       'en': '',
     },
-    'edx0mrtk': {
+    'd6zaaqwb': {
       'es': 'Debe ser un correo válido.',
       'en': '',
     },
-    'f1u15tti': {
+    'qaepcuia': {
       'es': 'Please choose an option from the dropdown',
       'en': '',
     },
-    'e2j2inz2': {
+    'hbdyv7tl': {
       'es': 'Field is required',
       'en': '',
     },
-    'tymkm8ri': {
+    'hh6r7fwk': {
       'es': 'Please choose an option from the dropdown',
       'en': '',
     },
-    'stozcbbp': {
+    'p2ifnsj7': {
       'es': 'Su número telefónico es requerido.',
       'en': '',
     },
-    'hse0zh67': {
+    'gch3wkei': {
       'es': 'Please choose an option from the dropdown',
       'en': '',
     },
-    'kirs2naw': {
+    'ohfw6tkx': {
       'es': 'Field is required',
       'en': '',
     },
-    '4rg2563w': {
+    'jroibtr2': {
       'es': 'Please choose an option from the dropdown',
       'en': '',
     },
@@ -505,7 +505,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
-  // productsHome
+  // ProductsHome
   {
     'p1av52t5': {
       'es': 'Lista de Productos',
@@ -550,10 +550,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Cotizar',
       'en': '',
     },
-    '1qlugxrl': {
-      'es': 'Page Title',
-      'en': '',
-    },
     'pluqtuwp': {
       'es': 'Home',
       'en': '',
@@ -566,15 +562,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'du0c4qs6': {
-      'es': '.....',
+      'es': 'No sabes que productos usar, contactame y yo te ayudo ',
       'en': '',
     },
     'e2voppo4': {
       'es': 'Cotizar',
-      'en': '',
-    },
-    'zifp1v5t': {
-      'es': 'Page Title',
       'en': '',
     },
     'w1fzccp6': {
@@ -597,10 +589,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Cotizar',
       'en': '',
     },
-    '7zon8bt7': {
-      'es': 'Page Title',
-      'en': '',
-    },
     'eiohymcu': {
       'es': 'Home',
       'en': '',
@@ -621,10 +609,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Cotizar',
       'en': '',
     },
-    'o0dhzjts': {
-      'es': 'Page Title',
-      'en': '',
-    },
     '7sgxvywi': {
       'es': 'Home',
       'en': '',
@@ -641,11 +625,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'dgb2xpza': {
-      'es': 'Compra aqui',
-      'en': '',
-    },
-    '85thx68t': {
-      'es': 'Page Title',
+      'es': 'Ver catalogo',
       'en': '',
     },
     '3loa2i49': {
@@ -660,15 +640,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     's5evi25e': {
-      'es': '¿Buscans nuevo maquillaje?',
+      'es': '¿Buscas nuevo maquillaje?',
       'en': '',
     },
     'cn85esz6': {
-      'es': 'Compra aqui',
-      'en': '',
-    },
-    'rf4udbbi': {
-      'es': 'Maquillaje',
+      'es': 'Ver catalogo',
       'en': '',
     },
     'su11qsgj': {
@@ -679,16 +655,16 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // producto2
   {
     'tvnyxs1w': {
-      'es': 'Base Beauty Creations Flawless Stay Foundation',
+      'es': 'Gel Fijador de Cejas Beauty Creations',
       'en': '',
     },
     'qn8l86gj': {
-      'es': '₡ 8.900',
+      'es': '₡ 3.400',
       'en': '',
     },
     '2s7l88r3': {
       'es':
-          'Base Beauty Creations Flawless Stay Fundation. Excelente base para mantener de media a alta cobertura.',
+          'De lo más nuevo de Beauty Creations, el gel fijador de cejas te ayudará a que el acabado de tus cejas se mantenga por más tiempo, dándote un aspecto fenomenal todo el día. ',
       'en': '',
     },
     '8y07bzd7': {
@@ -696,6 +672,286 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'r2l35dn7': {
+      'es': 'Home',
+      'en': '',
+    },
+  },
+  // producto3
+  {
+    '45s7nykr': {
+      'es': 'Delineador de Labios Beauty Creations Nude X',
+      'en': '',
+    },
+    'xhv5mxaw': {
+      'es': '₡ 3.500',
+      'en': '',
+    },
+    '4dw6spov': {
+      'es':
+          'Lápiz delineadores de labios 24 tonos matte diferentes, con textura suave y punta retractil.',
+      'en': '',
+    },
+    'kxmxeqpa': {
+      'es': 'Page Title',
+      'en': '',
+    },
+    'khqvz9vr': {
+      'es': 'Home',
+      'en': '',
+    },
+  },
+  // producto4
+  {
+    'ahman6fr': {
+      'es': 'Crema Costa BB Cream Perfect Match',
+      'en': '',
+    },
+    'mv157zqj': {
+      'es': '₡ 12.000',
+      'en': '',
+    },
+    'df28qbd9': {
+      'es':
+          'Este producto es perfecto para reemplazar las bases que nos obstruyen los poros, hidratando la cara y dejando una sensación deliciosa.  Viene en 2 tonos: light o medium.\n\nEl BB Cream es una crema hidratante ultra ligera que se puede usar diariamente con la gran ventaja de que tiene un color tenue, ayudándonos a emparejar la piel y hacerla ver más fresca, además de tener extracto de aloe vera y rosas que ayudan a calmar, reafirmar y nutrir nuestra piel.',
+      'en': '',
+    },
+    'wtiwd85t': {
+      'es': 'Page Title',
+      'en': '',
+    },
+    '315k5sjh': {
+      'es': 'Home',
+      'en': '',
+    },
+  },
+  // producto5
+  {
+    'kdgxi6es': {
+      'es': 'Labiales Beauty Creations Nude X Soft Matte Lipstick',
+      'en': '',
+    },
+    'sduxr1m0': {
+      'es': '₡ 3,000',
+      'en': '',
+    },
+    'ponsk1ux': {
+      'es':
+          'Los labiales Soft matte vienen en 18 tonos nude  diferentes, cremosos y diseñados para combinar con cualquier tipo de piel.',
+      'en': '',
+    },
+    'bqmpqrfs': {
+      'es': 'Page Title',
+      'en': '',
+    },
+    'gps8nqal': {
+      'es': 'Home',
+      'en': '',
+    },
+  },
+  // producto6
+  {
+    'iqipktb7': {
+      'es': 'Base Flawless Stay Fundation',
+      'en': '',
+    },
+    'hcas4u6k': {
+      'es': '₡ 8,800',
+      'en': '',
+    },
+    '54jnz6yl': {
+      'es':
+          'Base Beauty Creations Flawless Stay Fundation. Excelente base para mantener de media a alta cobertura. ',
+      'en': '',
+    },
+    'h7zlci53': {
+      'es': 'Page Title',
+      'en': '',
+    },
+    'rl63xf4c': {
+      'es': 'Home',
+      'en': '',
+    },
+  },
+  // producto7
+  {
+    'onnrzby0': {
+      'es': 'Serum de Pitaya Costa para Poro Abierto',
+      'en': '',
+    },
+    's4okqyyo': {
+      'es': '₡ 14,500',
+      'en': '',
+    },
+    'sxmjw508': {
+      'es':
+          'Extracto de pithaya te ayuda a emparejar el tono natural de la piel tratando los poros abiertos que tengas para darle un aspecto más sano a tu piel. ',
+      'en': '',
+    },
+    'inawi4x6': {
+      'es': 'Page Title',
+      'en': '',
+    },
+    'lbfa0y5s': {
+      'es': 'Home',
+      'en': '',
+    },
+  },
+  // producto8
+  {
+    '0vk6ss5v': {
+      'es': 'Gel Facial Hidratante Antioxidante Costa Dewy Drips',
+      'en': '',
+    },
+    'iijwkyk4': {
+      'es': '₡ 6,900',
+      'en': '',
+    },
+    'cdnlhyj4': {
+      'es':
+          'Si lo que buscas es una fórmula ligera que a la vez hidrate su piel, este gel es perfecto para ti. Cargado de antioxidantes y extractos naturales que ayudan a reafirmar, regenerar y calmar la piel.',
+      'en': '',
+    },
+    'zyxna44o': {
+      'es': 'Page Title',
+      'en': '',
+    },
+    'jbd6nwfq': {
+      'es': 'Home',
+      'en': '',
+    },
+  },
+  // producto9
+  {
+    '81vxzxgu': {
+      'es': 'Protector Solar Diario Costa 30spf',
+      'en': '',
+    },
+    'mxq2h0am': {
+      'es': '₡ 14,000',
+      'en': '',
+    },
+    'tq8tfne7': {
+      'es':
+          'La fórmula tiene una textura ligera cargada de ácido hialurónico para dejar la piel humectada mientras la protege y al absorberse deja un acabado suave y aterciopelado como piel de durazno sin esas sensación pegajosa o grasosa.',
+      'en': '',
+    },
+    '69926e5h': {
+      'es': 'Page Title',
+      'en': '',
+    },
+    'pfvpjxfb': {
+      'es': 'Home',
+      'en': '',
+    },
+  },
+  // producto10
+  {
+    'lix7tcml': {
+      'es': 'Labial para el cuidado de labios Sweet Dose Beauty Creations',
+      'en': 'Sweet Dose Beauty Creations Lip Care Lipstick',
+    },
+    'ho948qvf': {
+      'es': '₡ 5,000',
+      'en': '',
+    },
+    'pmnxa230': {
+      'es':
+          'Lip Oil es un aceite nutritivo infundido con aceite de jojoba y vitamina E, ayuda a crear labios radiantes y saludables.',
+      'en': '',
+    },
+    '9hko8w9h': {
+      'es': 'Page Title',
+      'en': '',
+    },
+    'wi1u8wlc': {
+      'es': 'Home',
+      'en': '',
+    },
+  },
+  // producto11
+  {
+    '4n9wk85x': {
+      'es': 'Floral Bloom Paleta de Rubor',
+      'en': '',
+    },
+    's4w5rb98': {
+      'es': '₡ 6,900',
+      'en': '',
+    },
+    'nmf9ctxt': {
+      'es':
+          'Hermosa paleta de la marca Beauty Creacions, que contiene seis rubores en diferentes tonalidades mates',
+      'en': '',
+    },
+    'styaigol': {
+      'es': 'Page Title',
+      'en': '',
+    },
+    '5l8u0rvb': {
+      'es': 'Home',
+      'en': '',
+    },
+  },
+  // CategoriesPage
+  {
+    'zzsafvrl': {
+      'es': 'Categorías de Productos',
+      'en': '',
+    },
+    '27427qk0': {
+      'es': 'Crear Categoría',
+      'en': '',
+    },
+    '3yro6q99': {
+      'es': 'Productos',
+      'en': '',
+    },
+    'zj1gedtg': {
+      'es': 'Home',
+      'en': '',
+    },
+  },
+  // BrandsPage
+  {
+    '1jr2c1xr': {
+      'es': 'Marcas de Productos',
+      'en': '',
+    },
+    'zqezw5ud': {
+      'es': 'Crear Marca',
+      'en': '',
+    },
+    '6ia8ojnl': {
+      'es': 'Productos',
+      'en': '',
+    },
+    '2npfap3m': {
+      'es': 'Home',
+      'en': '',
+    },
+  },
+  // producto1Copy
+  {
+    'v4trfigf': {
+      'es': 'Page Title',
+      'en': '',
+    },
+    'qm09sdro': {
+      'es': 'Home',
+      'en': '',
+    },
+  },
+  // AppointmentPage
+  {
+    '7r984chp': {
+      'es': 'Agenda de Citas ',
+      'en': '',
+    },
+    'mjlbu7qv': {
+      'es': 'Horarios Disponibles',
+      'en': '',
+    },
+    'm6ktb9gx': {
       'es': 'Home',
       'en': '',
     },
@@ -745,16 +1001,68 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Descripción',
       'en': '',
     },
-    '164vgmwj': {
-      'es': 'Marca',
+    'fz3miakr': {
+      'es': 'Option 1',
       'en': '',
     },
-    'uq994gfs': {
-      'es': 'Categoría',
+    'esda1dpb': {
+      'es': 'Seleccione la categoría:',
+      'en': '',
+    },
+    '2oqr8720': {
+      'es': 'Search for an item...',
+      'en': '',
+    },
+    'w285rnjg': {
+      'es': 'Seleccione la marca:',
+      'en': '',
+    },
+    'wbj2bj04': {
+      'es': 'Search for an item...',
       'en': '',
     },
     'i158hw7c': {
       'es': 'Guardar',
+      'en': '',
+    },
+    'lxpksphe': {
+      'es': 'El nombre del producto es requerido.',
+      'en': '',
+    },
+    'udpl4pal': {
+      'es': 'El nombre debe poseer un mínimo de 10 caracteres.',
+      'en': '',
+    },
+    '8jzuqq1p': {
+      'es': 'El nombre debe poseer un máximo de 30 caracteres.',
+      'en': '',
+    },
+    'uq97tjh6': {
+      'es': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'k5ibwrux': {
+      'es': 'El precio es requerido.',
+      'en': '',
+    },
+    'l3p6fum4': {
+      'es': 'El precio debe serigual o mayor a 1000.',
+      'en': '',
+    },
+    '2pv6ce3o': {
+      'es': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'si1oyj8g': {
+      'es': 'La información del producto es requerida.',
+      'en': '',
+    },
+    '5gahnt6h': {
+      'es': 'La información del producto posee un máximo de 150 caracteres.',
+      'en': '',
+    },
+    'd68ceqqr': {
+      'es': 'Please choose an option from the dropdown',
       'en': '',
     },
   },
@@ -776,12 +1084,20 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Descripción',
       'en': '',
     },
-    'snzy726i': {
-      'es': 'Marca',
+    'qwq9m7lk': {
+      'es': 'Option 1',
       'en': '',
     },
-    'fu3x770l': {
-      'es': 'Categoría',
+    'yfa91cqv': {
+      'es': 'Seleccione la categoría:',
+      'en': '',
+    },
+    'ox78nlpa': {
+      'es': 'Search for an item...',
+      'en': '',
+    },
+    'y8xb6a1f': {
+      'es': 'Search for an item...',
       'en': '',
     },
     '0m9xcu8u': {
@@ -793,6 +1109,98 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'ysv8zyes': {
       'es': 'No hay citas disponibles en este momento.',
+      'en': '',
+    },
+  },
+  // bsCreateCategory
+  {
+    'npxh4tyg': {
+      'es': 'Nueva Categoría',
+      'en': '',
+    },
+    '5hgzxj7p': {
+      'es': 'Nombre',
+      'en': '',
+    },
+    'vpmnb1sv': {
+      'es': 'Guardar',
+      'en': '',
+    },
+    '9xnoxmw6': {
+      'es': 'El nombre es requerido.',
+      'en': '',
+    },
+    'bhgzztqg': {
+      'es': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+  },
+  // bsEditCategory
+  {
+    'xp6rog8g': {
+      'es': 'Modificar Categoría',
+      'en': '',
+    },
+    'wna1qgel': {
+      'es': 'Nombre',
+      'en': '',
+    },
+    'ltgl5alv': {
+      'es': 'Guardar',
+      'en': '',
+    },
+    'qbj77t3p': {
+      'es': 'El nombre es requerido.',
+      'en': '',
+    },
+    'q18801cy': {
+      'es': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+  },
+  // bsCreateBrand
+  {
+    '6xumess0': {
+      'es': 'Nueva Marca',
+      'en': '',
+    },
+    'fcw69dvk': {
+      'es': 'Nombre',
+      'en': '',
+    },
+    'clof189n': {
+      'es': 'Guardar',
+      'en': '',
+    },
+    'j1q17ycv': {
+      'es': 'El nombre es requerido.',
+      'en': '',
+    },
+    'v6uz2zlk': {
+      'es': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+  },
+  // bsEditBrand
+  {
+    'ol8zq6jn': {
+      'es': 'Modificar Categoría',
+      'en': '',
+    },
+    'ozhbkpeu': {
+      'es': 'Nombre',
+      'en': '',
+    },
+    '3rtfu1pn': {
+      'es': 'Guardar',
+      'en': '',
+    },
+    'fglqnxj1': {
+      'es': 'El nombre es requerido.',
+      'en': '',
+    },
+    'de271d6e': {
+      'es': 'Please choose an option from the dropdown',
       'en': '',
     },
   },

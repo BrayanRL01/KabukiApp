@@ -1,3 +1,6 @@
+import '/auth/firebase_auth/auth_util.dart';
+import '/componentes/bs_side_bar/bs_side_bar_widget.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -56,17 +59,84 @@ class _AsesoriaWidgetState extends State<AsesoriaWidget> {
           child: AppBar(
             backgroundColor: Color(0xFFFA8FB1),
             automaticallyImplyLeading: false,
-            title: Text(
-              FFLocalizations.of(context).getText(
-                'zifp1v5t' /* Page Title */,
+            leading: Align(
+              alignment: AlignmentDirectional(0.00, 0.00),
+              child: FlutterFlowIconButton(
+                borderColor: Color(0xFFFA8FB1),
+                borderRadius: 20.0,
+                borderWidth: 1.0,
+                buttonSize: 40.0,
+                fillColor: Color(0xFFFA8FB1),
+                icon: Icon(
+                  Icons.menu_rounded,
+                  color: FlutterFlowTheme.of(context).info,
+                  size: 24.0,
+                ),
+                onPressed: () async {
+                  await showModalBottomSheet(
+                    isScrollControlled: true,
+                    backgroundColor: Colors.transparent,
+                    context: context,
+                    builder: (context) {
+                      return GestureDetector(
+                        onTap: () => _model.unfocusNode.canRequestFocus
+                            ? FocusScope.of(context)
+                                .requestFocus(_model.unfocusNode)
+                            : FocusScope.of(context).unfocus(),
+                        child: Padding(
+                          padding: MediaQuery.viewInsetsOf(context),
+                          child: BsSideBarWidget(),
+                        ),
+                      );
+                    },
+                  ).then((value) => safeSetState(() {}));
+                },
               ),
-              style: FlutterFlowTheme.of(context).headlineMedium.override(
-                    fontFamily: 'Outfit',
-                    color: Colors.white,
-                    fontSize: 22.0,
-                  ),
             ),
-            actions: [],
+            actions: [
+              FlutterFlowIconButton(
+                borderColor: Colors.transparent,
+                borderRadius: 20.0,
+                borderWidth: 1.0,
+                buttonSize: 40.0,
+                icon: Icon(
+                  Icons.logout_rounded,
+                  color: Colors.white,
+                  size: 24.0,
+                ),
+                onPressed: () async {
+                  var confirmDialogResponse = await showDialog<bool>(
+                        context: context,
+                        builder: (alertDialogContext) {
+                          return AlertDialog(
+                            title: Text('Cerrar Sesión'),
+                            content: Text('¿Está seguro/a qué desea salir?'),
+                            actions: [
+                              TextButton(
+                                onPressed: () =>
+                                    Navigator.pop(alertDialogContext, false),
+                                child: Text('Cancelar'),
+                              ),
+                              TextButton(
+                                onPressed: () =>
+                                    Navigator.pop(alertDialogContext, true),
+                                child: Text('Confirmar'),
+                              ),
+                            ],
+                          );
+                        },
+                      ) ??
+                      false;
+                  if (confirmDialogResponse) {
+                    GoRouter.of(context).prepareAuthEvent();
+                    await authManager.signOut();
+                    GoRouter.of(context).clearRedirectLocation();
+                  }
+
+                  context.goNamedAuth('LoginPage', context.mounted);
+                },
+              ),
+            ],
             centerTitle: false,
             toolbarHeight: 70.0,
             elevation: 2.0,
@@ -142,7 +212,7 @@ class _AsesoriaWidgetState extends State<AsesoriaWidget> {
                             20.0, 0.0, 20.0, 0.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
-                            'du0c4qs6' /* ..... */,
+                            'du0c4qs6' /* No sabes que productos usar, c... */,
                           ),
                           textAlign: TextAlign.justify,
                           style:

@@ -1,3 +1,4 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/componentes/bs_side_bar/bs_side_bar_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -92,7 +93,50 @@ class _CateMaquillajeWidgetState extends State<CateMaquillajeWidget> {
                 },
               ),
             ),
-            actions: [],
+            actions: [
+              FlutterFlowIconButton(
+                borderColor: Colors.transparent,
+                borderRadius: 20.0,
+                borderWidth: 1.0,
+                buttonSize: 40.0,
+                icon: Icon(
+                  Icons.logout_rounded,
+                  color: Colors.white,
+                  size: 24.0,
+                ),
+                onPressed: () async {
+                  var confirmDialogResponse = await showDialog<bool>(
+                        context: context,
+                        builder: (alertDialogContext) {
+                          return AlertDialog(
+                            title: Text('Cerrar Sesión'),
+                            content: Text('¿Está seguro/a qué desea salir?'),
+                            actions: [
+                              TextButton(
+                                onPressed: () =>
+                                    Navigator.pop(alertDialogContext, false),
+                                child: Text('Cancelar'),
+                              ),
+                              TextButton(
+                                onPressed: () =>
+                                    Navigator.pop(alertDialogContext, true),
+                                child: Text('Confirmar'),
+                              ),
+                            ],
+                          );
+                        },
+                      ) ??
+                      false;
+                  if (confirmDialogResponse) {
+                    GoRouter.of(context).prepareAuthEvent();
+                    await authManager.signOut();
+                    GoRouter.of(context).clearRedirectLocation();
+                  }
+
+                  context.goNamedAuth('LoginPage', context.mounted);
+                },
+              ),
+            ],
             centerTitle: false,
             toolbarHeight: 70.0,
             elevation: 2.0,
@@ -166,7 +210,8 @@ class _CateMaquillajeWidgetState extends State<CateMaquillajeWidget> {
                                       .bodyMedium
                                       .override(
                                         fontFamily: 'Readex Pro',
-                                        color: Color(0xFFF9F9F9),
+                                        color:
+                                            FlutterFlowTheme.of(context).info,
                                         fontSize: 13.0,
                                         fontWeight: FontWeight.bold,
                                       ),
@@ -234,7 +279,8 @@ class _CateMaquillajeWidgetState extends State<CateMaquillajeWidget> {
                                       .bodyMedium
                                       .override(
                                         fontFamily: 'Readex Pro',
-                                        color: Color(0xFFF9F9F9),
+                                        color:
+                                            FlutterFlowTheme.of(context).info,
                                         fontSize: 13.0,
                                         fontWeight: FontWeight.bold,
                                       ),
@@ -311,7 +357,8 @@ class _CateMaquillajeWidgetState extends State<CateMaquillajeWidget> {
                                       .bodyMedium
                                       .override(
                                         fontFamily: 'Readex Pro',
-                                        color: Color(0xFFF9F9F9),
+                                        color:
+                                            FlutterFlowTheme.of(context).info,
                                         fontSize: 13.0,
                                         fontWeight: FontWeight.bold,
                                       ),
@@ -379,7 +426,8 @@ class _CateMaquillajeWidgetState extends State<CateMaquillajeWidget> {
                                       .bodyMedium
                                       .override(
                                         fontFamily: 'Readex Pro',
-                                        color: Color(0xFFF9F9F9),
+                                        color:
+                                            FlutterFlowTheme.of(context).info,
                                         fontSize: 13.0,
                                         fontWeight: FontWeight.bold,
                                       ),
@@ -438,7 +486,7 @@ class _CateMaquillajeWidgetState extends State<CateMaquillajeWidget> {
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(8.0),
                                     child: Image.asset(
-                                      'assets/images/Captura_de_pantalla_2023-11-14_130118.png',
+                                      'assets/images/Crema_Costa_BB_Cream_Perfect_Match.webp',
                                       width: 300.0,
                                       height: 200.0,
                                       fit: BoxFit.cover,
@@ -456,7 +504,8 @@ class _CateMaquillajeWidgetState extends State<CateMaquillajeWidget> {
                                       .bodyMedium
                                       .override(
                                         fontFamily: 'Readex Pro',
-                                        color: Color(0xFFF9F9F9),
+                                        color:
+                                            FlutterFlowTheme.of(context).info,
                                         fontSize: 13.0,
                                         fontWeight: FontWeight.bold,
                                       ),
@@ -505,8 +554,8 @@ class _CateMaquillajeWidgetState extends State<CateMaquillajeWidget> {
                                   },
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(8.0),
-                                    child: Image.asset(
-                                      'assets/images/Captura_de_pantalla_2023-11-14_130417.png',
+                                    child: Image.network(
+                                      'https://images.unsplash.com/photo-1596462502278-27bfdc403348?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw2fHxtYWtlJTIwdXB8ZW58MHx8fHwxNzAwNzQzNTA5fDA&ixlib=rb-4.0.3&q=80&w=1080',
                                       width: 300.0,
                                       height: 200.0,
                                       fit: BoxFit.cover,
@@ -524,7 +573,8 @@ class _CateMaquillajeWidgetState extends State<CateMaquillajeWidget> {
                                       .bodyMedium
                                       .override(
                                         fontFamily: 'Readex Pro',
-                                        color: Color(0xFFF9F9F9),
+                                        color:
+                                            FlutterFlowTheme.of(context).info,
                                         fontSize: 13.0,
                                         fontWeight: FontWeight.bold,
                                       ),

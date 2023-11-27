@@ -1,3 +1,4 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/componentes/bs_create_product/bs_create_product_widget.dart';
 import '/componentes/bs_edit_product/bs_edit_product_widget.dart';
@@ -91,7 +92,7 @@ class _ProductsHomeWidgetState extends State<ProductsHomeWidget>
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(100.0),
+          preferredSize: Size.fromHeight(70.0),
           child: AppBar(
             backgroundColor: Color(0xFFFA8FB1),
             automaticallyImplyLeading: false,
@@ -129,9 +130,52 @@ class _ProductsHomeWidgetState extends State<ProductsHomeWidget>
                 },
               ),
             ),
-            actions: [],
+            actions: [
+              FlutterFlowIconButton(
+                borderColor: Colors.transparent,
+                borderRadius: 20.0,
+                borderWidth: 1.0,
+                buttonSize: 40.0,
+                icon: Icon(
+                  Icons.logout_rounded,
+                  color: Colors.white,
+                  size: 24.0,
+                ),
+                onPressed: () async {
+                  var confirmDialogResponse = await showDialog<bool>(
+                        context: context,
+                        builder: (alertDialogContext) {
+                          return AlertDialog(
+                            title: Text('Cerrar Sesión'),
+                            content: Text('¿Está seguro/a qué desea salir?'),
+                            actions: [
+                              TextButton(
+                                onPressed: () =>
+                                    Navigator.pop(alertDialogContext, false),
+                                child: Text('Cancelar'),
+                              ),
+                              TextButton(
+                                onPressed: () =>
+                                    Navigator.pop(alertDialogContext, true),
+                                child: Text('Confirmar'),
+                              ),
+                            ],
+                          );
+                        },
+                      ) ??
+                      false;
+                  if (confirmDialogResponse) {
+                    GoRouter.of(context).prepareAuthEvent();
+                    await authManager.signOut();
+                    GoRouter.of(context).clearRedirectLocation();
+                  }
+
+                  context.goNamedAuth('LoginPage', context.mounted);
+                },
+              ),
+            ],
             centerTitle: false,
-            toolbarHeight: 100.0,
+            toolbarHeight: 70.0,
             elevation: 2.0,
           ),
         ),

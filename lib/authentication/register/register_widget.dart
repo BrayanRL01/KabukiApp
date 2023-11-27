@@ -77,7 +77,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
               key: _model.formKey,
               autovalidateMode: AutovalidateMode.disabled,
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(32.0, 32.0, 32.0, 32.0),
+                padding: EdgeInsetsDirectional.fromSTEB(32.0, 32.0, 32.0, 28.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -270,8 +270,13 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                             });
                           }
                         },
-                        text: FFLocalizations.of(context).getText(
-                          '0381p578' /* Fecha de Nacimiento */,
+                        text: valueOrDefault<String>(
+                          dateTimeFormat(
+                            'd/M/y',
+                            _model.datePicked,
+                            locale: FFLocalizations.of(context).languageCode,
+                          ),
+                          'Fecha de Nacimiento',
                         ),
                         options: FFButtonOptions(
                           width: 975.0,

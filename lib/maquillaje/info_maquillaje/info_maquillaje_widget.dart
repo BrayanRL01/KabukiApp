@@ -1,3 +1,4 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/componentes/bs_side_bar/bs_side_bar_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -92,7 +93,50 @@ class _InfoMaquillajeWidgetState extends State<InfoMaquillajeWidget> {
                 },
               ),
             ),
-            actions: [],
+            actions: [
+              FlutterFlowIconButton(
+                borderColor: Colors.transparent,
+                borderRadius: 20.0,
+                borderWidth: 1.0,
+                buttonSize: 40.0,
+                icon: Icon(
+                  Icons.logout_rounded,
+                  color: Colors.white,
+                  size: 24.0,
+                ),
+                onPressed: () async {
+                  var confirmDialogResponse = await showDialog<bool>(
+                        context: context,
+                        builder: (alertDialogContext) {
+                          return AlertDialog(
+                            title: Text('Cerrar Sesión'),
+                            content: Text('¿Está seguro/a qué desea salir?'),
+                            actions: [
+                              TextButton(
+                                onPressed: () =>
+                                    Navigator.pop(alertDialogContext, false),
+                                child: Text('Cancelar'),
+                              ),
+                              TextButton(
+                                onPressed: () =>
+                                    Navigator.pop(alertDialogContext, true),
+                                child: Text('Confirmar'),
+                              ),
+                            ],
+                          );
+                        },
+                      ) ??
+                      false;
+                  if (confirmDialogResponse) {
+                    GoRouter.of(context).prepareAuthEvent();
+                    await authManager.signOut();
+                    GoRouter.of(context).clearRedirectLocation();
+                  }
+
+                  context.goNamedAuth('LoginPage', context.mounted);
+                },
+              ),
+            ],
             centerTitle: false,
             toolbarHeight: 70.0,
             elevation: 2.0,
