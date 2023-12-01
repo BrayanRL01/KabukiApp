@@ -2,7 +2,7 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/componentes/bs_create_brand/bs_create_brand_widget.dart';
 import '/componentes/bs_edit_brand/bs_edit_brand_widget.dart';
-import '/componentes/bs_side_bar/bs_side_bar_widget.dart';
+import '/componentes/bs_side_bar_admin/bs_side_bar_admin_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -90,7 +90,7 @@ class _BrandsPageWidgetState extends State<BrandsPageWidget> {
                             : FocusScope.of(context).unfocus(),
                         child: Padding(
                           padding: MediaQuery.viewInsetsOf(context),
-                          child: BsSideBarWidget(),
+                          child: BsSideBarAdminWidget(),
                         ),
                       );
                     },
@@ -155,7 +155,7 @@ class _BrandsPageWidgetState extends State<BrandsPageWidget> {
               padding: EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 20.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Text(
                     FFLocalizations.of(context).getText(

@@ -111,7 +111,6 @@ class _BsEditProductWidgetState extends State<BsEditProductWidget> {
                 child: TextFormField(
                   controller: _model.txtNameController,
                   focusNode: _model.txtNameFocusNode,
-                  autofocus: true,
                   obscureText: false,
                   decoration: InputDecoration(
                     labelText: FFLocalizations.of(context).getText(
@@ -158,7 +157,6 @@ class _BsEditProductWidgetState extends State<BsEditProductWidget> {
                 child: TextFormField(
                   controller: _model.txtPrecioController,
                   focusNode: _model.txtPrecioFocusNode,
-                  autofocus: true,
                   obscureText: false,
                   decoration: InputDecoration(
                     labelText: FFLocalizations.of(context).getText(
@@ -205,7 +203,6 @@ class _BsEditProductWidgetState extends State<BsEditProductWidget> {
                 child: TextFormField(
                   controller: _model.txtInfoController,
                   focusNode: _model.txtInfoFocusNode,
-                  autofocus: true,
                   obscureText: false,
                   decoration: InputDecoration(
                     labelText: FFLocalizations.of(context).getText(

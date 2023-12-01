@@ -46,11 +46,6 @@ class UsersRecord extends FirestoreRecord {
   String get phoneNumber => _phoneNumber ?? '';
   bool hasPhoneNumber() => _phoneNumber != null;
 
-  // "role" field.
-  String? _role;
-  String get role => _role ?? '';
-  bool hasRole() => _role != null;
-
   // "skin_type" field.
   String? _skinType;
   String get skinType => _skinType ?? '';
@@ -61,6 +56,11 @@ class UsersRecord extends FirestoreRecord {
   DateTime? get birthday => _birthday;
   bool hasBirthday() => _birthday != null;
 
+  // "admin" field.
+  bool? _admin;
+  bool get admin => _admin ?? false;
+  bool hasAdmin() => _admin != null;
+
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
     _displayName = snapshotData['display_name'] as String?;
@@ -68,9 +68,9 @@ class UsersRecord extends FirestoreRecord {
     _uid = snapshotData['uid'] as String?;
     _createdTime = snapshotData['created_time'] as DateTime?;
     _phoneNumber = snapshotData['phone_number'] as String?;
-    _role = snapshotData['role'] as String?;
     _skinType = snapshotData['skin_type'] as String?;
     _birthday = snapshotData['birthday'] as DateTime?;
+    _admin = snapshotData['admin'] as bool?;
   }
 
   static CollectionReference get collection =>
@@ -113,9 +113,9 @@ Map<String, dynamic> createUsersRecordData({
   String? uid,
   DateTime? createdTime,
   String? phoneNumber,
-  String? role,
   String? skinType,
   DateTime? birthday,
+  bool? admin,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -125,9 +125,9 @@ Map<String, dynamic> createUsersRecordData({
       'uid': uid,
       'created_time': createdTime,
       'phone_number': phoneNumber,
-      'role': role,
       'skin_type': skinType,
       'birthday': birthday,
+      'admin': admin,
     }.withoutNulls,
   );
 
@@ -145,9 +145,9 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e1?.uid == e2?.uid &&
         e1?.createdTime == e2?.createdTime &&
         e1?.phoneNumber == e2?.phoneNumber &&
-        e1?.role == e2?.role &&
         e1?.skinType == e2?.skinType &&
-        e1?.birthday == e2?.birthday;
+        e1?.birthday == e2?.birthday &&
+        e1?.admin == e2?.admin;
   }
 
   @override
@@ -158,9 +158,9 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e?.uid,
         e?.createdTime,
         e?.phoneNumber,
-        e?.role,
         e?.skinType,
-        e?.birthday
+        e?.birthday,
+        e?.admin
       ]);
 
   @override

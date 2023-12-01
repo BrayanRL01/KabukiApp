@@ -39,7 +39,7 @@ Future<DocumentReference> createNewAdmin(
     "display_name": userName,
     "phone_number": phoneNumber,
     "uid": userId,
-    "role": 'Admin',
+    "admin": true,
     "created_time": createdTime,
   });
 

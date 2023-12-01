@@ -26,6 +26,24 @@ class ErrorMessageDialog extends StatefulWidget {
 class _ErrorMessageDialogState extends State<ErrorMessageDialog> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      width: widget.width,
+      height: widget.height,
+      padding: EdgeInsets.all(20),
+      // color: Colors.white,
+
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+            colors: [Colors.pink, Colors.white, Colors.pinkAccent],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight),
+        borderRadius: BorderRadius.circular(25),
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [Text("Hola Mundo")],
+      ),
+    );
   }
 }

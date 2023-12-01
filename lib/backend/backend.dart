@@ -12,6 +12,11 @@ import 'schema/frm_cliente_record.dart';
 import 'schema/appointments_record.dart';
 import 'schema/categories_record.dart';
 import 'schema/brands_record.dart';
+import 'schema/skin_types_record.dart';
+import 'schema/allergies_record.dart';
+import 'schema/skin_color_record.dart';
+import 'schema/provinces_record.dart';
+import 'schema/appointment_status_record.dart';
 
 export 'dart:async' show StreamSubscription;
 export 'package:cloud_firestore/cloud_firestore.dart';
@@ -26,6 +31,11 @@ export 'schema/frm_cliente_record.dart';
 export 'schema/appointments_record.dart';
 export 'schema/categories_record.dart';
 export 'schema/brands_record.dart';
+export 'schema/skin_types_record.dart';
+export 'schema/allergies_record.dart';
+export 'schema/skin_color_record.dart';
+export 'schema/provinces_record.dart';
+export 'schema/appointment_status_record.dart';
 
 /// Functions to query UsersRecords (as a Stream and as a Future).
 Future<int> queryUsersRecordCount({
@@ -281,6 +291,191 @@ Future<List<BrandsRecord>> queryBrandsRecordOnce({
     queryCollectionOnce(
       BrandsRecord.collection,
       BrandsRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query SkinTypesRecords (as a Stream and as a Future).
+Future<int> querySkinTypesRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      SkinTypesRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<SkinTypesRecord>> querySkinTypesRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      SkinTypesRecord.collection,
+      SkinTypesRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<SkinTypesRecord>> querySkinTypesRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      SkinTypesRecord.collection,
+      SkinTypesRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query AllergiesRecords (as a Stream and as a Future).
+Future<int> queryAllergiesRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      AllergiesRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<AllergiesRecord>> queryAllergiesRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      AllergiesRecord.collection,
+      AllergiesRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<AllergiesRecord>> queryAllergiesRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      AllergiesRecord.collection,
+      AllergiesRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query SkinColorRecords (as a Stream and as a Future).
+Future<int> querySkinColorRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      SkinColorRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<SkinColorRecord>> querySkinColorRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      SkinColorRecord.collection,
+      SkinColorRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<SkinColorRecord>> querySkinColorRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      SkinColorRecord.collection,
+      SkinColorRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query ProvincesRecords (as a Stream and as a Future).
+Future<int> queryProvincesRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      ProvincesRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<ProvincesRecord>> queryProvincesRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      ProvincesRecord.collection,
+      ProvincesRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<ProvincesRecord>> queryProvincesRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      ProvincesRecord.collection,
+      ProvincesRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query AppointmentStatusRecords (as a Stream and as a Future).
+Future<int> queryAppointmentStatusRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      AppointmentStatusRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<AppointmentStatusRecord>> queryAppointmentStatusRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      AppointmentStatusRecord.collection,
+      AppointmentStatusRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<AppointmentStatusRecord>> queryAppointmentStatusRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      AppointmentStatusRecord.collection,
+      AppointmentStatusRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,

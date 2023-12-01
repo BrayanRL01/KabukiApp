@@ -46,6 +46,11 @@ class ProductsRecord extends FirestoreRecord {
   String get category => _category ?? '';
   bool hasCategory() => _category != null;
 
+  // "favorito" field.
+  List<DocumentReference>? _favorito;
+  List<DocumentReference> get favorito => _favorito ?? const [];
+  bool hasFavorito() => _favorito != null;
+
   void _initializeFields() {
     _productName = snapshotData['product_name'] as String?;
     _productPrice = castToType<int>(snapshotData['product_price']);
@@ -53,6 +58,7 @@ class ProductsRecord extends FirestoreRecord {
     _productPhoto = snapshotData['product_photo'] as String?;
     _brand = snapshotData['brand'] as String?;
     _category = snapshotData['category'] as String?;
+    _favorito = getDataList(snapshotData['favorito']);
   }
 
   static CollectionReference get collection =>
@@ -116,12 +122,14 @@ class ProductsRecordDocumentEquality implements Equality<ProductsRecord> {
 
   @override
   bool equals(ProductsRecord? e1, ProductsRecord? e2) {
+    const listEquality = ListEquality();
     return e1?.productName == e2?.productName &&
         e1?.productPrice == e2?.productPrice &&
         e1?.description == e2?.description &&
         e1?.productPhoto == e2?.productPhoto &&
         e1?.brand == e2?.brand &&
-        e1?.category == e2?.category;
+        e1?.category == e2?.category &&
+        listEquality.equals(e1?.favorito, e2?.favorito);
   }
 
   @override
@@ -131,7 +139,8 @@ class ProductsRecordDocumentEquality implements Equality<ProductsRecord> {
         e?.description,
         e?.productPhoto,
         e?.brand,
-        e?.category
+        e?.category,
+        e?.favorito
       ]);
 
   @override

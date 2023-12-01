@@ -2,13 +2,16 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
 import '/componentes/bs_side_bar/bs_side_bar_widget.dart';
+import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
 import 'info_perfil_widget.dart' show InfoPerfilWidget;
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -74,10 +77,6 @@ class InfoPerfilModel extends FlutterFlowModel<InfoPerfilWidget> {
     return null;
   }
 
-  // State field(s) for txNacimiento widget.
-  FocusNode? txNacimientoFocusNode;
-  TextEditingController? txNacimientoController;
-  String? Function(BuildContext, String?)? txNacimientoControllerValidator;
   // State field(s) for txtTelefono widget.
   FocusNode? txtTelefonoFocusNode;
   TextEditingController? txtTelefonoController;
@@ -99,11 +98,10 @@ class InfoPerfilModel extends FlutterFlowModel<InfoPerfilWidget> {
     return null;
   }
 
-  // State field(s) for txtContrasena widget.
-  FocusNode? txtContrasenaFocusNode;
-  TextEditingController? txtContrasenaController;
-  late bool txtContrasenaVisibility;
-  String? Function(BuildContext, String?)? txtContrasenaControllerValidator;
+  DateTime? datePicked;
+  // State field(s) for ddSkin widget.
+  String? ddSkinValue;
+  FormFieldController<String>? ddSkinValueController;
 
   /// Initialization and disposal methods.
 
@@ -111,7 +109,6 @@ class InfoPerfilModel extends FlutterFlowModel<InfoPerfilWidget> {
     txtNombreControllerValidator = _txtNombreControllerValidator;
     txtCorreoControllerValidator = _txtCorreoControllerValidator;
     txtTelefonoControllerValidator = _txtTelefonoControllerValidator;
-    txtContrasenaVisibility = false;
   }
 
   void dispose() {
@@ -122,14 +119,8 @@ class InfoPerfilModel extends FlutterFlowModel<InfoPerfilWidget> {
     txtCorreoFocusNode?.dispose();
     txtCorreoController?.dispose();
 
-    txNacimientoFocusNode?.dispose();
-    txNacimientoController?.dispose();
-
     txtTelefonoFocusNode?.dispose();
     txtTelefonoController?.dispose();
-
-    txtContrasenaFocusNode?.dispose();
-    txtContrasenaController?.dispose();
   }
 
   /// Action blocks are added here.

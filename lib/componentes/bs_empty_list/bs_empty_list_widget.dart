@@ -49,15 +49,18 @@ class _BsEmptyListWidgetState extends State<BsEmptyListWidget> {
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(
-            FFLocalizations.of(context).getText(
-              'ysv8zyes' /* No hay citas disponibles en es... */,
+          Expanded(
+            child: Text(
+              FFLocalizations.of(context).getText(
+                'ysv8zyes' /* No hay citas disponibles en es... */,
+              ),
+              textAlign: TextAlign.center,
+              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                    fontFamily: 'Readex Pro',
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.w600,
+                  ),
             ),
-            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                  fontFamily: 'Readex Pro',
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.w600,
-                ),
           ),
         ],
       ),

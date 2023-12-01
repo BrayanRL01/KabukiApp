@@ -73,7 +73,6 @@ class _BsCreateBrandWidgetState extends State<BsCreateBrandWidget> {
                 child: TextFormField(
                   controller: _model.txtNameController,
                   focusNode: _model.txtNameFocusNode,
-                  autofocus: true,
                   obscureText: false,
                   decoration: InputDecoration(
                     labelText: FFLocalizations.of(context).getText(

@@ -1,5 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/componentes/bs_create_appointment/bs_create_appointment_widget.dart';
 import '/componentes/bs_empty_list/bs_empty_list_widget.dart';
 import '/componentes/bs_side_bar/bs_side_bar_widget.dart';
 import '/flutter_flow/flutter_flow_calendar.dart';
@@ -165,11 +166,58 @@ class _AppointmentPageWidgetState extends State<AppointmentPageWidget> {
                 ),
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                  child: FFButtonWidget(
+                    onPressed: () async {
+                      await showModalBottomSheet(
+                        isScrollControlled: true,
+                        backgroundColor: Colors.transparent,
+                        context: context,
+                        builder: (context) {
+                          return GestureDetector(
+                            onTap: () => _model.unfocusNode.canRequestFocus
+                                ? FocusScope.of(context)
+                                    .requestFocus(_model.unfocusNode)
+                                : FocusScope.of(context).unfocus(),
+                            child: Padding(
+                              padding: MediaQuery.viewInsetsOf(context),
+                              child: BsCreateAppointmentWidget(),
+                            ),
+                          );
+                        },
+                      ).then((value) => safeSetState(() {}));
+                    },
+                    text: FFLocalizations.of(context).getText(
+                      '8cf5w94o' /* Agregar Citas */,
+                    ),
+                    options: FFButtonOptions(
+                      height: 40.0,
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                      iconPadding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      color: Color(0xFFFA8FB1),
+                      textStyle:
+                          FlutterFlowTheme.of(context).titleSmall.override(
+                                fontFamily: 'Readex Pro',
+                                color: Colors.white,
+                              ),
+                      elevation: 3.0,
+                      borderSide: BorderSide(
+                        color: Colors.transparent,
+                        width: 1.0,
+                      ),
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                   child: FlutterFlowCalendar(
                     color: Color(0xFFFA8FB1),
                     iconColor: FlutterFlowTheme.of(context).secondaryText,
                     weekFormat: true,
                     weekStartsMonday: false,
+                    initialDate: getCurrentTimestamp,
                     rowHeight: 64.0,
                     onChange: (DateTimeRange? newSelectedDate) {
                       setState(

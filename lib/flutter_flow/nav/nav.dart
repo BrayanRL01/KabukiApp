@@ -241,12 +241,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => BrandsPageWidget(),
         ),
         FFRoute(
-          name: 'producto1Copy',
-          path: '/producto1Copy',
+          name: 'InfoProductos',
+          path: '/infoProductos',
           asyncParams: {
             'pProduct': getDoc(['products'], ProductsRecord.fromSnapshot),
           },
-          builder: (context, params) => Producto1CopyWidget(
+          builder: (context, params) => InfoProductosWidget(
             pProduct: params.getParam('pProduct', ParamType.Document),
           ),
         ),
@@ -254,6 +254,21 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'AppointmentPage',
           path: '/appointmentPage',
           builder: (context, params) => AppointmentPageWidget(),
+        ),
+        FFRoute(
+          name: 'favorito',
+          path: '/favorito',
+          builder: (context, params) => FavoritoWidget(),
+        ),
+        FFRoute(
+          name: 'UsersPage',
+          path: '/usersPage',
+          builder: (context, params) => UsersPageWidget(),
+        ),
+        FFRoute(
+          name: 'ResetPasswordPage',
+          path: '/resetPasswordPage',
+          builder: (context, params) => ResetPasswordPageWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

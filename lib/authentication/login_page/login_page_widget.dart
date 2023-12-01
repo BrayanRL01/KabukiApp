@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'login_page_model.dart';
@@ -70,50 +71,17 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                 Align(
                   alignment: AlignmentDirectional(0.00, 0.00),
                   child: Container(
-                    width: 80.0,
-                    height: 80.0,
+                    width: 201.0,
+                    height: 100.0,
                     decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        colors: [
-                          Color(0xFFF8BBD0),
-                          Color(0xFFF48FB1),
-                          Color(0xFFF06292)
-                        ],
-                        stops: [0.0, 0.5, 1.0],
-                        begin: AlignmentDirectional(-1.0, -1.0),
-                        end: AlignmentDirectional(1.0, 1.0),
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: Image.asset(
+                          'assets/images/Imagen_de_WhatsApp_2023-11-30_a_las_18.36.36_02c49484-removebg-preview.png',
+                        ).image,
                       ),
-                      shape: BoxShape.circle,
-                    ),
-                    child: Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(4.0, 4.0, 4.0, 4.0),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(50.0),
-                        child: Image.network(
-                          'https://images.unsplash.com/photo-1512496015851-a90fb38ba796?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw0fHxtYWtlJTI1MjB1cHxlbnwwfHx8fDE2OTg3NjUxNjF8MA&ixlib=rb-4.0.3&q=80&w=1080',
-                          width: 193.0,
-                          height: 140.0,
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                Align(
-                  alignment: AlignmentDirectional(0.00, 0.00),
-                  child: Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
-                    child: Text(
-                      FFLocalizations.of(context).getText(
-                        'b5egkd9t' /* Kabuki */,
-                      ),
-                      style:
-                          FlutterFlowTheme.of(context).headlineSmall.override(
-                                fontFamily: 'Outfit',
-                                color: Color(0xFFC2185B),
-                              ),
+                      borderRadius: BorderRadius.circular(20.0),
+                      shape: BoxShape.rectangle,
                     ),
                   ),
                 ),
@@ -173,7 +141,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                               ),
                               focusedBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
-                                  color: Color(0x00000000),
+                                  color: Color(0xFFF24A82),
                                   width: 2.0,
                                 ),
                                 borderRadius: BorderRadius.circular(12.0),
@@ -236,7 +204,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                               ),
                               focusedBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
-                                  color: Color(0x00000000),
+                                  color: Color(0xFFF24A82),
                                   width: 2.0,
                                 ),
                                 borderRadius: BorderRadius.circular(12.0),
@@ -294,8 +262,14 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                 return;
                               }
 
-                              context.goNamedAuth(
-                                  'cateMaquillaje', context.mounted);
+                              if (valueOrDefault<bool>(
+                                  currentUserDocument?.admin, false)) {
+                                context.pushNamedAuth(
+                                    'ProductsHome', context.mounted);
+                              } else {
+                                context.pushNamedAuth(
+                                    'cateMaquillaje', context.mounted);
+                              }
                             },
                             text: FFLocalizations.of(context).getText(
                               'dr94e0p6' /* Ingresar */,
@@ -339,10 +313,10 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                 text: FFLocalizations.of(context).getText(
                                   'xkoskyp0' /* Iniciar sesión con Google */,
                                 ),
-                                icon: Icon(
-                                  Icons.add,
-                                  color: Colors.transparent,
-                                  size: 20.0,
+                                icon: FaIcon(
+                                  FontAwesomeIcons.google,
+                                  color: Colors.black,
+                                  size: 22.0,
                                 ),
                                 options: FFButtonOptions(
                                   width: 370.0,
@@ -366,29 +340,14 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                 ),
                               ),
                             ),
-                            Align(
-                              alignment: AlignmentDirectional(-0.80, 0.00),
-                              child: Container(
-                                width: 35.0,
-                                height: 35.0,
-                                clipBehavior: Clip.antiAlias,
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                ),
-                                child: Image.network(
-                                  'https://th.bing.com/th/id/R.0fa3fe04edf6c0202970f2088edea9e7?rik=joOK76LOMJlBPw&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fgoogle-logo-png-open-2000.png&ehk=0PJJlqaIxYmJ9eOIp9mYVPA4KwkGo5Zob552JPltDMw%3d&risl=&pid=ImgRaw&r=0',
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                            ),
                           ],
                         ),
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 16.0, 0.0, 16.0),
                           child: FFButtonWidget(
-                            onPressed: () {
-                              print('Button pressed ...');
+                            onPressed: () async {
+                              context.pushNamed('ResetPasswordPage');
                             },
                             text: FFLocalizations.of(context).getText(
                               'b1zesyp0' /* Recuperar contraseña */,

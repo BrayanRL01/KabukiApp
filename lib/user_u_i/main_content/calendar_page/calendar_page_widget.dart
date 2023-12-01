@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/custom_code/widgets/index.dart' as custom_widgets;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -165,6 +166,17 @@ class _CalendarPageWidgetState extends State<CalendarPageWidget> {
                 ),
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                  child: Container(
+                    width: 200.0,
+                    height: 40.0,
+                    child: custom_widgets.WhatsAppRedirect(
+                      width: 200.0,
+                      height: 40.0,
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                   child: FlutterFlowCalendar(
                     color: Color(0xFFFA8FB1),
                     iconColor: FlutterFlowTheme.of(context).secondaryText,
@@ -224,10 +236,12 @@ class _CalendarPageWidgetState extends State<CalendarPageWidget> {
                       List<AppointmentsRecord> listViewAppointmentsRecordList =
                           snapshot.data!;
                       if (listViewAppointmentsRecordList.isEmpty) {
-                        return Container(
-                          width: 100.0,
-                          height: 100.0,
-                          child: BsEmptyListWidget(),
+                        return Center(
+                          child: Container(
+                            width: 300.0,
+                            height: 150.0,
+                            child: BsEmptyListWidget(),
+                          ),
                         );
                       }
                       return ListView.builder(

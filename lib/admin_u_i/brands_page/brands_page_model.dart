@@ -2,7 +2,7 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/componentes/bs_create_brand/bs_create_brand_widget.dart';
 import '/componentes/bs_edit_brand/bs_edit_brand_widget.dart';
-import '/componentes/bs_side_bar/bs_side_bar_widget.dart';
+import '/componentes/bs_side_bar_admin/bs_side_bar_admin_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';

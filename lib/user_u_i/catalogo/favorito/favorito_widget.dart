@@ -12,19 +12,19 @@ import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'productos_model.dart';
-export 'productos_model.dart';
+import 'favorito_model.dart';
+export 'favorito_model.dart';
 
-class ProductosWidget extends StatefulWidget {
-  const ProductosWidget({Key? key}) : super(key: key);
+class FavoritoWidget extends StatefulWidget {
+  const FavoritoWidget({Key? key}) : super(key: key);
 
   @override
-  _ProductosWidgetState createState() => _ProductosWidgetState();
+  _FavoritoWidgetState createState() => _FavoritoWidgetState();
 }
 
-class _ProductosWidgetState extends State<ProductosWidget>
+class _FavoritoWidgetState extends State<FavoritoWidget>
     with TickerProviderStateMixin {
-  late ProductosModel _model;
+  late FavoritoModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -53,7 +53,7 @@ class _ProductosWidgetState extends State<ProductosWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => ProductosModel());
+    _model = createModel(context, () => FavoritoModel());
 
     setupAnimations(
       animationsMap.values.where((anim) =>
@@ -127,6 +127,19 @@ class _ProductosWidgetState extends State<ProductosWidget>
                 },
               ),
             ),
+            title: Align(
+              alignment: AlignmentDirectional(0.00, 0.00),
+              child: Text(
+                FFLocalizations.of(context).getText(
+                  'whwpgi6v' /* Favoritos */,
+                ),
+                style: FlutterFlowTheme.of(context).titleLarge.override(
+                      fontFamily: 'Outfit',
+                      color: FlutterFlowTheme.of(context).info,
+                      fontSize: 40.0,
+                    ),
+              ),
+            ),
             actions: [
               FlutterFlowIconButton(
                 borderColor: Colors.transparent,
@@ -186,7 +199,12 @@ class _ProductosWidgetState extends State<ProductosWidget>
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                   child: StreamBuilder<List<ProductsRecord>>(
-                    stream: queryProductsRecord(),
+                    stream: queryProductsRecord(
+                      queryBuilder: (productsRecord) => productsRecord.where(
+                        'favorito',
+                        arrayContains: currentUserReference,
+                      ),
+                    ),
                     builder: (context, snapshot) {
                       // Customize what your widget looks like when it's loading.
                       if (!snapshot.hasData) {
@@ -244,7 +262,7 @@ class _ProductosWidgetState extends State<ProductosWidget>
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
                                         context.pushNamed(
-                                          'producto1Copy',
+                                          'InfoProductos',
                                           queryParameters: {
                                             'pProduct': serializeParam(
                                               listViewProductsRecord,

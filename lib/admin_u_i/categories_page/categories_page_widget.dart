@@ -2,7 +2,7 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/componentes/bs_create_category/bs_create_category_widget.dart';
 import '/componentes/bs_edit_category/bs_edit_category_widget.dart';
-import '/componentes/bs_side_bar/bs_side_bar_widget.dart';
+import '/componentes/bs_side_bar_admin/bs_side_bar_admin_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -90,7 +90,7 @@ class _CategoriesPageWidgetState extends State<CategoriesPageWidget> {
                             : FocusScope.of(context).unfocus(),
                         child: Padding(
                           padding: MediaQuery.viewInsetsOf(context),
-                          child: BsSideBarWidget(),
+                          child: BsSideBarAdminWidget(),
                         ),
                       );
                     },
@@ -132,9 +132,11 @@ class _CategoriesPageWidgetState extends State<CategoriesPageWidget> {
                         },
                       ) ??
                       false;
-                  GoRouter.of(context).prepareAuthEvent();
-                  await authManager.signOut();
-                  GoRouter.of(context).clearRedirectLocation();
+                  if (confirmDialogResponse) {
+                    GoRouter.of(context).prepareAuthEvent();
+                    await authManager.signOut();
+                    GoRouter.of(context).clearRedirectLocation();
+                  }
 
                   context.goNamedAuth('LoginPage', context.mounted);
                 },

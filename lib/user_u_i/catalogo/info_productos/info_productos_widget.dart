@@ -1,6 +1,8 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_toggle_icon.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
@@ -8,11 +10,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'producto1_copy_model.dart';
-export 'producto1_copy_model.dart';
+import 'info_productos_model.dart';
+export 'info_productos_model.dart';
 
-class Producto1CopyWidget extends StatefulWidget {
-  const Producto1CopyWidget({
+class InfoProductosWidget extends StatefulWidget {
+  const InfoProductosWidget({
     Key? key,
     this.pProduct,
   }) : super(key: key);
@@ -20,18 +22,18 @@ class Producto1CopyWidget extends StatefulWidget {
   final ProductsRecord? pProduct;
 
   @override
-  _Producto1CopyWidgetState createState() => _Producto1CopyWidgetState();
+  _InfoProductosWidgetState createState() => _InfoProductosWidgetState();
 }
 
-class _Producto1CopyWidgetState extends State<Producto1CopyWidget> {
-  late Producto1CopyModel _model;
+class _InfoProductosWidgetState extends State<InfoProductosWidget> {
+  late InfoProductosModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => Producto1CopyModel());
+    _model = createModel(context, () => InfoProductosModel());
   }
 
   @override
@@ -66,7 +68,7 @@ class _Producto1CopyWidgetState extends State<Producto1CopyWidget> {
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Container(
                       height: 500.0,
@@ -313,6 +315,82 @@ class _Producto1CopyWidgetState extends State<Producto1CopyWidget> {
                           ),
                         ),
                       ],
+                    ),
+                    Align(
+                      alignment: AlignmentDirectional(0.00, 0.00),
+                      child: Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Expanded(
+                              child: Align(
+                                alignment: AlignmentDirectional(0.00, 0.00),
+                                child: StreamBuilder<ProductsRecord>(
+                                  stream: ProductsRecord.getDocument(
+                                      widget.pProduct!.reference),
+                                  builder: (context, snapshot) {
+                                    // Customize what your widget looks like when it's loading.
+                                    if (!snapshot.hasData) {
+                                      return Center(
+                                        child: SizedBox(
+                                          width: 50.0,
+                                          height: 50.0,
+                                          child: CircularProgressIndicator(
+                                            valueColor:
+                                                AlwaysStoppedAnimation<Color>(
+                                              FlutterFlowTheme.of(context)
+                                                  .primary,
+                                            ),
+                                          ),
+                                        ),
+                                      );
+                                    }
+                                    final toggleIconProductsRecord =
+                                        snapshot.data!;
+                                    return ToggleIcon(
+                                      onPressed: () async {
+                                        final favoritoElement =
+                                            currentUserReference;
+                                        final favoritoUpdate =
+                                            toggleIconProductsRecord.favorito
+                                                    .contains(favoritoElement)
+                                                ? FieldValue.arrayRemove(
+                                                    [favoritoElement])
+                                                : FieldValue.arrayUnion(
+                                                    [favoritoElement]);
+                                        await toggleIconProductsRecord.reference
+                                            .update({
+                                          ...mapToFirestore(
+                                            {
+                                              'favorito': favoritoUpdate,
+                                            },
+                                          ),
+                                        });
+                                      },
+                                      value: toggleIconProductsRecord.favorito
+                                          .contains(currentUserReference),
+                                      onIcon: Icon(
+                                        Icons.favorite,
+                                        color: Color(0xFFFF1493),
+                                        size: 70.0,
+                                      ),
+                                      offIcon: Icon(
+                                        Icons.favorite_border,
+                                        color: Color(0xFFFF1493),
+                                        size: 70.0,
+                                      ),
+                                    );
+                                  },
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
                   ],
                 ),

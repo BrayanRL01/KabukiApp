@@ -12,7 +12,20 @@
           "package_name": "com.kabuki.kabukiapp"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "1065363029512-6f93q9kq5tdeh4kr8vuma8t839c3t0dp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kabuki.kabukiapp",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "1065363029512-r8mutalm8l8q6hdthira2oas1djk4au1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyBuzxA7oqF4GMPmfBEpZmDfFwrfw5dflQU"
@@ -20,7 +33,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1065363029512-r8mutalm8l8q6hdthira2oas1djk4au1.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1065363029512-u6k9avq771558178fte9op5vsoasirsl.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.kabuki.kabukiapp"
+              }
+            }
+          ]
         }
       }
     }

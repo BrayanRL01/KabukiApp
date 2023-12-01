@@ -138,10 +138,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // LoginPage
   {
-    'b5egkd9t': {
-      'es': 'Kabuki',
-      'en': '',
-    },
     'h64my6oi': {
       'es': 'Bienvenida',
       'en': '',
@@ -181,10 +177,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // Register
   {
-    '9p4usmkv': {
-      'es': 'Kabuki',
-      'en': '',
-    },
     'csy0pze2': {
       'es': '¡Unete y sé parte de nuestra comunidad!',
       'en': '',
@@ -222,7 +214,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     '720mj4c9': {
-      'es': 'Field is required',
+      'es': 'Su nombre es requerido.',
+      'en': '',
+    },
+    'l5c57wia': {
+      'es': 'El maximo de caracteres es de 40.',
       'en': '',
     },
     '91mcbacr': {
@@ -230,7 +226,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'hp9ier30': {
-      'es': 'Field is required',
+      'es': 'Su correo electrónico es requerido.',
+      'en': '',
+    },
+    'eixye28o': {
+      'es': 'El máximo de caracteres es de 40.',
+      'en': '',
+    },
+    'uxoz7d6u': {
+      'es': 'Debe ser un correo electrónico válido.',
       'en': '',
     },
     'qw6xh8hu': {
@@ -238,15 +242,36 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     't4c1gxt9': {
-      'es': 'Field is required',
+      'es': 'El número de teléfono es requerido.',
+      'en': '',
+    },
+    'tokkvkz2': {
+      'es': 'Solo se permiten 8 dígitos.',
+      'en': '',
+    },
+    '66rpaa7f': {
+      'es': 'Solo se permiten 8 dígitos.',
       'en': '',
     },
     '1jtztxsv': {
       'es': 'Please choose an option from the dropdown',
       'en': '',
     },
-    '6ropmss9': {
-      'es': 'Field is required',
+    'bzd5xgl0': {
+      'es': 'La contraseña es requerida.',
+      'en': '',
+    },
+    'p5jqapmd': {
+      'es': 'Debe tener 8 caracteres.',
+      'en': '',
+    },
+    '6xjr4xap': {
+      'es': 'Ha llegado a los 20 caracteres permitidos.',
+      'en': '',
+    },
+    'fd2i2xth': {
+      'es':
+          'Su contraseña debe contener 8 caracteres como mínimo, una letra mayúscula, un número y un caracter  especial.',
       'en': '',
     },
     '0pxde63k': {
@@ -254,7 +279,20 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     '5i5xpqj3': {
-      'es': 'Field is required',
+      'es': 'La contraseña es requerida.',
+      'en': '',
+    },
+    'l7ip4f3s': {
+      'es': 'Debe tener 8 caracteres.',
+      'en': '',
+    },
+    'cszisowz': {
+      'es': 'Ha llegado a los 20 caracteres permitidos.',
+      'en': '',
+    },
+    'w9v4gkq2': {
+      'es':
+          'Su contraseña debe contener 8 caracteres como mínimo, una letra mayúscula, un número y un caracter  especial.',
       'en': '',
     },
     'ttypmrjy': {
@@ -332,6 +370,30 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // productos
   {
+    't6ynft0x': {
+      'es': 'Option 1',
+      'en': '',
+    },
+    'bgocaboa': {
+      'es': 'Categorías',
+      'en': '',
+    },
+    'c80qpflv': {
+      'es': 'Search for an item...',
+      'en': '',
+    },
+    'kxcrp779': {
+      'es': 'Option 1',
+      'en': '',
+    },
+    'g5m0zfpa': {
+      'es': 'Marcas',
+      'en': '',
+    },
+    'dynccrol': {
+      'es': 'Search for an item...',
+      'en': '',
+    },
     'hfjtnt37': {
       'es': 'Home',
       'en': '',
@@ -351,16 +413,20 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Digite su correo',
       'en': '',
     },
-    '82hi21ts': {
-      'es': 'Fecha de nacimiento',
-      'en': '',
-    },
     'wuu2ulhs': {
       'es': 'Digite su número de teléfono',
       'en': '',
     },
-    'itpbs5cf': {
-      'es': 'Digite su contraseña',
+    '3kenkmg1': {
+      'es': 'Option 1',
+      'en': '',
+    },
+    'wfugbnwo': {
+      'es': 'Tipo de piel',
+      'en': '',
+    },
+    'zuemjn0k': {
+      'es': 'Search for an item...',
       'en': '',
     },
     'ndkyyuhg': {
@@ -930,7 +996,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
-  // producto1Copy
+  // InfoProductos
   {
     'v4trfigf': {
       'es': 'Page Title',
@@ -947,12 +1013,70 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Agenda de Citas ',
       'en': '',
     },
+    '8cf5w94o': {
+      'es': 'Agregar Citas',
+      'en': '',
+    },
     'mjlbu7qv': {
       'es': 'Horarios Disponibles',
       'en': '',
     },
     'm6ktb9gx': {
       'es': 'Home',
+      'en': '',
+    },
+  },
+  // favorito
+  {
+    'whwpgi6v': {
+      'es': 'Favoritos',
+      'en': '',
+    },
+    'bxkt8c8n': {
+      'es': 'Home',
+      'en': '',
+    },
+  },
+  // UsersPage
+  {
+    'b8qijbni': {
+      'es': 'Lista de Usuarios',
+      'en': '',
+    },
+    '81bv02pq': {
+      'es': 'Crear Administrador',
+      'en': '',
+    },
+    'ejllpq34': {
+      'es': 'Admin',
+      'en': '',
+    },
+    'kt9acrqr': {
+      'es': 'Home',
+      'en': '',
+    },
+  },
+  // ResetPasswordPage
+  {
+    '0aen3r65': {
+      'es': 'Recuperar Contraseña',
+      'en': '',
+    },
+    'kuwjncxv': {
+      'es':
+          'Ingrese su correo electrónico para poder efectuar el cambio de contraseña.',
+      'en': '',
+    },
+    'zlh6ha9k': {
+      'es': 'Correo Electrónico',
+      'en': '',
+    },
+    'uo2yj3yb': {
+      'es': 'Enviar Correo',
+      'en': '',
+    },
+    'ow4rajg7': {
+      'es': 'Iniciar Sesión',
       'en': '',
     },
   },
@@ -980,6 +1104,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'iralra0i': {
       'es': 'Perfil',
+      'en': '',
+    },
+    'gc5l1v7k': {
+      'es': 'Favoritos',
       'en': '',
     },
   },
@@ -1201,6 +1329,123 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'de271d6e': {
       'es': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+  },
+  // bsCreateUser
+  {
+    'xjd8ftg0': {
+      'es': 'Nuevo Administrador',
+      'en': '',
+    },
+    'm9mabgua': {
+      'es': 'Nombre',
+      'en': '',
+    },
+    'nvzno7qd': {
+      'es': 'Correo Electrónico',
+      'en': '',
+    },
+    'yv4ix63q': {
+      'es': 'Número Telefónico',
+      'en': '',
+    },
+    'kbgovh75': {
+      'es': 'Contraseña',
+      'en': '',
+    },
+    '4q3uu1wb': {
+      'es': 'Guardar',
+      'en': '',
+    },
+    'hgaef45t': {
+      'es': 'El nombre del producto es requerido.',
+      'en': '',
+    },
+    'gmtrpas0': {
+      'es': 'El nombre debe poseer un mínimo de 10 caracteres.',
+      'en': '',
+    },
+    'xsf3415w': {
+      'es': 'El nombre debe poseer un máximo de 30 caracteres.',
+      'en': '',
+    },
+    '47zz684e': {
+      'es': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    '8dtnqlta': {
+      'es': 'El precio es requerido.',
+      'en': '',
+    },
+    'cat7l7gj': {
+      'es': 'El precio debe serigual o mayor a 1000.',
+      'en': '',
+    },
+    'qr6f8yxr': {
+      'es': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'xy0um8n3': {
+      'es': 'La información del producto es requerida.',
+      'en': '',
+    },
+    'zb49w76s': {
+      'es': 'La información del producto posee un máximo de 150 caracteres.',
+      'en': '',
+    },
+    'gd5saph8': {
+      'es': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+  },
+  // bsCreateAppointment
+  {
+    'k5dwrhsr': {
+      'es': 'Nueva Cita',
+      'en': '',
+    },
+    'wl2qe7qv': {
+      'es': 'Estado',
+      'en': '',
+    },
+    'mqz7ztjp': {
+      'es': 'Search for an item...',
+      'en': '',
+    },
+    'odgsaev7': {
+      'es': 'Guardar',
+      'en': '',
+    },
+  },
+  // bsSideBarAdmin
+  {
+    '584ez4on': {
+      'es': 'Productos',
+      'en': '',
+    },
+    'yzihpklm': {
+      'es': 'Categorías',
+      'en': '',
+    },
+    'hndhim9w': {
+      'es': 'Agenda',
+      'en': '',
+    },
+    '09rw7zv0': {
+      'es': 'Marcas',
+      'en': '',
+    },
+    '19w15z97': {
+      'es': 'Videos',
+      'en': '',
+    },
+    'wqae0zjp': {
+      'es': 'Perfil',
+      'en': '',
+    },
+    'y7563o7o': {
+      'es': 'Usuarios',
       'en': '',
     },
   },
