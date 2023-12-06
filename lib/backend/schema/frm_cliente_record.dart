@@ -46,6 +46,11 @@ class FrmClienteRecord extends FirestoreRecord {
   String get colorPiel => _colorPiel ?? '';
   bool hasColorPiel() => _colorPiel != null;
 
+  // "alergia" field.
+  List<String>? _alergia;
+  List<String> get alergia => _alergia ?? const [];
+  bool hasAlergia() => _alergia != null;
+
   void _initializeFields() {
     _nombre = snapshotData['nombre'] as String?;
     _provincia = snapshotData['provincia'] as String?;
@@ -53,6 +58,7 @@ class FrmClienteRecord extends FirestoreRecord {
     _tipoPiel = snapshotData['tipoPiel'] as String?;
     _alergias = snapshotData['alergias'] as String?;
     _colorPiel = snapshotData['colorPiel'] as String?;
+    _alergia = getDataList(snapshotData['alergia']);
   }
 
   static CollectionReference get collection =>
@@ -116,12 +122,14 @@ class FrmClienteRecordDocumentEquality implements Equality<FrmClienteRecord> {
 
   @override
   bool equals(FrmClienteRecord? e1, FrmClienteRecord? e2) {
+    const listEquality = ListEquality();
     return e1?.nombre == e2?.nombre &&
         e1?.provincia == e2?.provincia &&
         e1?.edad == e2?.edad &&
         e1?.tipoPiel == e2?.tipoPiel &&
         e1?.alergias == e2?.alergias &&
-        e1?.colorPiel == e2?.colorPiel;
+        e1?.colorPiel == e2?.colorPiel &&
+        listEquality.equals(e1?.alergia, e2?.alergia);
   }
 
   @override
@@ -131,7 +139,8 @@ class FrmClienteRecordDocumentEquality implements Equality<FrmClienteRecord> {
         e?.edad,
         e?.tipoPiel,
         e?.alergias,
-        e?.colorPiel
+        e?.colorPiel,
+        e?.alergia
       ]);
 
   @override

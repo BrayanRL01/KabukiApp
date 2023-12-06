@@ -38,11 +38,6 @@ class InfoPerfilModel extends FlutterFlowModel<InfoPerfilWidget> {
       );
     }
 
-    if (val.length < 10) {
-      return FFLocalizations.of(context).getText(
-        'vi5vjzku' /* El mínimo de caracteres es de ... */,
-      );
-    }
     if (val.length > 30) {
       return FFLocalizations.of(context).getText(
         'oupyiyxg' /* El máximo de caracteres es de ... */,
@@ -63,15 +58,12 @@ class InfoPerfilModel extends FlutterFlowModel<InfoPerfilWidget> {
       );
     }
 
-    if (val.length < 10) {
-      return 'Requires at least 10 characters.';
-    }
     if (val.length > 40) {
       return 'Maximum 40 characters allowed, currently ${val.length}.';
     }
     if (!RegExp(kTextValidatorEmailRegex).hasMatch(val)) {
       return FFLocalizations.of(context).getText(
-        'd6zaaqwb' /* Debe ser un correo válido. */,
+        'd6zaaqwb' /* Debe ser un correo electrónico... */,
       );
     }
     return null;

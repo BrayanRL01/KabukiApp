@@ -62,6 +62,8 @@ class _RegisterWidgetState extends State<RegisterWidget> {
       );
     }
 
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -75,7 +77,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
             alignment: AlignmentDirectional(0.00, 0.00),
             child: Form(
               key: _model.formKey,
-              autovalidateMode: AutovalidateMode.disabled,
+              autovalidateMode: AutovalidateMode.always,
               child: Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(32.0, 32.0, 32.0, 28.0),
                 child: SingleChildScrollView(
@@ -217,6 +219,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                         child: TextFormField(
                           controller: _model.txtNumController,
                           focusNode: _model.txtNumFocusNode,
+                          textCapitalization: TextCapitalization.none,
                           obscureText: false,
                           decoration: InputDecoration(
                             labelText: FFLocalizations.of(context).getText(
@@ -262,9 +265,12 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                                   required isFocused,
                                   maxLength}) =>
                               null,
-                          keyboardType: TextInputType.number,
+                          keyboardType: TextInputType.phone,
                           validator: _model.txtNumControllerValidator
                               .asValidator(context),
+                          inputFormatters: [
+                            FilteringTextInputFormatter.allow(RegExp('[0-9]'))
+                          ],
                         ),
                       ),
                       Padding(
@@ -276,8 +282,39 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                               context: context,
                               initialDate:
                                   (_model.datePicked ?? DateTime.now()),
-                              firstDate: DateTime(1900),
-                              lastDate: (_model.datePicked ?? DateTime.now()),
+                              firstDate: (DateTime.fromMicrosecondsSinceEpoch(
+                                      -2208968627000000) ??
+                                  DateTime(1900)),
+                              lastDate: DateTime(2050),
+                              builder: (context, child) {
+                                return wrapInMaterialDatePickerTheme(
+                                  context,
+                                  child!,
+                                  headerBackgroundColor:
+                                      FlutterFlowTheme.of(context).primary,
+                                  headerForegroundColor:
+                                      FlutterFlowTheme.of(context).info,
+                                  headerTextStyle: FlutterFlowTheme.of(context)
+                                      .headlineLarge
+                                      .override(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 32.0,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                  pickerBackgroundColor:
+                                      FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                  pickerForegroundColor:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                  selectedDateTimeBackgroundColor:
+                                      Color(0xFFF24A82),
+                                  selectedDateTimeForegroundColor:
+                                      FlutterFlowTheme.of(context).info,
+                                  actionButtonForegroundColor:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                  iconSize: 24.0,
+                                );
+                              },
                             );
 
                             if (_datePickedDate != null) {
@@ -380,6 +417,13 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                             ),
                           ),
                           style: FlutterFlowTheme.of(context).bodyLarge,
+                          maxLength: 20,
+                          maxLengthEnforcement: MaxLengthEnforcement.enforced,
+                          buildCounter: (context,
+                                  {required currentLength,
+                                  required isFocused,
+                                  maxLength}) =>
+                              null,
                           validator: _model.txtPasswordControllerValidator
                               .asValidator(context),
                         ),
@@ -443,6 +487,13 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                             ),
                           ),
                           style: FlutterFlowTheme.of(context).bodyLarge,
+                          maxLength: 20,
+                          maxLengthEnforcement: MaxLengthEnforcement.enforced,
+                          buildCounter: (context,
+                                  {required currentLength,
+                                  required isFocused,
+                                  maxLength}) =>
+                              null,
                           validator: _model.txtConfirmControllerValidator
                               .asValidator(context),
                         ),

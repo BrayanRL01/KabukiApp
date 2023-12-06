@@ -30,11 +30,6 @@ class BsCreateProductModel extends FlutterFlowModel<BsCreateProductWidget> {
       );
     }
 
-    if (val.length < 10) {
-      return FFLocalizations.of(context).getText(
-        'udpl4pal' /* El nombre debe poseer un mínim... */,
-      );
-    }
     if (val.length > 30) {
       return FFLocalizations.of(context).getText(
         '8jzuqq1p' /* El nombre debe poseer un máxim... */,
@@ -55,11 +50,6 @@ class BsCreateProductModel extends FlutterFlowModel<BsCreateProductWidget> {
       );
     }
 
-    if (val.length < 4) {
-      return FFLocalizations.of(context).getText(
-        'l3p6fum4' /* El precio debe serigual o mayo... */,
-      );
-    }
     if (val.length > 7) {
       return 'Maximum 7 characters allowed, currently ${val.length}.';
     }
@@ -78,13 +68,28 @@ class BsCreateProductModel extends FlutterFlowModel<BsCreateProductWidget> {
       );
     }
 
-    if (val.length < 10) {
-      return 'Requires at least 10 characters.';
-    }
     if (val.length > 150) {
       return FFLocalizations.of(context).getText(
         '5gahnt6h' /* La información del producto po... */,
       );
+    }
+
+    return null;
+  }
+
+  // State field(s) for txtStack widget.
+  FocusNode? txtStackFocusNode;
+  TextEditingController? txtStackController;
+  String? Function(BuildContext, String?)? txtStackControllerValidator;
+  String? _txtStackControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        'x7lmdee0' /* La cantidad es requerida. */,
+      );
+    }
+
+    if (val.length > 3) {
+      return 'Maximum 3 characters allowed, currently ${val.length}.';
     }
 
     return null;
@@ -107,6 +112,7 @@ class BsCreateProductModel extends FlutterFlowModel<BsCreateProductWidget> {
     txtNameControllerValidator = _txtNameControllerValidator;
     txtPrecioControllerValidator = _txtPrecioControllerValidator;
     txtInfoControllerValidator = _txtInfoControllerValidator;
+    txtStackControllerValidator = _txtStackControllerValidator;
   }
 
   void dispose() {
@@ -118,6 +124,9 @@ class BsCreateProductModel extends FlutterFlowModel<BsCreateProductWidget> {
 
     txtInfoFocusNode?.dispose();
     txtInfoController?.dispose();
+
+    txtStackFocusNode?.dispose();
+    txtStackController?.dispose();
   }
 
   /// Action blocks are added here.

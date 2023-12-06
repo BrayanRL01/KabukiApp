@@ -31,10 +31,22 @@ class VideosRecord extends FirestoreRecord {
   String get videoPath => _videoPath ?? '';
   bool hasVideoPath() => _videoPath != null;
 
+  // "category" field.
+  String? _category;
+  String get category => _category ?? '';
+  bool hasCategory() => _category != null;
+
+  // "skin_type" field.
+  String? _skinType;
+  String get skinType => _skinType ?? '';
+  bool hasSkinType() => _skinType != null;
+
   void _initializeFields() {
     _videoName = snapshotData['video_name'] as String?;
     _description = snapshotData['description'] as String?;
     _videoPath = snapshotData['video_path'] as String?;
+    _category = snapshotData['category'] as String?;
+    _skinType = snapshotData['skin_type'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -74,12 +86,16 @@ Map<String, dynamic> createVideosRecordData({
   String? videoName,
   String? description,
   String? videoPath,
+  String? category,
+  String? skinType,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
       'video_name': videoName,
       'description': description,
       'video_path': videoPath,
+      'category': category,
+      'skin_type': skinType,
     }.withoutNulls,
   );
 
@@ -93,12 +109,14 @@ class VideosRecordDocumentEquality implements Equality<VideosRecord> {
   bool equals(VideosRecord? e1, VideosRecord? e2) {
     return e1?.videoName == e2?.videoName &&
         e1?.description == e2?.description &&
-        e1?.videoPath == e2?.videoPath;
+        e1?.videoPath == e2?.videoPath &&
+        e1?.category == e2?.category &&
+        e1?.skinType == e2?.skinType;
   }
 
   @override
-  int hash(VideosRecord? e) =>
-      const ListEquality().hash([e?.videoName, e?.description, e?.videoPath]);
+  int hash(VideosRecord? e) => const ListEquality().hash(
+      [e?.videoName, e?.description, e?.videoPath, e?.category, e?.skinType]);
 
   @override
   bool isValidKey(Object? o) => o is VideosRecord;

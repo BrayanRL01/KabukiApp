@@ -45,17 +45,25 @@ class _BsCreateBrandWidgetState extends State<BsCreateBrandWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return AnimatedContainer(
       duration: Duration(milliseconds: 100),
       curve: Curves.easeIn,
       width: 324.0,
-      height: 455.0,
+      height: 180.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).secondaryBackground,
+        borderRadius: BorderRadius.only(
+          bottomLeft: Radius.circular(0.0),
+          bottomRight: Radius.circular(0.0),
+          topLeft: Radius.circular(12.0),
+          topRight: Radius.circular(12.0),
+        ),
       ),
       child: Form(
         key: _model.formKey,
-        autovalidateMode: AutovalidateMode.disabled,
+        autovalidateMode: AutovalidateMode.always,
         child: Padding(
           padding: EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
           child: Column(
@@ -128,6 +136,19 @@ class _BsCreateBrandWidgetState extends State<BsCreateBrandWidget> {
                               brandName: _model.txtNameController.text,
                             ));
                         Navigator.pop(context);
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(
+                              'Marca agregada correctamente.',
+                              style: TextStyle(
+                                color: FlutterFlowTheme.of(context).primaryText,
+                              ),
+                            ),
+                            duration: Duration(milliseconds: 4000),
+                            backgroundColor:
+                                FlutterFlowTheme.of(context).secondary,
+                          ),
+                        );
                       },
                       text: FFLocalizations.of(context).getText(
                         'clof189n' /* Guardar */,

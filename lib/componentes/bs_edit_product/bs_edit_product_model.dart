@@ -27,6 +27,10 @@ class BsEditProductModel extends FlutterFlowModel<BsEditProductWidget> {
   FocusNode? txtInfoFocusNode;
   TextEditingController? txtInfoController;
   String? Function(BuildContext, String?)? txtInfoControllerValidator;
+  // State field(s) for txtStack widget.
+  FocusNode? txtStackFocusNode;
+  TextEditingController? txtStackController;
+  String? Function(BuildContext, String?)? txtStackControllerValidator;
   // State field(s) for ddCategories widget.
   String? ddCategoriesValue;
   FormFieldController<String>? ddCategoriesValueController;
@@ -47,6 +51,9 @@ class BsEditProductModel extends FlutterFlowModel<BsEditProductWidget> {
 
     txtInfoFocusNode?.dispose();
     txtInfoController?.dispose();
+
+    txtStackFocusNode?.dispose();
+    txtStackController?.dispose();
   }
 
   /// Action blocks are added here.

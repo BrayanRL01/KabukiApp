@@ -43,8 +43,6 @@ export '/user_u_i/catalogo/producto5/producto5_widget.dart'
     show Producto5Widget;
 export '/user_u_i/catalogo/producto6/producto6_widget.dart'
     show Producto6Widget;
-export '/user_u_i/catalogo/producto7/producto7_widget.dart'
-    show Producto7Widget;
 export '/user_u_i/catalogo/producto8/producto8_widget.dart'
     show Producto8Widget;
 export '/user_u_i/catalogo/producto9/producto9_widget.dart'
@@ -64,3 +62,12 @@ export '/user_u_i/catalogo/favorito/favorito_widget.dart' show FavoritoWidget;
 export '/admin_u_i/users_page/users_page_widget.dart' show UsersPageWidget;
 export '/authentication/reset_password_page/reset_password_page_widget.dart'
     show ResetPasswordPageWidget;
+export '/admin_u_i/videos_page/videos_page_widget.dart' show VideosPageWidget;
+export '/skin_care/catalogo_skincare/catalogo_skincare_widget.dart'
+    show CatalogoSkincareWidget;
+export '/skin_care/catalogo_skincare_copy/catalogo_skincare_copy_widget.dart'
+    show CatalogoSkincareCopyWidget;
+export '/user_u_i/catalogo/shopping_cart/shopping_cart_widget.dart'
+    show ShoppingCartWidget;
+export '/user_u_i/main_content/videos_page_copy/videos_page_copy_widget.dart'
+    show VideosPageCopyWidget;

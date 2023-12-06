@@ -18,10 +18,25 @@ class BsEditBrandModel extends FlutterFlowModel<BsEditBrandWidget> {
   FocusNode? txtNameFocusNode;
   TextEditingController? txtNameController;
   String? Function(BuildContext, String?)? txtNameControllerValidator;
+  String? _txtNameControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        'zidijvnf' /* El nombre de la marca es reque... */,
+      );
+    }
+
+    if (val.length > 20) {
+      return 'Maximum 20 characters allowed, currently ${val.length}.';
+    }
+
+    return null;
+  }
 
   /// Initialization and disposal methods.
 
-  void initState(BuildContext context) {}
+  void initState(BuildContext context) {
+    txtNameControllerValidator = _txtNameControllerValidator;
+  }
 
   void dispose() {
     txtNameFocusNode?.dispose();

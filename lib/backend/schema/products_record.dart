@@ -51,6 +51,11 @@ class ProductsRecord extends FirestoreRecord {
   List<DocumentReference> get favorito => _favorito ?? const [];
   bool hasFavorito() => _favorito != null;
 
+  // "stack" field.
+  int? _stack;
+  int get stack => _stack ?? 0;
+  bool hasStack() => _stack != null;
+
   void _initializeFields() {
     _productName = snapshotData['product_name'] as String?;
     _productPrice = castToType<int>(snapshotData['product_price']);
@@ -59,6 +64,7 @@ class ProductsRecord extends FirestoreRecord {
     _brand = snapshotData['brand'] as String?;
     _category = snapshotData['category'] as String?;
     _favorito = getDataList(snapshotData['favorito']);
+    _stack = castToType<int>(snapshotData['stack']);
   }
 
   static CollectionReference get collection =>
@@ -102,6 +108,7 @@ Map<String, dynamic> createProductsRecordData({
   String? productPhoto,
   String? brand,
   String? category,
+  int? stack,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -111,6 +118,7 @@ Map<String, dynamic> createProductsRecordData({
       'product_photo': productPhoto,
       'brand': brand,
       'category': category,
+      'stack': stack,
     }.withoutNulls,
   );
 
@@ -129,7 +137,8 @@ class ProductsRecordDocumentEquality implements Equality<ProductsRecord> {
         e1?.productPhoto == e2?.productPhoto &&
         e1?.brand == e2?.brand &&
         e1?.category == e2?.category &&
-        listEquality.equals(e1?.favorito, e2?.favorito);
+        listEquality.equals(e1?.favorito, e2?.favorito) &&
+        e1?.stack == e2?.stack;
   }
 
   @override
@@ -140,7 +149,8 @@ class ProductsRecordDocumentEquality implements Equality<ProductsRecord> {
         e?.productPhoto,
         e?.brand,
         e?.category,
-        e?.favorito
+        e?.favorito,
+        e?.stack
       ]);
 
   @override

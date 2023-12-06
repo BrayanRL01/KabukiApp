@@ -40,6 +40,8 @@ class _BsSideBarAdminWidgetState extends State<BsSideBarAdminWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Align(
       alignment: AlignmentDirectional(0.00, 0.00),
       child: Column(
@@ -219,7 +221,7 @@ class _BsSideBarAdminWidgetState extends State<BsSideBarAdminWidget> {
               children: [
                 FFButtonWidget(
                   onPressed: () async {
-                    context.pushNamed('CategoriesPage');
+                    context.pushNamed('VideosPage');
                   },
                   text: FFLocalizations.of(context).getText(
                     '19w15z97' /* Videos */,

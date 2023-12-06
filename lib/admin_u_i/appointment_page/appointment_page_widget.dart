@@ -1,8 +1,9 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/componentes/bs_create_appointment/bs_create_appointment_widget.dart';
+import '/componentes/bs_edit_appointment/bs_edit_appointment_widget.dart';
 import '/componentes/bs_empty_list/bs_empty_list_widget.dart';
-import '/componentes/bs_side_bar/bs_side_bar_widget.dart';
+import '/componentes/bs_side_bar_admin/bs_side_bar_admin_widget.dart';
 import '/flutter_flow/flutter_flow_calendar.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -10,6 +11,8 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'appointment_page_model.dart';
@@ -51,6 +54,8 @@ class _AppointmentPageWidgetState extends State<AppointmentPageWidget> {
       );
     }
 
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -89,7 +94,7 @@ class _AppointmentPageWidgetState extends State<AppointmentPageWidget> {
                             : FocusScope.of(context).unfocus(),
                         child: Padding(
                           padding: MediaQuery.viewInsetsOf(context),
-                          child: BsSideBarWidget(),
+                          child: BsSideBarAdminWidget(),
                         ),
                       );
                     },
@@ -135,6 +140,8 @@ class _AppointmentPageWidgetState extends State<AppointmentPageWidget> {
                     GoRouter.of(context).prepareAuthEvent();
                     await authManager.signOut();
                     GoRouter.of(context).clearRedirectLocation();
+                  } else {
+                    return;
                   }
 
                   context.goNamedAuth('LoginPage', context.mounted);
@@ -195,7 +202,7 @@ class _AppointmentPageWidgetState extends State<AppointmentPageWidget> {
                           EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                       iconPadding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: Color(0xFFFA8FB1),
+                      color: Color(0xFFF24A82),
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
                                 fontFamily: 'Readex Pro',
@@ -272,10 +279,12 @@ class _AppointmentPageWidgetState extends State<AppointmentPageWidget> {
                       List<AppointmentsRecord> listViewAppointmentsRecordList =
                           snapshot.data!;
                       if (listViewAppointmentsRecordList.isEmpty) {
-                        return Container(
-                          width: 100.0,
-                          height: 100.0,
-                          child: BsEmptyListWidget(),
+                        return Center(
+                          child: Container(
+                            width: 270.0,
+                            height: 150.0,
+                            child: BsEmptyListWidget(),
+                          ),
                         );
                       }
                       return ListView.builder(
@@ -288,28 +297,149 @@ class _AppointmentPageWidgetState extends State<AppointmentPageWidget> {
                           return Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 10.0, 0.0, 10.0, 5.0),
-                            child: ListTile(
-                              title: Text(
-                                valueOrDefault<String>(
-                                  listViewAppointmentsRecord.state,
-                                  'No hay citas disponibles.',
-                                ),
-                                style: FlutterFlowTheme.of(context).titleLarge,
+                            child: Slidable(
+                              endActionPane: ActionPane(
+                                motion: const ScrollMotion(),
+                                extentRatio: 0.5,
+                                children: [
+                                  SlidableAction(
+                                    label: '',
+                                    backgroundColor: Color(0xFFFCDADF),
+                                    icon: FontAwesomeIcons.pen,
+                                    onPressed: (_) async {
+                                      await showModalBottomSheet(
+                                        isScrollControlled: true,
+                                        backgroundColor: Colors.transparent,
+                                        context: context,
+                                        builder: (context) {
+                                          return GestureDetector(
+                                            onTap: () => _model
+                                                    .unfocusNode.canRequestFocus
+                                                ? FocusScope.of(context)
+                                                    .requestFocus(
+                                                        _model.unfocusNode)
+                                                : FocusScope.of(context)
+                                                    .unfocus(),
+                                            child: Padding(
+                                              padding: MediaQuery.viewInsetsOf(
+                                                  context),
+                                              child: BsEditAppointmentWidget(
+                                                pAppointment:
+                                                    listViewAppointmentsRecord,
+                                              ),
+                                            ),
+                                          );
+                                        },
+                                      ).then((value) => safeSetState(() {}));
+                                    },
+                                  ),
+                                  SlidableAction(
+                                    label: '',
+                                    backgroundColor:
+                                        FlutterFlowTheme.of(context).error,
+                                    icon: FontAwesomeIcons.trashAlt,
+                                    onPressed: (_) async {
+                                      var confirmDialogResponse =
+                                          await showDialog<bool>(
+                                                context: context,
+                                                builder: (alertDialogContext) {
+                                                  return AlertDialog(
+                                                    title:
+                                                        Text('Eliminar Cita'),
+                                                    content: Text(
+                                                        '¿Desea eliminar esta cita?'),
+                                                    actions: [
+                                                      TextButton(
+                                                        onPressed: () =>
+                                                            Navigator.pop(
+                                                                alertDialogContext,
+                                                                false),
+                                                        child: Text('Cancelar'),
+                                                      ),
+                                                      TextButton(
+                                                        onPressed: () =>
+                                                            Navigator.pop(
+                                                                alertDialogContext,
+                                                                true),
+                                                        child:
+                                                            Text('Confirmar'),
+                                                      ),
+                                                    ],
+                                                  );
+                                                },
+                                              ) ??
+                                              false;
+                                      if (confirmDialogResponse) {
+                                        await listViewAppointmentsRecord
+                                            .reference
+                                            .delete();
+                                        ScaffoldMessenger.of(context)
+                                            .showSnackBar(
+                                          SnackBar(
+                                            content: Text(
+                                              'Cita eliminada correctamente.',
+                                              style: TextStyle(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                              ),
+                                            ),
+                                            duration:
+                                                Duration(milliseconds: 4000),
+                                            backgroundColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .secondary,
+                                          ),
+                                        );
+                                      } else {
+                                        ScaffoldMessenger.of(context)
+                                            .showSnackBar(
+                                          SnackBar(
+                                            content: Text(
+                                              'Cita no eliminada.',
+                                              style: TextStyle(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                              ),
+                                            ),
+                                            duration:
+                                                Duration(milliseconds: 4000),
+                                            backgroundColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .error,
+                                          ),
+                                        );
+                                      }
+                                    },
+                                  ),
+                                ],
                               ),
-                              subtitle: Text(
-                                dateTimeFormat(
-                                  'M/d H:mm',
-                                  listViewAppointmentsRecord.appointmentDate!,
-                                  locale:
-                                      FFLocalizations.of(context).languageCode,
+                              child: ListTile(
+                                title: Text(
+                                  valueOrDefault<String>(
+                                    listViewAppointmentsRecord.state,
+                                    'No hay citas disponibles.',
+                                  ),
+                                  style:
+                                      FlutterFlowTheme.of(context).titleLarge,
                                 ),
-                                style: FlutterFlowTheme.of(context).labelMedium,
-                              ),
-                              tileColor: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                              dense: false,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(12.0),
+                                subtitle: Text(
+                                  dateTimeFormat(
+                                    'M/d H:mm',
+                                    listViewAppointmentsRecord.appointmentDate!,
+                                    locale: FFLocalizations.of(context)
+                                        .languageCode,
+                                  ),
+                                  style:
+                                      FlutterFlowTheme.of(context).labelMedium,
+                                ),
+                                tileColor: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                                dense: false,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(12.0),
+                                ),
                               ),
                             ),
                           );

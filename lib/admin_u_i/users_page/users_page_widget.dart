@@ -49,6 +49,8 @@ class _UsersPageWidgetState extends State<UsersPageWidget> {
       );
     }
 
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -133,6 +135,8 @@ class _UsersPageWidgetState extends State<UsersPageWidget> {
                     GoRouter.of(context).prepareAuthEvent();
                     await authManager.signOut();
                     GoRouter.of(context).clearRedirectLocation();
+                  } else {
+                    return;
                   }
 
                   context.goNamedAuth('LoginPage', context.mounted);
@@ -178,7 +182,6 @@ class _UsersPageWidgetState extends State<UsersPageWidget> {
                             await showModalBottomSheet(
                               isScrollControlled: true,
                               backgroundColor: Colors.transparent,
-                              enableDrag: false,
                               context: context,
                               builder: (context) {
                                 return GestureDetector(
@@ -204,7 +207,7 @@ class _UsersPageWidgetState extends State<UsersPageWidget> {
                                 24.0, 0.0, 24.0, 0.0),
                             iconPadding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            color: FlutterFlowTheme.of(context).primary,
+                            color: Color(0xFFF24A82),
                             textStyle: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
@@ -368,28 +371,27 @@ class _UsersPageWidgetState extends State<UsersPageWidget> {
                                                         ),
                                                         child: Checkbox(
                                                           value: _model
-                                                                  .checkboxValueMap[
-                                                              listViewUsersRecord] ??= false,
-                                                          onChanged:
+                                                                      .checkboxValueMap[
+                                                                  listViewUsersRecord] ??=
                                                               listViewUsersRecord
-                                                                      .admin
-                                                                  ? null
-                                                                  : (newValue) async {
-                                                                      setState(() =>
-                                                                          _model.checkboxValueMap[listViewUsersRecord] =
-                                                                              newValue!);
-                                                                    },
+                                                                  .admin,
+                                                          onChanged: true
+                                                              ? null
+                                                              : (newValue) async {
+                                                                  setState(() =>
+                                                                      _model.checkboxValueMap[
+                                                                              listViewUsersRecord] =
+                                                                          newValue!);
+                                                                },
                                                           activeColor:
                                                               FlutterFlowTheme.of(
                                                                       context)
                                                                   .primary,
-                                                          checkColor:
-                                                              listViewUsersRecord
-                                                                      .admin
-                                                                  ? null
-                                                                  : FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .info,
+                                                          checkColor: true
+                                                              ? null
+                                                              : FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .info,
                                                         ),
                                                       ),
                                                       Padding(

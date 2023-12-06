@@ -7,9 +7,9 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/custom_code/widgets/index.dart' as custom_widgets;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'calendar_page_model.dart';
@@ -50,6 +50,8 @@ class _CalendarPageWidgetState extends State<CalendarPageWidget> {
         ),
       );
     }
+
+    context.watch<FFAppState>();
 
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
@@ -97,6 +99,30 @@ class _CalendarPageWidgetState extends State<CalendarPageWidget> {
                 },
               ),
             ),
+            title: Align(
+              alignment: AlignmentDirectional(0.00, 0.00),
+              child: Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                child: InkWell(
+                  splashColor: Colors.transparent,
+                  focusColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  onTap: () async {
+                    context.pushNamed('cateMaquillaje');
+                  },
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(8.0),
+                    child: Image.asset(
+                      'assets/images/Imagen_de_WhatsApp_2023-11-30_a_las_18.36.36_02c49484-removebg-preview.png',
+                      width: 150.0,
+                      height: 70.0,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+              ),
+            ),
             actions: [
               FlutterFlowIconButton(
                 borderColor: Colors.transparent,
@@ -135,6 +161,8 @@ class _CalendarPageWidgetState extends State<CalendarPageWidget> {
                     GoRouter.of(context).prepareAuthEvent();
                     await authManager.signOut();
                     GoRouter.of(context).clearRedirectLocation();
+                  } else {
+                    return;
                   }
 
                   context.goNamedAuth('LoginPage', context.mounted);
@@ -166,12 +194,34 @@ class _CalendarPageWidgetState extends State<CalendarPageWidget> {
                 ),
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
-                  child: Container(
-                    width: 200.0,
-                    height: 40.0,
-                    child: custom_widgets.WhatsAppRedirect(
-                      width: 200.0,
+                  child: FFButtonWidget(
+                    onPressed: () async {
+                      await launchURL('whatsapp://send?phone=506');
+                    },
+                    text: FFLocalizations.of(context).getText(
+                      'dey20upn' /* Reservar Cita */,
+                    ),
+                    icon: FaIcon(
+                      FontAwesomeIcons.whatsapp,
+                    ),
+                    options: FFButtonOptions(
                       height: 40.0,
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                      iconPadding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      color: Color(0xFF63D239),
+                      textStyle:
+                          FlutterFlowTheme.of(context).titleSmall.override(
+                                fontFamily: 'Readex Pro',
+                                color: Colors.white,
+                              ),
+                      elevation: 3.0,
+                      borderSide: BorderSide(
+                        color: Colors.transparent,
+                        width: 1.0,
+                      ),
+                      borderRadius: BorderRadius.circular(8.0),
                     ),
                   ),
                 ),

@@ -46,17 +46,25 @@ class _BsCreateAppointmentWidgetState extends State<BsCreateAppointmentWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return AnimatedContainer(
       duration: Duration(milliseconds: 100),
       curve: Curves.easeIn,
       width: 324.0,
-      height: 455.0,
+      height: 230.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).secondaryBackground,
+        borderRadius: BorderRadius.only(
+          bottomLeft: Radius.circular(0.0),
+          bottomRight: Radius.circular(0.0),
+          topLeft: Radius.circular(12.0),
+          topRight: Radius.circular(12.0),
+        ),
       ),
       child: Form(
         key: _model.formKey,
-        autovalidateMode: AutovalidateMode.disabled,
+        autovalidateMode: AutovalidateMode.always,
         child: Padding(
           padding: EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
           child: Column(
@@ -176,7 +184,7 @@ class _BsCreateAppointmentWidgetState extends State<BsCreateAppointmentWidget> {
                         EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                     iconPadding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: Color(0xFFFA8FB1),
+                    color: Color(0xFFF24A82),
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Readex Pro',
                           color: Colors.white,
@@ -235,7 +243,7 @@ class _BsCreateAppointmentWidgetState extends State<BsCreateAppointmentWidget> {
                     elevation: 2.0,
                     borderColor: FlutterFlowTheme.of(context).alternate,
                     borderWidth: 2.0,
-                    borderRadius: 8.0,
+                    borderRadius: 12.0,
                     margin:
                         EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 4.0),
                     hidesUnderline: true,
@@ -259,6 +267,19 @@ class _BsCreateAppointmentWidgetState extends State<BsCreateAppointmentWidget> {
                               appointmentDate: _model.datePicked,
                             ));
                         Navigator.pop(context);
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(
+                              'Cita agregada correctamente.',
+                              style: TextStyle(
+                                color: FlutterFlowTheme.of(context).primaryText,
+                              ),
+                            ),
+                            duration: Duration(milliseconds: 4000),
+                            backgroundColor:
+                                FlutterFlowTheme.of(context).secondary,
+                          ),
+                        );
                       },
                       text: FFLocalizations.of(context).getText(
                         'odgsaev7' /* Guardar */,

@@ -52,6 +52,8 @@ class _BrandsPageWidgetState extends State<BrandsPageWidget> {
       );
     }
 
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -136,6 +138,8 @@ class _BrandsPageWidgetState extends State<BrandsPageWidget> {
                     GoRouter.of(context).prepareAuthEvent();
                     await authManager.signOut();
                     GoRouter.of(context).clearRedirectLocation();
+                  } else {
+                    return;
                   }
 
                   context.goNamedAuth('LoginPage', context.mounted);
@@ -183,7 +187,6 @@ class _BrandsPageWidgetState extends State<BrandsPageWidget> {
                                 isScrollControlled: true,
                                 backgroundColor: Colors.white,
                                 barrierColor: Colors.white,
-                                enableDrag: false,
                                 context: context,
                                 builder: (context) {
                                   return GestureDetector(
@@ -307,7 +310,6 @@ class _BrandsPageWidgetState extends State<BrandsPageWidget> {
                                         await showModalBottomSheet(
                                           isScrollControlled: true,
                                           backgroundColor: Colors.transparent,
-                                          enableDrag: false,
                                           context: context,
                                           builder: (context) {
                                             return GestureDetector(
@@ -372,6 +374,43 @@ class _BrandsPageWidgetState extends State<BrandsPageWidget> {
                                         if (confirmDialogResponse) {
                                           await listViewBrandsRecord.reference
                                               .delete();
+                                          ScaffoldMessenger.of(context)
+                                              .showSnackBar(
+                                            SnackBar(
+                                              content: Text(
+                                                'Marca eliminada correctamente.',
+                                                style: TextStyle(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                ),
+                                              ),
+                                              duration:
+                                                  Duration(milliseconds: 4000),
+                                              backgroundColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondary,
+                                            ),
+                                          );
+                                        } else {
+                                          ScaffoldMessenger.of(context)
+                                              .showSnackBar(
+                                            SnackBar(
+                                              content: Text(
+                                                'Marca no eliminada.',
+                                                style: TextStyle(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                ),
+                                              ),
+                                              duration:
+                                                  Duration(milliseconds: 4000),
+                                              backgroundColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondary,
+                                            ),
+                                          );
                                         }
                                       },
                                     ),

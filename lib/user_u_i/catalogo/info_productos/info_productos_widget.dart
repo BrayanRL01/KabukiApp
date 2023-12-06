@@ -54,6 +54,8 @@ class _InfoProductosWidgetState extends State<InfoProductosWidget> {
       );
     }
 
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -326,66 +328,64 @@ class _InfoProductosWidgetState extends State<InfoProductosWidget> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Expanded(
-                              child: Align(
-                                alignment: AlignmentDirectional(0.00, 0.00),
-                                child: StreamBuilder<ProductsRecord>(
-                                  stream: ProductsRecord.getDocument(
-                                      widget.pProduct!.reference),
-                                  builder: (context, snapshot) {
-                                    // Customize what your widget looks like when it's loading.
-                                    if (!snapshot.hasData) {
-                                      return Center(
-                                        child: SizedBox(
-                                          width: 50.0,
-                                          height: 50.0,
-                                          child: CircularProgressIndicator(
-                                            valueColor:
-                                                AlwaysStoppedAnimation<Color>(
-                                              FlutterFlowTheme.of(context)
-                                                  .primary,
-                                            ),
+                            Align(
+                              alignment: AlignmentDirectional(0.00, 0.00),
+                              child: StreamBuilder<ProductsRecord>(
+                                stream: ProductsRecord.getDocument(
+                                    widget.pProduct!.reference),
+                                builder: (context, snapshot) {
+                                  // Customize what your widget looks like when it's loading.
+                                  if (!snapshot.hasData) {
+                                    return Center(
+                                      child: SizedBox(
+                                        width: 50.0,
+                                        height: 50.0,
+                                        child: CircularProgressIndicator(
+                                          valueColor:
+                                              AlwaysStoppedAnimation<Color>(
+                                            FlutterFlowTheme.of(context)
+                                                .primary,
                                           ),
                                         ),
-                                      );
-                                    }
-                                    final toggleIconProductsRecord =
-                                        snapshot.data!;
-                                    return ToggleIcon(
-                                      onPressed: () async {
-                                        final favoritoElement =
-                                            currentUserReference;
-                                        final favoritoUpdate =
-                                            toggleIconProductsRecord.favorito
-                                                    .contains(favoritoElement)
-                                                ? FieldValue.arrayRemove(
-                                                    [favoritoElement])
-                                                : FieldValue.arrayUnion(
-                                                    [favoritoElement]);
-                                        await toggleIconProductsRecord.reference
-                                            .update({
-                                          ...mapToFirestore(
-                                            {
-                                              'favorito': favoritoUpdate,
-                                            },
-                                          ),
-                                        });
-                                      },
-                                      value: toggleIconProductsRecord.favorito
-                                          .contains(currentUserReference),
-                                      onIcon: Icon(
-                                        Icons.favorite,
-                                        color: Color(0xFFFF1493),
-                                        size: 70.0,
-                                      ),
-                                      offIcon: Icon(
-                                        Icons.favorite_border,
-                                        color: Color(0xFFFF1493),
-                                        size: 70.0,
                                       ),
                                     );
-                                  },
-                                ),
+                                  }
+                                  final toggleIconProductsRecord =
+                                      snapshot.data!;
+                                  return ToggleIcon(
+                                    onPressed: () async {
+                                      final favoritoElement =
+                                          currentUserReference;
+                                      final favoritoUpdate =
+                                          toggleIconProductsRecord.favorito
+                                                  .contains(favoritoElement)
+                                              ? FieldValue.arrayRemove(
+                                                  [favoritoElement])
+                                              : FieldValue.arrayUnion(
+                                                  [favoritoElement]);
+                                      await toggleIconProductsRecord.reference
+                                          .update({
+                                        ...mapToFirestore(
+                                          {
+                                            'favorito': favoritoUpdate,
+                                          },
+                                        ),
+                                      });
+                                    },
+                                    value: toggleIconProductsRecord.favorito
+                                        .contains(currentUserReference),
+                                    onIcon: Icon(
+                                      Icons.favorite,
+                                      color: Color(0xFFFF1493),
+                                      size: 70.0,
+                                    ),
+                                    offIcon: Icon(
+                                      Icons.favorite_border,
+                                      color: Color(0xFFFF1493),
+                                      size: 70.0,
+                                    ),
+                                  );
+                                },
                               ),
                             ),
                           ],

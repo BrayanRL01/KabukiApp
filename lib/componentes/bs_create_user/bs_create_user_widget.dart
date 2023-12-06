@@ -54,11 +54,13 @@ class _BsCreateUserWidgetState extends State<BsCreateUserWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return AnimatedContainer(
       duration: Duration(milliseconds: 100),
       curve: Curves.easeIn,
       width: 324.0,
-      height: 455.0,
+      height: 400.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).secondaryBackground,
         borderRadius: BorderRadius.only(
@@ -70,7 +72,7 @@ class _BsCreateUserWidgetState extends State<BsCreateUserWidget> {
       ),
       child: Form(
         key: _model.formKey,
-        autovalidateMode: AutovalidateMode.disabled,
+        autovalidateMode: AutovalidateMode.always,
         child: Padding(
           padding: EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
           child: Column(
@@ -171,6 +173,7 @@ class _BsCreateUserWidgetState extends State<BsCreateUserWidget> {
                     ),
                   ),
                   style: FlutterFlowTheme.of(context).bodyMedium,
+                  keyboardType: TextInputType.emailAddress,
                   validator:
                       _model.txtEmailControllerValidator.asValidator(context),
                 ),
@@ -217,9 +220,19 @@ class _BsCreateUserWidgetState extends State<BsCreateUserWidget> {
                     ),
                   ),
                   style: FlutterFlowTheme.of(context).bodyMedium,
+                  maxLength: 8,
+                  maxLengthEnforcement: MaxLengthEnforcement.enforced,
+                  buildCounter: (context,
+                          {required currentLength,
+                          required isFocused,
+                          maxLength}) =>
+                      null,
                   keyboardType: TextInputType.number,
                   validator:
                       _model.txtPhoneControllerValidator.asValidator(context),
+                  inputFormatters: [
+                    FilteringTextInputFormatter.allow(RegExp('[0-9]'))
+                  ],
                 ),
               ),
               Padding(
@@ -286,7 +299,7 @@ class _BsCreateUserWidgetState extends State<BsCreateUserWidget> {
                         EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                     iconPadding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: FlutterFlowTheme.of(context).primary,
+                    color: Color(0xFFF24A82),
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Readex Pro',
                           color: Colors.white,
@@ -382,6 +395,19 @@ class _BsCreateUserWidgetState extends State<BsCreateUserWidget> {
                           _model.txtPhoneController.text,
                         );
                         Navigator.pop(context);
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(
+                              'Administrador creado correctamente.',
+                              style: TextStyle(
+                                color: FlutterFlowTheme.of(context).primaryText,
+                              ),
+                            ),
+                            duration: Duration(milliseconds: 4000),
+                            backgroundColor:
+                                FlutterFlowTheme.of(context).secondary,
+                          ),
+                        );
                       },
                       text: FFLocalizations.of(context).getText(
                         '4q3uu1wb' /* Guardar */,

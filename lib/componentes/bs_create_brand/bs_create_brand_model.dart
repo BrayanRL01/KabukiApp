@@ -18,10 +18,28 @@ class BsCreateBrandModel extends FlutterFlowModel<BsCreateBrandWidget> {
   FocusNode? txtNameFocusNode;
   TextEditingController? txtNameController;
   String? Function(BuildContext, String?)? txtNameControllerValidator;
+  String? _txtNameControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        'nb4329zk' /* El nombre de la marca es reque... */,
+      );
+    }
+
+    if (val.length < 4) {
+      return 'Requires at least 4 characters.';
+    }
+    if (val.length > 15) {
+      return 'Maximum 15 characters allowed, currently ${val.length}.';
+    }
+
+    return null;
+  }
 
   /// Initialization and disposal methods.
 
-  void initState(BuildContext context) {}
+  void initState(BuildContext context) {
+    txtNameControllerValidator = _txtNameControllerValidator;
+  }
 
   void dispose() {
     txtNameFocusNode?.dispose();

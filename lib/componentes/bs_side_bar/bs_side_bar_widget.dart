@@ -40,6 +40,8 @@ class _BsSideBarWidgetState extends State<BsSideBarWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Align(
       alignment: AlignmentDirectional(0.00, 0.00),
       child: Column(
@@ -218,8 +220,8 @@ class _BsSideBarWidgetState extends State<BsSideBarWidget> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 FFButtonWidget(
-                  onPressed: () {
-                    print('Button pressed ...');
+                  onPressed: () async {
+                    context.pushNamed('VideosPageCopy');
                   },
                   text: FFLocalizations.of(context).getText(
                     'oj58krki' /* Videos */,

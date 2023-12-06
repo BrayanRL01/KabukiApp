@@ -17,6 +17,7 @@ import 'schema/allergies_record.dart';
 import 'schema/skin_color_record.dart';
 import 'schema/provinces_record.dart';
 import 'schema/appointment_status_record.dart';
+import 'schema/shopping_data_record.dart';
 
 export 'dart:async' show StreamSubscription;
 export 'package:cloud_firestore/cloud_firestore.dart';
@@ -36,6 +37,7 @@ export 'schema/allergies_record.dart';
 export 'schema/skin_color_record.dart';
 export 'schema/provinces_record.dart';
 export 'schema/appointment_status_record.dart';
+export 'schema/shopping_data_record.dart';
 
 /// Functions to query UsersRecords (as a Stream and as a Future).
 Future<int> queryUsersRecordCount({
@@ -476,6 +478,43 @@ Future<List<AppointmentStatusRecord>> queryAppointmentStatusRecordOnce({
     queryCollectionOnce(
       AppointmentStatusRecord.collection,
       AppointmentStatusRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query ShoppingDataRecords (as a Stream and as a Future).
+Future<int> queryShoppingDataRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      ShoppingDataRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<ShoppingDataRecord>> queryShoppingDataRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      ShoppingDataRecord.collection,
+      ShoppingDataRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<ShoppingDataRecord>> queryShoppingDataRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      ShoppingDataRecord.collection,
+      ShoppingDataRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,

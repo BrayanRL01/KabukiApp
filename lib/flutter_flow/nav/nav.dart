@@ -5,7 +5,6 @@ import 'package:go_router/go_router.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
@@ -118,6 +117,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'productos',
           path: '/productos',
+          requireAuth: true,
           builder: (context, params) => ProductosWidget(),
         ),
         FFRoute(
@@ -206,11 +206,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => Producto6Widget(),
         ),
         FFRoute(
-          name: 'producto7',
-          path: '/producto7',
-          builder: (context, params) => Producto7Widget(),
-        ),
-        FFRoute(
           name: 'producto8',
           path: '/producto8',
           builder: (context, params) => Producto8Widget(),
@@ -269,8 +264,34 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'ResetPasswordPage',
           path: '/resetPasswordPage',
           builder: (context, params) => ResetPasswordPageWidget(),
+        ),
+        FFRoute(
+          name: 'VideosPage',
+          path: '/videosPage',
+          builder: (context, params) => VideosPageWidget(),
+        ),
+        FFRoute(
+          name: 'catalogoSkincare',
+          path: '/catalogoSkincare',
+          builder: (context, params) => CatalogoSkincareWidget(),
+        ),
+        FFRoute(
+          name: 'catalogoSkincareCopy',
+          path: '/catalogoSkincareCopy',
+          builder: (context, params) => CatalogoSkincareCopyWidget(),
+        ),
+        FFRoute(
+          name: 'ShoppingCart',
+          path: '/shoppingCart',
+          builder: (context, params) => ShoppingCartWidget(),
+        ),
+        FFRoute(
+          name: 'VideosPageCopy',
+          path: '/videosPageCopy',
+          builder: (context, params) => VideosPageCopyWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
+      observers: [routeObserver],
     );
 
 extension NavParamExtensions on Map<String, String?> {

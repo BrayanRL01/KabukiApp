@@ -1,3 +1,22 @@
 {
-  "indexes": []
+  "indexes": [
+    {
+      "collectionGroup": "videos",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "category",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "skin_type",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "video_name",
+          "order": "ASCENDING"
+        }
+      ]
+    }
+  ]
 }

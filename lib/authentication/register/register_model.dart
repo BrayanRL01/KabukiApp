@@ -53,7 +53,7 @@ class RegisterModel extends FlutterFlowModel<RegisterWidget> {
     }
     if (!RegExp(kTextValidatorEmailRegex).hasMatch(val)) {
       return FFLocalizations.of(context).getText(
-        'uxoz7d6u' /* Debe ser un correo electrónico... */,
+        'il9qgl3o' /* Debe ser un correo electrónico... */,
       );
     }
     return null;
@@ -104,7 +104,7 @@ class RegisterModel extends FlutterFlowModel<RegisterWidget> {
     }
     if (val.length > 20) {
       return FFLocalizations.of(context).getText(
-        '6xjr4xap' /* Ha llegado a los 20 caracteres... */,
+        'al86tsjs' /* Ha llegado a los 20 caracteres... */,
       );
     }
     if (!RegExp('^(?=.*?[A-Z])(?=.*?[0-9])(?=.*?[!@#\\\$&*~]).{8,}\$')
@@ -135,7 +135,7 @@ class RegisterModel extends FlutterFlowModel<RegisterWidget> {
     }
     if (val.length > 20) {
       return FFLocalizations.of(context).getText(
-        'cszisowz' /* Ha llegado a los 20 caracteres... */,
+        'um1e6sju' /* Ha llegado a los 20 caracteres... */,
       );
     }
     if (!RegExp('^(?=.*?[A-Z])(?=.*?[0-9])(?=.*?[!@#\\\$&*~]).{8,}\$')

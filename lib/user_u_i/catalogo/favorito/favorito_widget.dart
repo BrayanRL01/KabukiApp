@@ -1,11 +1,14 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/componentes/bs_empty_fav/bs_empty_fav_widget.dart';
 import '/componentes/bs_side_bar/bs_side_bar_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_toggle_icon.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
@@ -81,6 +84,8 @@ class _FavoritoWidgetState extends State<FavoritoWidget>
       );
     }
 
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -131,12 +136,13 @@ class _FavoritoWidgetState extends State<FavoritoWidget>
               alignment: AlignmentDirectional(0.00, 0.00),
               child: Text(
                 FFLocalizations.of(context).getText(
-                  'whwpgi6v' /* Favoritos */,
+                  'fl2bej5f' /* Favoritos */,
                 ),
-                style: FlutterFlowTheme.of(context).titleLarge.override(
+                style: FlutterFlowTheme.of(context).bodyMedium.override(
                       fontFamily: 'Outfit',
-                      color: FlutterFlowTheme.of(context).info,
+                      color: Colors.white,
                       fontSize: 40.0,
+                      fontWeight: FontWeight.w500,
                     ),
               ),
             ),
@@ -147,40 +153,12 @@ class _FavoritoWidgetState extends State<FavoritoWidget>
                 borderWidth: 1.0,
                 buttonSize: 40.0,
                 icon: Icon(
-                  Icons.logout_rounded,
+                  Icons.shopping_cart,
                   color: Colors.white,
                   size: 24.0,
                 ),
                 onPressed: () async {
-                  var confirmDialogResponse = await showDialog<bool>(
-                        context: context,
-                        builder: (alertDialogContext) {
-                          return AlertDialog(
-                            title: Text('Cerrar Sesión'),
-                            content: Text('¿Está seguro/a qué desea salir?'),
-                            actions: [
-                              TextButton(
-                                onPressed: () =>
-                                    Navigator.pop(alertDialogContext, false),
-                                child: Text('Cancelar'),
-                              ),
-                              TextButton(
-                                onPressed: () =>
-                                    Navigator.pop(alertDialogContext, true),
-                                child: Text('Confirmar'),
-                              ),
-                            ],
-                          );
-                        },
-                      ) ??
-                      false;
-                  if (confirmDialogResponse) {
-                    GoRouter.of(context).prepareAuthEvent();
-                    await authManager.signOut();
-                    GoRouter.of(context).clearRedirectLocation();
-                  }
-
-                  context.goNamedAuth('LoginPage', context.mounted);
+                  context.pushNamed('ShoppingCart');
                 },
               ),
             ],
@@ -196,158 +174,378 @@ class _FavoritoWidgetState extends State<FavoritoWidget>
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
-                  child: StreamBuilder<List<ProductsRecord>>(
-                    stream: queryProductsRecord(
-                      queryBuilder: (productsRecord) => productsRecord.where(
-                        'favorito',
-                        arrayContains: currentUserReference,
+                Align(
+                  alignment: AlignmentDirectional(0.00, 0.00),
+                  child: Padding(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                    child: StreamBuilder<List<ProductsRecord>>(
+                      stream: queryProductsRecord(
+                        queryBuilder: (productsRecord) => productsRecord.where(
+                          'favorito',
+                          arrayContains: currentUserReference,
+                        ),
                       ),
-                    ),
-                    builder: (context, snapshot) {
-                      // Customize what your widget looks like when it's loading.
-                      if (!snapshot.hasData) {
-                        return Center(
-                          child: SizedBox(
-                            width: 50.0,
-                            height: 50.0,
-                            child: CircularProgressIndicator(
-                              valueColor: AlwaysStoppedAnimation<Color>(
-                                FlutterFlowTheme.of(context).primary,
+                      builder: (context, snapshot) {
+                        // Customize what your widget looks like when it's loading.
+                        if (!snapshot.hasData) {
+                          return Center(
+                            child: SizedBox(
+                              width: 50.0,
+                              height: 50.0,
+                              child: CircularProgressIndicator(
+                                valueColor: AlwaysStoppedAnimation<Color>(
+                                  FlutterFlowTheme.of(context).primary,
+                                ),
                               ),
                             ),
-                          ),
-                        );
-                      }
-                      List<ProductsRecord> listViewProductsRecordList =
-                          snapshot.data!;
-                      return ListView.builder(
-                        padding: EdgeInsets.zero,
-                        primary: false,
-                        shrinkWrap: true,
-                        scrollDirection: Axis.vertical,
-                        itemCount: listViewProductsRecordList.length,
-                        itemBuilder: (context, listViewIndex) {
-                          final listViewProductsRecord =
-                              listViewProductsRecordList[listViewIndex];
-                          return Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                16.0, 0.0, 16.0, 8.0),
+                          );
+                        }
+                        List<ProductsRecord> listViewProductsRecordList =
+                            snapshot.data!;
+                        if (listViewProductsRecordList.isEmpty) {
+                          return Center(
                             child: Container(
-                              width: double.infinity,
-                              decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context).info,
-                                boxShadow: [
-                                  BoxShadow(
-                                    blurRadius: 4.0,
-                                    color: Color(0x520E151B),
-                                    offset: Offset(0.0, 2.0),
-                                  )
-                                ],
-                                borderRadius: BorderRadius.circular(8.0),
-                              ),
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    12.0, 12.0, 12.0, 12.0),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    InkWell(
-                                      splashColor: Colors.transparent,
-                                      focusColor: Colors.transparent,
-                                      hoverColor: Colors.transparent,
-                                      highlightColor: Colors.transparent,
-                                      onTap: () async {
-                                        context.pushNamed(
-                                          'InfoProductos',
-                                          queryParameters: {
-                                            'pProduct': serializeParam(
-                                              listViewProductsRecord,
-                                              ParamType.Document,
-                                            ),
-                                          }.withoutNulls,
-                                          extra: <String, dynamic>{
-                                            'pProduct': listViewProductsRecord,
-                                            kTransitionInfoKey: TransitionInfo(
-                                              hasTransition: true,
-                                              transitionType: PageTransitionType
-                                                  .topToBottom,
-                                            ),
-                                          },
-                                        );
-                                      },
-                                      child: ClipRRect(
-                                        borderRadius:
-                                            BorderRadius.circular(12.0),
-                                        child: Image.network(
-                                          listViewProductsRecord.productPhoto,
-                                          width: double.infinity,
-                                          height: 200.0,
-                                          fit: BoxFit.cover,
+                              width: 200.0,
+                              height: 100.0,
+                              child: BsEmptyFavWidget(),
+                            ),
+                          );
+                        }
+                        return ListView.builder(
+                          padding: EdgeInsets.zero,
+                          primary: false,
+                          shrinkWrap: true,
+                          scrollDirection: Axis.vertical,
+                          itemCount: listViewProductsRecordList.length,
+                          itemBuilder: (context, listViewIndex) {
+                            final listViewProductsRecord =
+                                listViewProductsRecordList[listViewIndex];
+                            return Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  16.0, 0.0, 16.0, 8.0),
+                              child: Container(
+                                width: double.infinity,
+                                decoration: BoxDecoration(
+                                  color: FlutterFlowTheme.of(context).info,
+                                  boxShadow: [
+                                    BoxShadow(
+                                      blurRadius: 4.0,
+                                      color: Color(0x520E151B),
+                                      offset: Offset(0.0, 2.0),
+                                    )
+                                  ],
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      12.0, 12.0, 12.0, 12.0),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          context.pushNamed(
+                                            'InfoProductos',
+                                            queryParameters: {
+                                              'pProduct': serializeParam(
+                                                listViewProductsRecord,
+                                                ParamType.Document,
+                                              ),
+                                            }.withoutNulls,
+                                            extra: <String, dynamic>{
+                                              'pProduct':
+                                                  listViewProductsRecord,
+                                              kTransitionInfoKey:
+                                                  TransitionInfo(
+                                                hasTransition: true,
+                                                transitionType:
+                                                    PageTransitionType
+                                                        .topToBottom,
+                                              ),
+                                            },
+                                          );
+                                        },
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(12.0),
+                                          child: Image.network(
+                                            listViewProductsRecord.productPhoto,
+                                            width: double.infinity,
+                                            height: 200.0,
+                                            fit: BoxFit.cover,
+                                          ),
                                         ),
                                       ),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 12.0, 0.0, 0.0),
-                                      child: Row(
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 12.0, 0.0, 0.0),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Text(
+                                              listViewProductsRecord
+                                                  .productName,
+                                              textAlign: TextAlign.center,
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLarge
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        fontSize: 15.0,
+                                                      ),
+                                            ),
+                                            Text(
+                                              formatNumber(
+                                                listViewProductsRecord
+                                                    .productPrice,
+                                                formatType: FormatType.decimal,
+                                                decimalType:
+                                                    DecimalType.automatic,
+                                                currency: '₡',
+                                              ),
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineSmall
+                                                      .override(
+                                                        fontFamily: 'Outfit',
+                                                        fontSize: 20.0,
+                                                      ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      Row(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceBetween,
                                         children: [
-                                          Text(
-                                            listViewProductsRecord.productName,
-                                            textAlign: TextAlign.center,
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyLarge
-                                                .override(
-                                                  fontFamily: 'Readex Pro',
-                                                  fontSize: 15.0,
-                                                ),
-                                          ),
-                                          Text(
-                                            formatNumber(
-                                              listViewProductsRecord
-                                                  .productPrice,
-                                              formatType: FormatType.decimal,
-                                              decimalType:
-                                                  DecimalType.automatic,
-                                              currency: '₡',
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 5.0, 0.0, 0.0),
+                                            child: Text(
+                                              valueOrDefault<String>(
+                                                listViewProductsRecord.category,
+                                                'Maquillaje',
+                                              ),
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium,
                                             ),
-                                            style: FlutterFlowTheme.of(context)
-                                                .headlineSmall
-                                                .override(
-                                                  fontFamily: 'Outfit',
-                                                  fontSize: 20.0,
+                                          ),
+                                          StreamBuilder<ProductsRecord>(
+                                            stream: ProductsRecord.getDocument(
+                                                listViewProductsRecord
+                                                    .reference),
+                                            builder: (context, snapshot) {
+                                              // Customize what your widget looks like when it's loading.
+                                              if (!snapshot.hasData) {
+                                                return Center(
+                                                  child: SizedBox(
+                                                    width: 50.0,
+                                                    height: 50.0,
+                                                    child:
+                                                        CircularProgressIndicator(
+                                                      valueColor:
+                                                          AlwaysStoppedAnimation<
+                                                              Color>(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .primary,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                );
+                                              }
+                                              final toggleIconProductsRecord =
+                                                  snapshot.data!;
+                                              return ToggleIcon(
+                                                onPressed: () async {
+                                                  final favoritoElement =
+                                                      currentUserReference;
+                                                  final favoritoUpdate =
+                                                      toggleIconProductsRecord
+                                                              .favorito
+                                                              .contains(
+                                                                  favoritoElement)
+                                                          ? FieldValue
+                                                              .arrayRemove([
+                                                              favoritoElement
+                                                            ])
+                                                          : FieldValue
+                                                              .arrayUnion([
+                                                              favoritoElement
+                                                            ]);
+                                                  await toggleIconProductsRecord
+                                                      .reference
+                                                      .update({
+                                                    ...mapToFirestore(
+                                                      {
+                                                        'favorito':
+                                                            favoritoUpdate,
+                                                      },
+                                                    ),
+                                                  });
+                                                },
+                                                value: toggleIconProductsRecord
+                                                    .favorito
+                                                    .contains(
+                                                        currentUserReference),
+                                                onIcon: Icon(
+                                                  Icons.favorite,
+                                                  color: Color(0xFFFF1493),
+                                                  size: 25.0,
                                                 ),
+                                                offIcon: Icon(
+                                                  Icons.favorite_border,
+                                                  color: Color(0xFFFF1493),
+                                                  size: 25.0,
+                                                ),
+                                              );
+                                            },
                                           ),
                                         ],
                                       ),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 5.0, 0.0, 0.0),
-                                      child: Text(
-                                        valueOrDefault<String>(
-                                          listViewProductsRecord.category,
-                                          'Maquillaje',
+                                      Align(
+                                        alignment:
+                                            AlignmentDirectional(0.00, 0.00),
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 5.0, 0.0, 0.0),
+                                          child: StreamBuilder<
+                                              List<ShoppingDataRecord>>(
+                                            stream: queryShoppingDataRecord(
+                                              queryBuilder:
+                                                  (shoppingDataRecord) =>
+                                                      shoppingDataRecord
+                                                          .where(
+                                                            'UserId',
+                                                            isEqualTo:
+                                                                currentUserReference,
+                                                          )
+                                                          .where(
+                                                            'Products',
+                                                            isEqualTo:
+                                                                listViewProductsRecord
+                                                                    .reference,
+                                                          ),
+                                              singleRecord: true,
+                                            ),
+                                            builder: (context, snapshot) {
+                                              // Customize what your widget looks like when it's loading.
+                                              if (!snapshot.hasData) {
+                                                return Center(
+                                                  child: SizedBox(
+                                                    width: 50.0,
+                                                    height: 50.0,
+                                                    child:
+                                                        CircularProgressIndicator(
+                                                      valueColor:
+                                                          AlwaysStoppedAnimation<
+                                                              Color>(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .primary,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                );
+                                              }
+                                              List<ShoppingDataRecord>
+                                                  buttonShoppingDataRecordList =
+                                                  snapshot.data!;
+                                              final buttonShoppingDataRecord =
+                                                  buttonShoppingDataRecordList
+                                                          .isNotEmpty
+                                                      ? buttonShoppingDataRecordList
+                                                          .first
+                                                      : null;
+                                              return FFButtonWidget(
+                                                onPressed:
+                                                    buttonShoppingDataRecord
+                                                                ?.products ==
+                                                            listViewProductsRecord
+                                                                .reference
+                                                        ? null
+                                                        : () async {
+                                                            await ShoppingDataRecord
+                                                                .collection
+                                                                .doc()
+                                                                .set(
+                                                                    createShoppingDataRecordData(
+                                                                  quantity: 1,
+                                                                  subTotal: listViewProductsRecord
+                                                                      .productPrice
+                                                                      .toDouble(),
+                                                                  userId:
+                                                                      currentUserReference,
+                                                                  products:
+                                                                      listViewProductsRecord
+                                                                          .reference,
+                                                                ));
+                                                          },
+                                                text: listViewProductsRecord
+                                                            .reference ==
+                                                        buttonShoppingDataRecord
+                                                            ?.products
+                                                    ? FFAppState().added
+                                                    : 'Agregar al Carrito',
+                                                options: FFButtonOptions(
+                                                  width: 400.0,
+                                                  height: 40.0,
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          24.0, 0.0, 24.0, 0.0),
+                                                  iconPadding:
+                                                      EdgeInsetsDirectional
+                                                          .fromSTEB(0.0, 0.0,
+                                                              0.0, 0.0),
+                                                  color: Color(0xFFFA8FB1),
+                                                  textStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .override(
+                                                            fontFamily:
+                                                                'Readex Pro',
+                                                            color: Colors.white,
+                                                          ),
+                                                  elevation: 3.0,
+                                                  borderSide: BorderSide(
+                                                    color: Colors.transparent,
+                                                    width: 1.0,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                ),
+                                              );
+                                            },
+                                          ),
                                         ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .labelMedium,
                                       ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
-                              ),
-                            ).animateOnPageLoad(
-                                animationsMap['containerOnPageLoadAnimation']!),
-                          );
-                        },
-                      );
-                    },
+                              ).animateOnPageLoad(animationsMap[
+                                  'containerOnPageLoadAnimation']!),
+                            );
+                          },
+                        );
+                      },
+                    ),
                   ),
                 ),
               ],

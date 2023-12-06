@@ -66,6 +66,8 @@ class _InfoPerfilWidgetState extends State<InfoPerfilWidget> {
       );
     }
 
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -112,6 +114,30 @@ class _InfoPerfilWidgetState extends State<InfoPerfilWidget> {
                 },
               ),
             ),
+            title: Align(
+              alignment: AlignmentDirectional(0.00, 0.00),
+              child: Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                child: InkWell(
+                  splashColor: Colors.transparent,
+                  focusColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  onTap: () async {
+                    context.pushNamed('cateMaquillaje');
+                  },
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(8.0),
+                    child: Image.asset(
+                      'assets/images/Imagen_de_WhatsApp_2023-11-30_a_las_18.36.36_02c49484-removebg-preview.png',
+                      width: 150.0,
+                      height: 70.0,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+              ),
+            ),
             actions: [
               FlutterFlowIconButton(
                 borderColor: Colors.transparent,
@@ -146,9 +172,13 @@ class _InfoPerfilWidgetState extends State<InfoPerfilWidget> {
                         },
                       ) ??
                       false;
-                  GoRouter.of(context).prepareAuthEvent();
-                  await authManager.signOut();
-                  GoRouter.of(context).clearRedirectLocation();
+                  if (confirmDialogResponse) {
+                    GoRouter.of(context).prepareAuthEvent();
+                    await authManager.signOut();
+                    GoRouter.of(context).clearRedirectLocation();
+                  } else {
+                    return;
+                  }
 
                   context.goNamedAuth('LoginPage', context.mounted);
                 },
@@ -163,7 +193,7 @@ class _InfoPerfilWidgetState extends State<InfoPerfilWidget> {
           top: true,
           child: Form(
             key: _model.formKey,
-            autovalidateMode: AutovalidateMode.disabled,
+            autovalidateMode: AutovalidateMode.always,
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.max,
@@ -252,6 +282,12 @@ class _InfoPerfilWidgetState extends State<InfoPerfilWidget> {
                                   child: Image.network(
                                     currentUserPhoto,
                                     fit: BoxFit.cover,
+                                    errorBuilder:
+                                        (context, error, stackTrace) =>
+                                            Image.asset(
+                                      'assets/images/error_image.png',
+                                      fit: BoxFit.cover,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -285,7 +321,7 @@ class _InfoPerfilWidgetState extends State<InfoPerfilWidget> {
                             },
                             child: Text(
                               FFLocalizations.of(context).getText(
-                                '0gv8hagp' /* Agregar foto de perfil */,
+                                '0gv8hagp' /* Actualizar foto de perfil */,
                               ),
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
@@ -327,28 +363,28 @@ class _InfoPerfilWidgetState extends State<InfoPerfilWidget> {
                                         FlutterFlowTheme.of(context).alternate,
                                     width: 2.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(20.0),
+                                  borderRadius: BorderRadius.circular(12.0),
                                 ),
                                 focusedBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: Color(0xFFF9F9F9),
                                     width: 2.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(20.0),
+                                  borderRadius: BorderRadius.circular(12.0),
                                 ),
                                 errorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).error,
                                     width: 2.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(20.0),
+                                  borderRadius: BorderRadius.circular(12.0),
                                 ),
                                 focusedErrorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).error,
                                     width: 2.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(20.0),
+                                  borderRadius: BorderRadius.circular(12.0),
                                 ),
                                 filled: true,
                                 fillColor: Color(0xFFF9F9F9),
@@ -393,28 +429,28 @@ class _InfoPerfilWidgetState extends State<InfoPerfilWidget> {
                                   color: FlutterFlowTheme.of(context).alternate,
                                   width: 2.0,
                                 ),
-                                borderRadius: BorderRadius.circular(20.0),
+                                borderRadius: BorderRadius.circular(12.0),
                               ),
                               focusedBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
                                   color: Color(0xFFF9F9F9),
                                   width: 2.0,
                                 ),
-                                borderRadius: BorderRadius.circular(20.0),
+                                borderRadius: BorderRadius.circular(12.0),
                               ),
                               errorBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
                                   color: FlutterFlowTheme.of(context).error,
                                   width: 2.0,
                                 ),
-                                borderRadius: BorderRadius.circular(20.0),
+                                borderRadius: BorderRadius.circular(12.0),
                               ),
                               focusedErrorBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
                                   color: FlutterFlowTheme.of(context).error,
                                   width: 2.0,
                                 ),
-                                borderRadius: BorderRadius.circular(20.0),
+                                borderRadius: BorderRadius.circular(12.0),
                               ),
                               filled: true,
                               fillColor: Color(0xFFF9F9F9),
@@ -460,28 +496,28 @@ class _InfoPerfilWidgetState extends State<InfoPerfilWidget> {
                                         FlutterFlowTheme.of(context).alternate,
                                     width: 2.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(20.0),
+                                  borderRadius: BorderRadius.circular(12.0),
                                 ),
                                 focusedBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: Color(0xFFF9F9F9),
                                     width: 2.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(20.0),
+                                  borderRadius: BorderRadius.circular(12.0),
                                 ),
                                 errorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).error,
                                     width: 2.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(20.0),
+                                  borderRadius: BorderRadius.circular(12.0),
                                 ),
                                 focusedErrorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: FlutterFlowTheme.of(context).error,
                                     width: 2.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(20.0),
+                                  borderRadius: BorderRadius.circular(12.0),
                                 ),
                                 filled: true,
                                 fillColor: Color(0xFFF9F9F9),
@@ -606,7 +642,7 @@ class _InfoPerfilWidgetState extends State<InfoPerfilWidget> {
                             elevation: 2.0,
                             borderColor: FlutterFlowTheme.of(context).alternate,
                             borderWidth: 2.0,
-                            borderRadius: 8.0,
+                            borderRadius: 12.0,
                             margin: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 4.0, 16.0, 4.0),
                             hidesUnderline: true,
@@ -630,6 +666,19 @@ class _InfoPerfilWidgetState extends State<InfoPerfilWidget> {
                           birthday: _model.datePicked,
                           skinType: _model.ddSkinValue,
                         ));
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(
+                              'Usuario actualizado correctamente.',
+                              style: TextStyle(
+                                color: FlutterFlowTheme.of(context).primaryText,
+                              ),
+                            ),
+                            duration: Duration(milliseconds: 4000),
+                            backgroundColor:
+                                FlutterFlowTheme.of(context).secondary,
+                          ),
+                        );
                       },
                       text: FFLocalizations.of(context).getText(
                         'ndkyyuhg' /* Editar Perfil */,

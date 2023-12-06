@@ -52,6 +52,8 @@ class _CategoriesPageWidgetState extends State<CategoriesPageWidget> {
       );
     }
 
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -136,6 +138,8 @@ class _CategoriesPageWidgetState extends State<CategoriesPageWidget> {
                     GoRouter.of(context).prepareAuthEvent();
                     await authManager.signOut();
                     GoRouter.of(context).clearRedirectLocation();
+                  } else {
+                    return;
                   }
 
                   context.goNamedAuth('LoginPage', context.mounted);
@@ -183,7 +187,6 @@ class _CategoriesPageWidgetState extends State<CategoriesPageWidget> {
                                 isScrollControlled: true,
                                 backgroundColor: Colors.white,
                                 barrierColor: Colors.white,
-                                enableDrag: false,
                                 context: context,
                                 builder: (context) {
                                   return GestureDetector(
@@ -336,9 +339,81 @@ class _CategoriesPageWidgetState extends State<CategoriesPageWidget> {
                                       backgroundColor:
                                           FlutterFlowTheme.of(context).error,
                                       icon: FontAwesomeIcons.trashAlt,
-                                      onPressed: (_) {
-                                        print(
-                                            'SlidableActionWidget pressed ...');
+                                      onPressed: (_) async {
+                                        var confirmDialogResponse =
+                                            await showDialog<bool>(
+                                                  context: context,
+                                                  builder:
+                                                      (alertDialogContext) {
+                                                    return AlertDialog(
+                                                      title: Text(
+                                                          'Eliminar Categoría'),
+                                                      content: Text(
+                                                          '¿Desea eliminar esta categoría?'),
+                                                      actions: [
+                                                        TextButton(
+                                                          onPressed: () =>
+                                                              Navigator.pop(
+                                                                  alertDialogContext,
+                                                                  false),
+                                                          child:
+                                                              Text('Cancelar'),
+                                                        ),
+                                                        TextButton(
+                                                          onPressed: () =>
+                                                              Navigator.pop(
+                                                                  alertDialogContext,
+                                                                  true),
+                                                          child:
+                                                              Text('Confirmar'),
+                                                        ),
+                                                      ],
+                                                    );
+                                                  },
+                                                ) ??
+                                                false;
+                                        if (confirmDialogResponse) {
+                                          await listViewCategoriesRecord
+                                              .reference
+                                              .delete();
+                                          ScaffoldMessenger.of(context)
+                                              .showSnackBar(
+                                            SnackBar(
+                                              content: Text(
+                                                'Categoría eliminada correctamente.',
+                                                style: TextStyle(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                ),
+                                              ),
+                                              duration:
+                                                  Duration(milliseconds: 4000),
+                                              backgroundColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondary,
+                                            ),
+                                          );
+                                        } else {
+                                          ScaffoldMessenger.of(context)
+                                              .showSnackBar(
+                                            SnackBar(
+                                              content: Text(
+                                                'Categoría no eliminada.',
+                                                style: TextStyle(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                ),
+                                              ),
+                                              duration:
+                                                  Duration(milliseconds: 4000),
+                                              backgroundColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .error,
+                                            ),
+                                          );
+                                        }
                                       },
                                     ),
                                   ],

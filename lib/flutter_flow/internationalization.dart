@@ -158,10 +158,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Ingresar',
       'en': '',
     },
-    'xkoskyp0': {
-      'es': 'Iniciar sesión con Google',
-      'en': '',
-    },
     'b1zesyp0': {
       'es': 'Recuperar contraseña',
       'en': '',
@@ -172,6 +168,26 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'nlh8t64c': {
       'es': 'Ingresa aqui',
+      'en': '',
+    },
+    'ryfrnoze': {
+      'es': 'El correo electrónico es requerido.',
+      'en': '',
+    },
+    '4yz1hq24': {
+      'es': 'Debe ingresar un correo electrónico válido.',
+      'en': '',
+    },
+    'hwj92i7w': {
+      'es': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    '9wppgp12': {
+      'es': 'La contraseña es requerida.',
+      'en': '',
+    },
+    'dmiuuvfv': {
+      'es': 'Please choose an option from the dropdown',
       'en': '',
     },
   },
@@ -233,7 +249,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'El máximo de caracteres es de 40.',
       'en': '',
     },
-    'uxoz7d6u': {
+    'il9qgl3o': {
       'es': 'Debe ser un correo electrónico válido.',
       'en': '',
     },
@@ -265,7 +281,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Debe tener 8 caracteres.',
       'en': '',
     },
-    '6xjr4xap': {
+    'al86tsjs': {
       'es': 'Ha llegado a los 20 caracteres permitidos.',
       'en': '',
     },
@@ -286,7 +302,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Debe tener 8 caracteres.',
       'en': '',
     },
-    'cszisowz': {
+    'um1e6sju': {
       'es': 'Ha llegado a los 20 caracteres permitidos.',
       'en': '',
     },
@@ -335,32 +351,80 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Nombre',
       'en': '',
     },
-    '67jeljc0': {
-      'es': 'Provincia',
-      'en': '',
-    },
-    'k9xxihs7': {
+    '4k5xbqb2': {
       'es': 'Edad',
       'en': '',
     },
-    'too1ebqh': {
-      'es': 'Tipo de Piel',
+    'eqsnoudo': {
+      'es': 'Option 1',
       'en': '',
     },
-    '6ukyjlbk': {
+    'koq742w7': {
+      'es': 'Tipo de piel',
+      'en': '',
+    },
+    'hg0wgewu': {
+      'es': 'Buscar...',
+      'en': '',
+    },
+    'e9d1n8j1': {
+      'es': 'Option 1',
+      'en': '',
+    },
+    'czk2jfmh': {
+      'es': 'Color de piel',
+      'en': '',
+    },
+    'kszkf03q': {
+      'es': 'Buscar...',
+      'en': '',
+    },
+    '9sp74bwr': {
+      'es': 'Option 1',
+      'en': '',
+    },
+    'i8nfdaz3': {
       'es': 'Alergias',
       'en': '',
     },
-    'u78z1vy6': {
-      'es': 'Color de Piel',
+    'i9p9dtrk': {
+      'es': 'Buscar...',
+      'en': '',
+    },
+    '8uzi5bbm': {
+      'es': 'Option 1',
+      'en': '',
+    },
+    'etkbwth5': {
+      'es': 'Provincia',
+      'en': '',
+    },
+    '0swh2h6k': {
+      'es': 'Buscar...',
+      'en': '',
+    },
+    'nn1o6gro': {
+      'es': 'Su nombre es requerido.',
+      'en': '',
+    },
+    't0bustsw': {
+      'es': 'Se permitren un máximo de 40 caracteres.',
+      'en': '',
+    },
+    'pfsilrho': {
+      'es': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    '3n7wvs61': {
+      'es': 'Su edad es requerida.',
+      'en': '',
+    },
+    'pfu6m7kl': {
+      'es': 'Please choose an option from the dropdown',
       'en': '',
     },
     'fpvlcdxr': {
       'es': 'Guardar',
-      'en': '',
-    },
-    'bnogrqa2': {
-      'es': 'Continuar',
       'en': '',
     },
     'os1d5p7x': {
@@ -370,6 +434,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // productos
   {
+    '0ykfwnup': {
+      'es': 'Buscar Producto...',
+      'en': '',
+    },
+    'dcg4ko7m': {
+      'es': 'Option 1',
+      'en': '',
+    },
     't6ynft0x': {
       'es': 'Option 1',
       'en': '',
@@ -402,7 +474,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // infoPerfil
   {
     '0gv8hagp': {
-      'es': 'Agregar foto de perfil',
+      'es': 'Actualizar foto de perfil',
       'en': '',
     },
     'v30kgpiv': {
@@ -454,18 +526,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'd6zaaqwb': {
-      'es': 'Debe ser un correo válido.',
+      'es': 'Debe ser un correo electrónico válido.',
       'en': '',
     },
     'qaepcuia': {
-      'es': 'Please choose an option from the dropdown',
-      'en': '',
-    },
-    'hbdyv7tl': {
-      'es': 'Field is required',
-      'en': '',
-    },
-    'hh6r7fwk': {
       'es': 'Please choose an option from the dropdown',
       'en': '',
     },
@@ -474,14 +538,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'gch3wkei': {
-      'es': 'Please choose an option from the dropdown',
-      'en': '',
-    },
-    'ohfw6tkx': {
-      'es': 'Field is required',
-      'en': '',
-    },
-    'jroibtr2': {
       'es': 'Please choose an option from the dropdown',
       'en': '',
     },
@@ -592,6 +648,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Agenda de Citas ',
       'en': '',
     },
+    'dey20upn': {
+      'es': 'Reservar Cita',
+      'en': '',
+    },
     'qulpbvv3': {
       'es': 'Horarios Disponibles',
       'en': '',
@@ -642,16 +702,16 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // maquilajeEventos
   {
-    'ekj7ua7d': {
+    'h2mc4085': {
       'es': 'Maquillaje para Eventos',
       'en': '',
     },
-    'gtsb1vc3': {
+    'x87vfy6f': {
       'es':
           '¡Siempre es importante lucir hermosa y radiante para cualquier ocasión especial! Ofrezco servicios de peinado y maquillaje profesional para toda ocasión, desde bodas y eventos sociales hasta sesiones de fotos y graduaciones.\n\nTrabajo contigo para crear un look personalizado que complemente tu estilo y personalidad, y me aseguro de que te sientas cómoda y segura durante todo el proceso.\n\nYa sea que desees un look natural y fresco o un look más dramático y sofisticado, puedo ayudarte a crear el estilo perfecto para ti. Utilizo productos de alta calidad y técnicas avanzadas de peinado y maquillaje para garantizar que tu look se mantenga perfecto durante todo el día o noche.\n\nContáctame para cotizar mis servicios de peinado y maquillaje para toda ocasión. ¡Déjame ayudarte a lucir espectacular en tu próxima ocasión especial!',
       'en': '',
     },
-    'ftyquwpk': {
+    'se03gkzb': {
       'es': 'Cotizar',
       'en': '',
     },
@@ -838,30 +898,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
-  // producto7
-  {
-    'onnrzby0': {
-      'es': 'Serum de Pitaya Costa para Poro Abierto',
-      'en': '',
-    },
-    's4okqyyo': {
-      'es': '₡ 14,500',
-      'en': '',
-    },
-    'sxmjw508': {
-      'es':
-          'Extracto de pithaya te ayuda a emparejar el tono natural de la piel tratando los poros abiertos que tengas para darle un aspecto más sano a tu piel. ',
-      'en': '',
-    },
-    'inawi4x6': {
-      'es': 'Page Title',
-      'en': '',
-    },
-    'lbfa0y5s': {
-      'es': 'Home',
-      'en': '',
-    },
-  },
   // producto8
   {
     '0vk6ss5v': {
@@ -1028,7 +1064,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // favorito
   {
-    'whwpgi6v': {
+    'fl2bej5f': {
       'es': 'Favoritos',
       'en': '',
     },
@@ -1077,6 +1113,197 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'ow4rajg7': {
       'es': 'Iniciar Sesión',
+      'en': '',
+    },
+    '56lne3cl': {
+      'es': 'El correo electrónico es requerido.',
+      'en': '',
+    },
+    '3d4uimtd': {
+      'es': 'Debe ingresar un correo electrónico válido.',
+      'en': '',
+    },
+    '43h658dg': {
+      'es': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+  },
+  // VideosPage
+  {
+    'xq9hcxhl': {
+      'es': 'Videos de la Aplicación',
+      'en': '',
+    },
+    '9tywv9oq': {
+      'es': 'Agregar Video',
+      'en': '',
+    },
+    'y00knr8c': {
+      'es': 'Home',
+      'en': '',
+    },
+  },
+  // catalogoSkincare
+  {
+    'vzzq7exr': {
+      'es': 'JABÓN FACIAL DE PROTEÍNA DE SEDA ÁMBAR',
+      'en': '',
+    },
+    'vukx72vt': {
+      'es': 'Ámbar',
+      'en': '',
+    },
+    '7n0xaurr': {
+      'es': 'Precio',
+      'en': '',
+    },
+    'sikpbah0': {
+      'es': 'TÓNICO DE PROTEÍNA DE SEDA DE ÁMBAR',
+      'en': '',
+    },
+    'onqw3c15': {
+      'es': 'Ámbar',
+      'en': '',
+    },
+    '7kpfw51p': {
+      'es': 'Precio',
+      'en': '',
+    },
+    'nmwfe7im': {
+      'es': 'SÉRUM DE PROTEÍNA DE SEDA DE ÁMBAR',
+      'en': '',
+    },
+    'vaxvcdr3': {
+      'es': 'Ámbar',
+      'en': '',
+    },
+    'b1e6ku4z': {
+      'es': 'Precio',
+      'en': '',
+    },
+    '797n15is': {
+      'es': 'CREMA HIDRTANTE DE PROTEÍNA DE SEDA ÁMBAR',
+      'en': '',
+    },
+    'nbzevsbx': {
+      'es': 'Ámbar',
+      'en': '',
+    },
+    'f2t85c2e': {
+      'es': 'Precio',
+      'en': '',
+    },
+    'yix5m1jl': {
+      'es': 'MASCARILLA DE VELO',
+      'en': '',
+    },
+    'c1r4mphv': {
+      'es': 'Ámbar - Kabuki',
+      'en': '',
+    },
+    '6sp5pjrs': {
+      'es': 'Precio',
+      'en': '',
+    },
+    '1fc7r1pz': {
+      'es': 'KIT DE LOS 4 PASOS DE ÁMBAR',
+      'en': '',
+    },
+    'y59vsilk': {
+      'es': 'Ámbar',
+      'en': '',
+    },
+    'qxg0s0ss': {
+      'es': 'Precio',
+      'en': '',
+    },
+    '24345p4e': {
+      'es': 'Page Title',
+      'en': '',
+    },
+    'm99k8unp': {
+      'es': 'Home',
+      'en': '',
+    },
+  },
+  // catalogoSkincareCopy
+  {
+    'bbsxkz60': {
+      'es': 'JABÓN FACIAL DE PROTEÍNA DE SEDA ÁMBAR',
+      'en': '',
+    },
+    'vth8xmfr': {
+      'es': 'Ámbar',
+      'en': '',
+    },
+    'kmg40tji': {
+      'es': 'Precio',
+      'en': '',
+    },
+    '43mek9nu': {
+      'es': 'Page Title',
+      'en': '',
+    },
+    'rrubqc64': {
+      'es': 'Home',
+      'en': '',
+    },
+  },
+  // ShoppingCart
+  {
+    'eqphtyfj': {
+      'es': 'Total a Pagar: ',
+      'en': '',
+    },
+    '68nmsyqe': {
+      'es': 'Realizar Pago',
+      'en': '',
+    },
+    '22w6xxe8': {
+      'es': 'Subtotal: ',
+      'en': '',
+    },
+    '26qjyjed': {
+      'es': 'Detalles',
+      'en': '',
+    },
+    'p7v8sevu': {
+      'es': 'Home',
+      'en': '',
+    },
+  },
+  // VideosPageCopy
+  {
+    'ob6h47zq': {
+      'es': 'Videos de Ayuda',
+      'en': '',
+    },
+    '512i46wu': {
+      'es': 'Option 1',
+      'en': '',
+    },
+    'jtcdiopn': {
+      'es': 'Categorías',
+      'en': '',
+    },
+    'zfl6b5a7': {
+      'es': 'Search for an item...',
+      'en': '',
+    },
+    'wdrvrdoy': {
+      'es': 'Option 1',
+      'en': '',
+    },
+    'rgbs6i1o': {
+      'es': 'Tipos de Piel',
+      'en': '',
+    },
+    '4gno0fpw': {
+      'es': 'Search for an item...',
+      'en': '',
+    },
+    '8pjt4d3n': {
+      'es': 'Home',
       'en': '',
     },
   },
@@ -1129,6 +1356,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Descripción',
       'en': '',
     },
+    'bp1f7nc5': {
+      'es': 'Cantidad',
+      'en': '',
+    },
     'fz3miakr': {
       'es': 'Option 1',
       'en': '',
@@ -1174,7 +1405,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'l3p6fum4': {
-      'es': 'El precio debe serigual o mayor a 1000.',
+      'es': 'El precio debe ser igual o mayor a 1000.',
       'en': '',
     },
     '2pv6ce3o': {
@@ -1190,6 +1421,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'd68ceqqr': {
+      'es': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'x7lmdee0': {
+      'es': 'La cantidad es requerida.',
+      'en': '',
+    },
+    'm8qj3ziq': {
       'es': 'Please choose an option from the dropdown',
       'en': '',
     },
@@ -1210,6 +1449,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'zq32aym9': {
       'es': 'Descripción',
+      'en': '',
+    },
+    'mfg2yad0': {
+      'es': 'Cantidad',
       'en': '',
     },
     'qwq9m7lk': {
@@ -1277,11 +1520,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Guardar',
       'en': '',
     },
-    'qbj77t3p': {
-      'es': 'El nombre es requerido.',
+    '03x7jqy6': {
+      'es': 'La categoría es requerida.',
       'en': '',
     },
-    'q18801cy': {
+    '4sbyokp4': {
       'es': 'Please choose an option from the dropdown',
       'en': '',
     },
@@ -1300,11 +1543,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Guardar',
       'en': '',
     },
-    'j1q17ycv': {
-      'es': 'El nombre es requerido.',
+    'nb4329zk': {
+      'es': 'El nombre de la marca es requerido.',
       'en': '',
     },
-    'v6uz2zlk': {
+    '8d6f4286': {
       'es': 'Please choose an option from the dropdown',
       'en': '',
     },
@@ -1312,7 +1555,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // bsEditBrand
   {
     'ol8zq6jn': {
-      'es': 'Modificar Categoría',
+      'es': 'Modificar Marca',
       'en': '',
     },
     'ozhbkpeu': {
@@ -1323,11 +1566,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Guardar',
       'en': '',
     },
-    'fglqnxj1': {
-      'es': 'El nombre es requerido.',
+    'zidijvnf': {
+      'es': 'El nombre de la marca es requerido.',
       'en': '',
     },
-    'de271d6e': {
+    '1sj60nnu': {
       'es': 'Please choose an option from the dropdown',
       'en': '',
     },
@@ -1358,43 +1601,44 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Guardar',
       'en': '',
     },
-    'hgaef45t': {
-      'es': 'El nombre del producto es requerido.',
+    'g4u18gpr': {
+      'es': 'El nombre es requerido.',
       'en': '',
     },
-    'gmtrpas0': {
-      'es': 'El nombre debe poseer un mínimo de 10 caracteres.',
-      'en': '',
-    },
-    'xsf3415w': {
-      'es': 'El nombre debe poseer un máximo de 30 caracteres.',
-      'en': '',
-    },
-    '47zz684e': {
+    'gd95ybiz': {
       'es': 'Please choose an option from the dropdown',
       'en': '',
     },
-    '8dtnqlta': {
-      'es': 'El precio es requerido.',
+    'sl5cwfbe': {
+      'es': 'El correo electrónico es requerido.',
       'en': '',
     },
-    'cat7l7gj': {
-      'es': 'El precio debe serigual o mayor a 1000.',
+    '0uktyngh': {
+      'es': 'Debe ingresar un correo electrónico válido.',
       'en': '',
     },
-    'qr6f8yxr': {
+    'bqu7enxw': {
       'es': 'Please choose an option from the dropdown',
       'en': '',
     },
-    'xy0um8n3': {
-      'es': 'La información del producto es requerida.',
+    'nb3bkxn5': {
+      'es': 'El número telefónico es requerido.',
       'en': '',
     },
-    'zb49w76s': {
-      'es': 'La información del producto posee un máximo de 150 caracteres.',
+    '6k3hvs0k': {
+      'es': 'Please choose an option from the dropdown',
       'en': '',
     },
-    'gd5saph8': {
+    'akbj3ey7': {
+      'es': 'La contraseña es requerida.',
+      'en': '',
+    },
+    'pzgbg9sy': {
+      'es':
+          'Su contraseña debe contener 8 caracteres como mínimo, una letra mayúscula, un número y un caracter especial.',
+      'en': '',
+    },
+    'jgpd8xj2': {
       'es': 'Please choose an option from the dropdown',
       'en': '',
     },
@@ -1446,6 +1690,195 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'y7563o7o': {
       'es': 'Usuarios',
+      'en': '',
+    },
+  },
+  // bsEmptyVideos
+  {
+    'du22frm2': {
+      'es': 'No hay videos disponibles en este momento.',
+      'en': '',
+    },
+  },
+  // bsCreateVideo
+  {
+    '17u4twa6': {
+      'es': 'Nuevo Video',
+      'en': '',
+    },
+    'a44nfljc': {
+      'es': 'Nombre',
+      'en': '',
+    },
+    'kr4garaq': {
+      'es': 'Descripción',
+      'en': '',
+    },
+    'ocnxslky': {
+      'es': 'Option 1',
+      'en': '',
+    },
+    '5zn1ltsa': {
+      'es': 'Categorías',
+      'en': '',
+    },
+    '3klyq0de': {
+      'es': 'Buscar...',
+      'en': '',
+    },
+    '7lifl3nr': {
+      'es': 'Tipo de Piel',
+      'en': '',
+    },
+    'i6zd28bv': {
+      'es': 'Buscar...',
+      'en': '',
+    },
+    'xz6usgda': {
+      'es': 'Guardar',
+      'en': '',
+    },
+    'kx7z2ury': {
+      'es': 'El nombre del video es requerido.',
+      'en': '',
+    },
+    'sbt8urpg': {
+      'es': 'El nombre del video debe poseer un mínimo de 10 caracteres.',
+      'en': '',
+    },
+    'qmc84ims': {
+      'es': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'v9038bz2': {
+      'es': 'La descripción es requerida.',
+      'en': '',
+    },
+    'dh4sekov': {
+      'es': 'El precio debe serigual o mayor a 1000.',
+      'en': '',
+    },
+    'hny6sp1x': {
+      'es': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+  },
+  // bsEditAppointment
+  {
+    '02ux9e1c': {
+      'es': 'Editar Cita',
+      'en': '',
+    },
+    'u12ay9az': {
+      'es': 'Estado',
+      'en': '',
+    },
+    'a9cyirre': {
+      'es': 'Search for an item...',
+      'en': '',
+    },
+    'db9rx1zh': {
+      'es': 'Guardar',
+      'en': '',
+    },
+  },
+  // bsEditVideo
+  {
+    'cd8po6x5': {
+      'es': 'Editar Video',
+      'en': '',
+    },
+    'fasd9uc2': {
+      'es': 'Nombre',
+      'en': '',
+    },
+    '9uqqc9gv': {
+      'es': 'Descripción',
+      'en': '',
+    },
+    'nxgia639': {
+      'es': 'Option 1',
+      'en': '',
+    },
+    '8poy9woi': {
+      'es': 'Seleccione la categoría:',
+      'en': '',
+    },
+    '1p5qz1ti': {
+      'es': 'Buscar...',
+      'en': '',
+    },
+    'oiopafe3': {
+      'es': 'Seleccione el tipo de piel:',
+      'en': '',
+    },
+    '2alwqprg': {
+      'es': 'Buscar...',
+      'en': '',
+    },
+    '3e7qixb0': {
+      'es': 'Guardar',
+      'en': '',
+    },
+    'pq2enlxz': {
+      'es': 'El nombre del video es requerido.',
+      'en': '',
+    },
+    'a99rzsl0': {
+      'es': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'njbhrbx3': {
+      'es': 'La descripción del video es requerida.',
+      'en': '',
+    },
+    'bwtsj0ku': {
+      'es': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+  },
+  // bsPayment
+  {
+    'hn0uz2vo': {
+      'es': 'Total a Pagar',
+      'en': '',
+    },
+    'un3si0tf': {
+      'es': 'Producto:',
+      'en': '',
+    },
+    '9oonlkqh': {
+      'es': 'Cantidad:',
+      'en': '',
+    },
+    'zfwo4302': {
+      'es': 'Precio:',
+      'en': '',
+    },
+    '0a753hcj': {
+      'es': 'Subtotal:',
+      'en': '',
+    },
+    'de5uv7qx': {
+      'es': 'Total a Pagar:',
+      'en': '',
+    },
+    '1b7tsj9o': {
+      'es': 'Realizar Pago',
+      'en': '',
+    },
+  },
+  // bsEmptyFav
+  {
+    '1a3t4oz5': {
+      'es': 'No has agregado ningún producto a Favoritos.',
+      'en': '',
+    },
+  },
+  // bsEmptyCart
+  {
+    'c2pi50o4': {
+      'es': 'No has añadido ningún producto al carrito.',
       'en': '',
     },
   },

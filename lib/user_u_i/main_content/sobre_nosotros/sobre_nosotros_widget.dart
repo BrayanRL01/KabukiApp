@@ -47,6 +47,8 @@ class _SobreNosotrosWidgetState extends State<SobreNosotrosWidget> {
       );
     }
 
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -93,6 +95,30 @@ class _SobreNosotrosWidgetState extends State<SobreNosotrosWidget> {
                 },
               ),
             ),
+            title: Align(
+              alignment: AlignmentDirectional(0.00, 0.00),
+              child: Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                child: InkWell(
+                  splashColor: Colors.transparent,
+                  focusColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  onTap: () async {
+                    context.pushNamed('cateMaquillaje');
+                  },
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(8.0),
+                    child: Image.asset(
+                      'assets/images/Imagen_de_WhatsApp_2023-11-30_a_las_18.36.36_02c49484-removebg-preview.png',
+                      width: 150.0,
+                      height: 70.0,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+              ),
+            ),
             actions: [
               FlutterFlowIconButton(
                 borderColor: Colors.transparent,
@@ -131,6 +157,8 @@ class _SobreNosotrosWidgetState extends State<SobreNosotrosWidget> {
                     GoRouter.of(context).prepareAuthEvent();
                     await authManager.signOut();
                     GoRouter.of(context).clearRedirectLocation();
+                  } else {
+                    return;
                   }
 
                   context.goNamedAuth('LoginPage', context.mounted);
@@ -194,7 +222,7 @@ Soy Ale, y me complace... */
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).labelSmall.override(
                               fontFamily: 'Readex Pro',
-                              color: Color(0xFFFA8FB1),
+                              color: Color(0xFFFF1493),
                               fontSize: 15.0,
                               fontWeight: FontWeight.w200,
                             ),
@@ -248,7 +276,7 @@ Soy Ale, y me complace... */
                                 .labelSmall
                                 .override(
                                   fontFamily: 'Readex Pro',
-                                  color: Color(0xFFFA8FB1),
+                                  color: Color(0xFFFF1493),
                                   fontSize: 15.0,
                                   fontWeight: FontWeight.w300,
                                 ),
@@ -273,7 +301,7 @@ Soy Ale, y me complace... */
                           style:
                               FlutterFlowTheme.of(context).labelSmall.override(
                                     fontFamily: 'Readex Pro',
-                                    color: Color(0xFFFA8FB1),
+                                    color: Color(0xFFFF1493),
                                     fontSize: 14.0,
                                     fontWeight: FontWeight.w300,
                                   ),

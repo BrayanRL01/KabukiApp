@@ -27,9 +27,11 @@ dependencies:
     sdk: flutter
   auto_size_text: 3.0.0
   cached_network_image: 3.2.1
+  chewie: 1.7.1
   cloud_firestore: 4.8.0
   cloud_firestore_platform_interface: 5.15.0
   cloud_firestore_web: 3.6.0
+  csv: 5.0.1
   dropdown_button2: 2.3.9
   file_picker: 6.1.1
   firebase_auth: 4.6.2
@@ -47,6 +49,7 @@ dependencies:
   flutter_animate: 4.1.1+1
   flutter_cache_manager: 3.3.1
   flutter_plugin_android_lifecycle: 2.0.17
+  flutter_secure_storage: 8.0.0
   flutter_slidable: 
     git:
       url: https://github.com/letsar/flutter_slidable.git
@@ -87,6 +90,8 @@ dependencies:
   simple_gesture_detector: ^0.2.0
   sqflite: 2.2.6
   stream_transform: 2.1.0
+  substring_highlight: 1.0.33
+  synchronized: 3.1.0
   table_calendar: ^3.0.9
   timeago: 3.2.2
   url_launcher: 6.1.10
