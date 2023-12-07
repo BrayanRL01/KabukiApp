@@ -267,8 +267,9 @@ class _ClasesAutomaquillajeWidgetState
                       Align(
                         alignment: AlignmentDirectional(0.00, 0.00),
                         child: FFButtonWidget(
-                          onPressed: () {
-                            print('Button pressed ...');
+                          onPressed: () async {
+                            await launchURL(
+                                'whatsapp://send?phone=50687276336');
                           },
                           text: FFLocalizations.of(context).getText(
                             'm2bzw6jy' /* Cotizar */,

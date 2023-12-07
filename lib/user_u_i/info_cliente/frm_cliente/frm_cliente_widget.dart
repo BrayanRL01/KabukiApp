@@ -703,6 +703,20 @@ class _FrmClienteWidgetState extends State<FrmClienteWidget> {
                                 },
                               ),
                             });
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Text(
+                                  'Formulario completado correctamente.',
+                                  style: TextStyle(
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
+                                  ),
+                                ),
+                                duration: Duration(milliseconds: 4000),
+                                backgroundColor:
+                                    FlutterFlowTheme.of(context).secondary,
+                              ),
+                            );
                           },
                           text: FFLocalizations.of(context).getText(
                             'fpvlcdxr' /* Guardar */,

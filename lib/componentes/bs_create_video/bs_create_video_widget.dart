@@ -333,6 +333,11 @@ class _BsCreateVideoWidgetState extends State<BsCreateVideoWidget> {
 
                           var downloadUrls = <String>[];
                           try {
+                            showUploadMessage(
+                              context,
+                              'Uploading file...',
+                              showLoading: true,
+                            );
                             selectedUploadedFiles = selectedMedia
                                 .map((m) => FFUploadedFile(
                                       name: m.storagePath.split('/').last,
@@ -353,6 +358,7 @@ class _BsCreateVideoWidgetState extends State<BsCreateVideoWidget> {
                                 .map((u) => u!)
                                 .toList();
                           } finally {
+                            ScaffoldMessenger.of(context).hideCurrentSnackBar();
                             _model.isDataUploading = false;
                           }
                           if (selectedUploadedFiles.length ==
@@ -363,8 +369,10 @@ class _BsCreateVideoWidgetState extends State<BsCreateVideoWidget> {
                                   selectedUploadedFiles.first;
                               _model.uploadedFileUrl = downloadUrls.first;
                             });
+                            showUploadMessage(context, 'Success!');
                           } else {
                             setState(() {});
+                            showUploadMessage(context, 'Failed to upload data');
                             return;
                           }
                         }

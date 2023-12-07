@@ -36,11 +36,6 @@ class FrmClienteRecord extends FirestoreRecord {
   String get tipoPiel => _tipoPiel ?? '';
   bool hasTipoPiel() => _tipoPiel != null;
 
-  // "alergias" field.
-  String? _alergias;
-  String get alergias => _alergias ?? '';
-  bool hasAlergias() => _alergias != null;
-
   // "colorPiel" field.
   String? _colorPiel;
   String get colorPiel => _colorPiel ?? '';
@@ -56,7 +51,6 @@ class FrmClienteRecord extends FirestoreRecord {
     _provincia = snapshotData['provincia'] as String?;
     _edad = castToType<int>(snapshotData['edad']);
     _tipoPiel = snapshotData['tipoPiel'] as String?;
-    _alergias = snapshotData['alergias'] as String?;
     _colorPiel = snapshotData['colorPiel'] as String?;
     _alergia = getDataList(snapshotData['alergia']);
   }
@@ -100,7 +94,6 @@ Map<String, dynamic> createFrmClienteRecordData({
   String? provincia,
   int? edad,
   String? tipoPiel,
-  String? alergias,
   String? colorPiel,
 }) {
   final firestoreData = mapToFirestore(
@@ -109,7 +102,6 @@ Map<String, dynamic> createFrmClienteRecordData({
       'provincia': provincia,
       'edad': edad,
       'tipoPiel': tipoPiel,
-      'alergias': alergias,
       'colorPiel': colorPiel,
     }.withoutNulls,
   );
@@ -127,7 +119,6 @@ class FrmClienteRecordDocumentEquality implements Equality<FrmClienteRecord> {
         e1?.provincia == e2?.provincia &&
         e1?.edad == e2?.edad &&
         e1?.tipoPiel == e2?.tipoPiel &&
-        e1?.alergias == e2?.alergias &&
         e1?.colorPiel == e2?.colorPiel &&
         listEquality.equals(e1?.alergia, e2?.alergia);
   }
@@ -138,7 +129,6 @@ class FrmClienteRecordDocumentEquality implements Equality<FrmClienteRecord> {
         e?.provincia,
         e?.edad,
         e?.tipoPiel,
-        e?.alergias,
         e?.colorPiel,
         e?.alergia
       ]);

@@ -346,9 +346,9 @@ class _BrandsPageWidgetState extends State<BrandsPageWidget> {
                                                       (alertDialogContext) {
                                                     return AlertDialog(
                                                       title: Text(
-                                                          'Eliminar Categoría'),
+                                                          'Eliminar Marca'),
                                                       content: Text(
-                                                          '¿Desea eliminar esta categoría?'),
+                                                          '¿Desea eliminar esta marca?'),
                                                       actions: [
                                                         TextButton(
                                                           onPressed: () =>

@@ -84,7 +84,7 @@ class BsCreateProductModel extends FlutterFlowModel<BsCreateProductWidget> {
   String? _txtStackControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'x7lmdee0' /* La cantidad es requerida. */,
+        'qanlz6yq' /* La cantidad es requerida. */,
       );
     }
 

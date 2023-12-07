@@ -1,5 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/componentes/bs_empty_products/bs_empty_products_widget.dart';
 import '/componentes/bs_side_bar/bs_side_bar_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_autocomplete_options_list.dart';
@@ -487,6 +488,15 @@ class _ProductosWidgetState extends State<ProductosWidget>
                       }
                       List<ProductsRecord> listViewProductsRecordList =
                           snapshot.data!;
+                      if (listViewProductsRecordList.isEmpty) {
+                        return Center(
+                          child: Container(
+                            width: 300.0,
+                            height: 500.0,
+                            child: BsEmptyProductsWidget(),
+                          ),
+                        );
+                      }
                       return ListView.builder(
                         padding: EdgeInsets.zero,
                         primary: false,

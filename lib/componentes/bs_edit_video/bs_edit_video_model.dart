@@ -23,7 +23,7 @@ class BsEditVideoModel extends FlutterFlowModel<BsEditVideoWidget> {
   String? _txtNameControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'pq2enlxz' /* El nombre del video es requeri... */,
+        'fhpswasj' /* El nombre del video es requeri... */,
       );
     }
 
@@ -41,7 +41,7 @@ class BsEditVideoModel extends FlutterFlowModel<BsEditVideoWidget> {
   String? _txtInfoControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'njbhrbx3' /* La descripción del video es re... */,
+        'a58jsc23' /* La descripción del video es re... */,
       );
     }
 

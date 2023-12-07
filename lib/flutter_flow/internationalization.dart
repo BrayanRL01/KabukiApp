@@ -1307,6 +1307,96 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
+  // infoPerfilCopy
+  {
+    '5vs9ouw6': {
+      'es': 'Actualizar foto de perfil',
+      'en': '',
+    },
+    'gofr9rks': {
+      'es': 'Digite su nombre',
+      'en': '',
+    },
+    'fchi4yib': {
+      'es': 'Digite su correo',
+      'en': '',
+    },
+    '2yk2x0h2': {
+      'es': 'Digite su número de teléfono',
+      'en': '',
+    },
+    'pit6dvfz': {
+      'es': 'Option 1',
+      'en': '',
+    },
+    '73u16fgb': {
+      'es': 'Tipo de piel',
+      'en': '',
+    },
+    'rs2zgwvl': {
+      'es': 'Search for an item...',
+      'en': '',
+    },
+    'm1etskza': {
+      'es': 'Editar Perfil',
+      'en': '',
+    },
+    '429pa9av': {
+      'es': 'Su nombre es requerido.',
+      'en': '',
+    },
+    'w8xpqn14': {
+      'es': 'El mínimo de caracteres es de 10.',
+      'en': '',
+    },
+    'zwp582f5': {
+      'es': 'El máximo de caracteres es de 30',
+      'en': '',
+    },
+    'c8aatgo8': {
+      'es': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'r3j8d2bj': {
+      'es': 'Su correo electrónico es requerido.',
+      'en': '',
+    },
+    '09r17jjw': {
+      'es': 'Debe ser un correo electrónico válido.',
+      'en': '',
+    },
+    'h5kmoxi1': {
+      'es': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'jg764qba': {
+      'es': 'Su número telefónico es requerido.',
+      'en': '',
+    },
+    'izjuu643': {
+      'es': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'xn48sel4': {
+      'es': 'Home',
+      'en': '',
+    },
+  },
+  // FormData
+  {
+    '7wt5wlya': {
+      'es': 'Información de Formularios',
+      'en': '',
+    },
+    '2olvzsi2': {
+      'es': 'Alergias: ',
+      'en': '',
+    },
+    'nf1in359': {
+      'es': 'Home',
+      'en': '',
+    },
+  },
   // bsSideBar
   {
     'tcdz07xm': {
@@ -1424,11 +1514,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Please choose an option from the dropdown',
       'en': '',
     },
-    'x7lmdee0': {
+    'qanlz6yq': {
       'es': 'La cantidad es requerida.',
       'en': '',
     },
-    'm8qj3ziq': {
+    'jtg1cmfi': {
       'es': 'Please choose an option from the dropdown',
       'en': '',
     },
@@ -1520,11 +1610,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Guardar',
       'en': '',
     },
-    '03x7jqy6': {
+    'en7wo9qc': {
       'es': 'La categoría es requerida.',
       'en': '',
     },
-    '4sbyokp4': {
+    'buioto20': {
       'es': 'Please choose an option from the dropdown',
       'en': '',
     },
@@ -1543,11 +1633,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Guardar',
       'en': '',
     },
-    'nb4329zk': {
+    'vk1e3zqz': {
       'es': 'El nombre de la marca es requerido.',
       'en': '',
     },
-    '8d6f4286': {
+    '8wxjwgfj': {
       'es': 'Please choose an option from the dropdown',
       'en': '',
     },
@@ -1566,11 +1656,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Guardar',
       'en': '',
     },
-    'zidijvnf': {
+    'wd81eopq': {
       'es': 'El nombre de la marca es requerido.',
       'en': '',
     },
-    '1sj60nnu': {
+    'n2k4cnws': {
       'es': 'Please choose an option from the dropdown',
       'en': '',
     },
@@ -1601,44 +1691,44 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Guardar',
       'en': '',
     },
-    'g4u18gpr': {
+    'vi39s3el': {
       'es': 'El nombre es requerido.',
       'en': '',
     },
-    'gd95ybiz': {
+    'r5tinqqv': {
       'es': 'Please choose an option from the dropdown',
       'en': '',
     },
-    'sl5cwfbe': {
+    'pz2ym7t5': {
       'es': 'El correo electrónico es requerido.',
       'en': '',
     },
-    '0uktyngh': {
+    '2gl36czo': {
       'es': 'Debe ingresar un correo electrónico válido.',
       'en': '',
     },
-    'bqu7enxw': {
+    'egswcwgd': {
       'es': 'Please choose an option from the dropdown',
       'en': '',
     },
-    'nb3bkxn5': {
+    'szb988pm': {
       'es': 'El número telefónico es requerido.',
       'en': '',
     },
-    '6k3hvs0k': {
+    'b8d5osgp': {
       'es': 'Please choose an option from the dropdown',
       'en': '',
     },
-    'akbj3ey7': {
+    'jmio9sna': {
       'es': 'La contraseña es requerida.',
       'en': '',
     },
-    'pzgbg9sy': {
+    'wv5cn7ne': {
       'es':
           'Su contraseña debe contener 8 caracteres como mínimo, una letra mayúscula, un número y un caracter especial.',
       'en': '',
     },
-    'jgpd8xj2': {
+    'cqto8252': {
       'es': 'Please choose an option from the dropdown',
       'en': '',
     },
@@ -1690,6 +1780,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'y7563o7o': {
       'es': 'Usuarios',
+      'en': '',
+    },
+    'yxduu2zc': {
+      'es': 'Formularios',
       'en': '',
     },
   },
@@ -1820,19 +1914,19 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es': 'Guardar',
       'en': '',
     },
-    'pq2enlxz': {
+    'fhpswasj': {
       'es': 'El nombre del video es requerido.',
       'en': '',
     },
-    'a99rzsl0': {
+    'ucnqio5q': {
       'es': 'Please choose an option from the dropdown',
       'en': '',
     },
-    'njbhrbx3': {
+    'a58jsc23': {
       'es': 'La descripción del video es requerida.',
       'en': '',
     },
-    'bwtsj0ku': {
+    'abspioul': {
       'es': 'Please choose an option from the dropdown',
       'en': '',
     },
@@ -1879,6 +1973,20 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'c2pi50o4': {
       'es': 'No has añadido ningún producto al carrito.',
+      'en': '',
+    },
+  },
+  // bsEmptyProducts
+  {
+    'yz3hnif1': {
+      'es': 'No hay productos disponibles.',
+      'en': '',
+    },
+  },
+  // bsEmptyAllergies
+  {
+    'huflrri9': {
+      'es': 'No posee alergias.',
       'en': '',
     },
   },

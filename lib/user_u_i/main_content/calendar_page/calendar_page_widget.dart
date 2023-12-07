@@ -196,7 +196,7 @@ class _CalendarPageWidgetState extends State<CalendarPageWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                   child: FFButtonWidget(
                     onPressed: () async {
-                      await launchURL('whatsapp://send?phone=506');
+                      await launchURL('whatsapp://send?phone=50687276336');
                     },
                     text: FFLocalizations.of(context).getText(
                       'dey20upn' /* Reservar Cita */,

@@ -414,51 +414,34 @@ class _BsCreateProductWidgetState extends State<BsCreateProductWidget> {
                     children: [
                       FFButtonWidget(
                         onPressed: () async {
-                          if (_model.uploadedFileUrl == null ||
-                              _model.uploadedFileUrl == '') {
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(
-                                content: Text(
-                                  'Debe agregar una foto al producto.',
-                                  style: TextStyle(
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                  ),
+                          await ProductsRecord.collection
+                              .doc()
+                              .set(createProductsRecordData(
+                                productName: _model.txtNameController.text,
+                                productPrice: int.tryParse(
+                                    _model.txtPrecioController.text),
+                                description: _model.txtInfoController.text,
+                                productPhoto: _model.uploadedFileUrl,
+                                brand: _model.ddBrandsValue,
+                                category: _model.ddCategoriesValue,
+                                stack: int.tryParse(
+                                    _model.txtStackController.text),
+                              ));
+                          Navigator.pop(context);
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text(
+                                'Producto agregado correctamente.',
+                                style: TextStyle(
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
                                 ),
-                                duration: Duration(milliseconds: 4000),
-                                backgroundColor:
-                                    FlutterFlowTheme.of(context).error,
                               ),
-                            );
-                          } else {
-                            await ProductsRecord.collection
-                                .doc()
-                                .set(createProductsRecordData(
-                                  productName: _model.txtNameController.text,
-                                  productPrice: int.tryParse(
-                                      _model.txtPrecioController.text),
-                                  description: _model.txtInfoController.text,
-                                  productPhoto: _model.uploadedFileUrl,
-                                  brand: _model.ddBrandsValue,
-                                  category: _model.ddCategoriesValue,
-                                  stack: int.tryParse(
-                                      _model.txtStackController.text),
-                                ));
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(
-                                content: Text(
-                                  'Producto agregado correctamente.',
-                                  style: TextStyle(
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                  ),
-                                ),
-                                duration: Duration(milliseconds: 4000),
-                                backgroundColor:
-                                    FlutterFlowTheme.of(context).secondary,
-                              ),
-                            );
-                          }
+                              duration: Duration(milliseconds: 4000),
+                              backgroundColor:
+                                  FlutterFlowTheme.of(context).secondary,
+                            ),
+                          );
                         },
                         text: FFLocalizations.of(context).getText(
                           'i158hw7c' /* Guardar */,

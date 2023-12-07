@@ -21,7 +21,7 @@ class BsCreateUserModel extends FlutterFlowModel<BsCreateUserWidget> {
   String? _txtNameControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'g4u18gpr' /* El nombre es requerido. */,
+        'vi39s3el' /* El nombre es requerido. */,
       );
     }
 
@@ -42,7 +42,7 @@ class BsCreateUserModel extends FlutterFlowModel<BsCreateUserWidget> {
   String? _txtEmailControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'sl5cwfbe' /* El correo electrónico es reque... */,
+        'pz2ym7t5' /* El correo electrónico es reque... */,
       );
     }
 
@@ -51,7 +51,7 @@ class BsCreateUserModel extends FlutterFlowModel<BsCreateUserWidget> {
     }
     if (!RegExp(kTextValidatorEmailRegex).hasMatch(val)) {
       return FFLocalizations.of(context).getText(
-        '0uktyngh' /* Debe ingresar un correo electr... */,
+        '2gl36czo' /* Debe ingresar un correo electr... */,
       );
     }
     return null;
@@ -64,7 +64,7 @@ class BsCreateUserModel extends FlutterFlowModel<BsCreateUserWidget> {
   String? _txtPhoneControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'nb3bkxn5' /* El número telefónico es requer... */,
+        'szb988pm' /* El número telefónico es requer... */,
       );
     }
 
@@ -87,7 +87,7 @@ class BsCreateUserModel extends FlutterFlowModel<BsCreateUserWidget> {
   String? _txtContrControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'akbj3ey7' /* La contraseña es requerida. */,
+        'jmio9sna' /* La contraseña es requerida. */,
       );
     }
 
@@ -100,7 +100,7 @@ class BsCreateUserModel extends FlutterFlowModel<BsCreateUserWidget> {
     if (!RegExp('^(?=.*?[A-Z])(?=.*?[0-9])(?=.*?[!@#\\\$&*~]).{8,}\$')
         .hasMatch(val)) {
       return FFLocalizations.of(context).getText(
-        'pzgbg9sy' /* Su contraseña debe contener 8 ... */,
+        'wv5cn7ne' /* Su contraseña debe contener 8 ... */,
       );
     }
     return null;

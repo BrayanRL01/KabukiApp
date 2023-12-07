@@ -21,7 +21,7 @@ class BsCreateBrandModel extends FlutterFlowModel<BsCreateBrandWidget> {
   String? _txtNameControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'nb4329zk' /* El nombre de la marca es reque... */,
+        'vk1e3zqz' /* El nombre de la marca es reque... */,
       );
     }
 

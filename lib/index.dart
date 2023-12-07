@@ -71,3 +71,6 @@ export '/user_u_i/catalogo/shopping_cart/shopping_cart_widget.dart'
     show ShoppingCartWidget;
 export '/user_u_i/main_content/videos_page_copy/videos_page_copy_widget.dart'
     show VideosPageCopyWidget;
+export '/admin_u_i/info_perfil_copy/info_perfil_copy_widget.dart'
+    show InfoPerfilCopyWidget;
+export '/admin_u_i/form_data/form_data_widget.dart' show FormDataWidget;

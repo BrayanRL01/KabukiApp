@@ -21,7 +21,7 @@ class BsEditBrandModel extends FlutterFlowModel<BsEditBrandWidget> {
   String? _txtNameControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'zidijvnf' /* El nombre de la marca es reque... */,
+        'wd81eopq' /* El nombre de la marca es reque... */,
       );
     }
 

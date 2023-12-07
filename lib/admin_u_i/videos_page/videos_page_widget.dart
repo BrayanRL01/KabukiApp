@@ -327,15 +327,17 @@ class _VideosPageWidgetState extends State<VideosPageWidget> {
                                         FlutterFlowIconButton(
                                           borderColor:
                                               FlutterFlowTheme.of(context)
-                                                  .primary,
+                                                  .secondaryBackground,
                                           borderRadius: 8.0,
                                           borderWidth: 1.0,
                                           buttonSize: 40.0,
-                                          fillColor: Color(0xFF63D239),
+                                          fillColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .success,
                                           icon: FaIcon(
                                             FontAwesomeIcons.pen,
                                             color: FlutterFlowTheme.of(context)
-                                                .primaryText,
+                                                .secondaryBackground,
                                             size: 24.0,
                                           ),
                                           onPressed: () async {
@@ -373,15 +375,17 @@ class _VideosPageWidgetState extends State<VideosPageWidget> {
                                         FlutterFlowIconButton(
                                           borderColor:
                                               FlutterFlowTheme.of(context)
-                                                  .primary,
+                                                  .secondaryBackground,
                                           borderRadius: 8.0,
                                           borderWidth: 1.0,
                                           buttonSize: 40.0,
-                                          fillColor: Color(0xFAF34711),
+                                          fillColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .error,
                                           icon: FaIcon(
                                             FontAwesomeIcons.trashAlt,
                                             color: FlutterFlowTheme.of(context)
-                                                .primaryText,
+                                                .secondaryBackground,
                                             size: 24.0,
                                           ),
                                           onPressed: () async {

@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'bs_side_bar_admin_model.dart';
@@ -105,7 +106,7 @@ class _BsSideBarAdminWidgetState extends State<BsSideBarAdminWidget> {
                     'yzihpklm' /* Categorías */,
                   ),
                   icon: Icon(
-                    Icons.search,
+                    Icons.factory,
                     size: 21.0,
                   ),
                   options: FFButtonOptions(
@@ -186,7 +187,7 @@ class _BsSideBarAdminWidgetState extends State<BsSideBarAdminWidget> {
                     '09rw7zv0' /* Marcas */,
                   ),
                   icon: Icon(
-                    Icons.newspaper_sharp,
+                    Icons.grading,
                     size: 15.0,
                   ),
                   options: FFButtonOptions(
@@ -261,7 +262,7 @@ class _BsSideBarAdminWidgetState extends State<BsSideBarAdminWidget> {
               children: [
                 FFButtonWidget(
                   onPressed: () async {
-                    context.pushNamed('infoPerfil');
+                    context.pushNamed('infoPerfilCopy');
                   },
                   text: FFLocalizations.of(context).getText(
                     'wqae0zjp' /* Perfil */,
@@ -306,8 +307,47 @@ class _BsSideBarAdminWidgetState extends State<BsSideBarAdminWidget> {
                   text: FFLocalizations.of(context).getText(
                     'y7563o7o' /* Usuarios */,
                   ),
+                  icon: FaIcon(
+                    FontAwesomeIcons.users,
+                  ),
+                  options: FFButtonOptions(
+                    width: 150.0,
+                    height: 40.0,
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                    iconPadding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                    color: Color(0xFFFCDADF),
+                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                          fontFamily: 'Readex Pro',
+                          color: Colors.black,
+                        ),
+                    elevation: 3.0,
+                    borderSide: BorderSide(
+                      color: Colors.transparent,
+                      width: 1.0,
+                    ),
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 15.0),
+            child: Row(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                FFButtonWidget(
+                  onPressed: () async {
+                    context.pushNamed('FormData');
+                  },
+                  text: FFLocalizations.of(context).getText(
+                    'yxduu2zc' /* Formularios */,
+                  ),
                   icon: Icon(
-                    Icons.favorite_border_sharp,
+                    Icons.format_list_bulleted,
                     size: 15.0,
                   ),
                   options: FFButtonOptions(

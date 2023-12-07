@@ -21,7 +21,7 @@ class BsEditCategoryModel extends FlutterFlowModel<BsEditCategoryWidget> {
   String? _txtNameControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        '03x7jqy6' /* La categoría es requerida. */,
+        'en7wo9qc' /* La categoría es requerida. */,
       );
     }
 

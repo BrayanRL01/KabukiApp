@@ -289,6 +289,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'VideosPageCopy',
           path: '/videosPageCopy',
           builder: (context, params) => VideosPageCopyWidget(),
+        ),
+        FFRoute(
+          name: 'infoPerfilCopy',
+          path: '/infoPerfilCopy',
+          builder: (context, params) => InfoPerfilCopyWidget(),
+        ),
+        FFRoute(
+          name: 'FormData',
+          path: '/formData',
+          builder: (context, params) => FormDataWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

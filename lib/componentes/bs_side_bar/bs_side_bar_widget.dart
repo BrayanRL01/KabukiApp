@@ -179,8 +179,8 @@ class _BsSideBarWidgetState extends State<BsSideBarWidget> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 FFButtonWidget(
-                  onPressed: () {
-                    print('Button pressed ...');
+                  onPressed: () async {
+                    context.pushNamed('frmCliente');
                   },
                   text: FFLocalizations.of(context).getText(
                     '8rdqqyya' /* Formulario */,

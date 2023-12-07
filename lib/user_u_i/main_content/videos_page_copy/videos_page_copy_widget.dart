@@ -358,7 +358,7 @@ class _VideosPageCopyWidgetState extends State<VideosPageCopyWidget> {
                           return Center(
                             child: Container(
                               width: 300.0,
-                              height: 100.0,
+                              height: 150.0,
                               child: BsEmptyVideosWidget(),
                             ),
                           );
