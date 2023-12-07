@@ -769,6 +769,9 @@ class _ProductosWidgetState extends State<ProductosWidget>
                                                           ));
                                                       ScaffoldMessenger.of(
                                                               context)
+                                                          .clearSnackBars();
+                                                      ScaffoldMessenger.of(
+                                                              context)
                                                           .showSnackBar(
                                                         SnackBar(
                                                           content: Text(
