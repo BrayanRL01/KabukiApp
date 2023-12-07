@@ -160,7 +160,7 @@ class _FormDataWidgetState extends State<FormDataWidget> {
                     alignment: AlignmentDirectional(0.00, 0.00),
                     child: Text(
                       FFLocalizations.of(context).getText(
-                        '7wt5wlya' /* Información de Formularios */,
+                        '52eert5m' /* Información de Formularios */,
                       ),
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -300,7 +300,7 @@ class _FormDataWidgetState extends State<FormDataWidget> {
                                             Text(
                                               FFLocalizations.of(context)
                                                   .getText(
-                                                '2olvzsi2' /* Alergias:  */,
+                                                'tf11814x' /* Alergias:  */,
                                               ),
                                               style: FlutterFlowTheme.of(
                                                       context)

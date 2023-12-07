@@ -185,8 +185,7 @@ class _CategoriesPageWidgetState extends State<CategoriesPageWidget> {
                             onPressed: () async {
                               await showModalBottomSheet(
                                 isScrollControlled: true,
-                                backgroundColor: Colors.white,
-                                barrierColor: Colors.white,
+                                backgroundColor: Colors.transparent,
                                 context: context,
                                 builder: (context) {
                                   return GestureDetector(

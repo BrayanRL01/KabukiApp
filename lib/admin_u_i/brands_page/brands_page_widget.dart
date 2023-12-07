@@ -185,8 +185,8 @@ class _BrandsPageWidgetState extends State<BrandsPageWidget> {
                             onPressed: () async {
                               await showModalBottomSheet(
                                 isScrollControlled: true,
-                                backgroundColor: Colors.white,
-                                barrierColor: Colors.white,
+                                backgroundColor: Colors.transparent,
+                                enableDrag: false,
                                 context: context,
                                 builder: (context) {
                                   return GestureDetector(

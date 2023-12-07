@@ -32,12 +32,6 @@ class FFAppState extends ChangeNotifier {
 
   late FlutterSecureStorage secureStorage;
 
-  int _quantity = 0;
-  int get quantity => _quantity;
-  set quantity(int _value) {
-    _quantity = _value;
-  }
-
   String _added = 'Agregado';
   String get added => _added;
   set added(String _value) {

@@ -282,10 +282,8 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                               context: context,
                               initialDate:
                                   (_model.datePicked ?? DateTime.now()),
-                              firstDate: (DateTime.fromMicrosecondsSinceEpoch(
-                                      -2208968627000000) ??
-                                  DateTime(1900)),
-                              lastDate: DateTime(2050),
+                              firstDate: DateTime(1900),
+                              lastDate: (_model.datePicked ?? DateTime.now()),
                               builder: (context, child) {
                                 return wrapInMaterialDatePickerTheme(
                                   context,

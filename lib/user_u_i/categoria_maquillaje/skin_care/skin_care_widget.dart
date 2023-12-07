@@ -269,7 +269,7 @@ class _SkinCareWidgetState extends State<SkinCareWidget> {
                             context.pushNamed('productos');
                           },
                           text: FFLocalizations.of(context).getText(
-                            'dgb2xpza' /* Ver catalogo */,
+                            'dgb2xpza' /* Ver Catalogo */,
                           ),
                           options: FFButtonOptions(
                             height: 40.0,

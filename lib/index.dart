@@ -13,8 +13,6 @@ export '/user_u_i/perfil/info_perfil/info_perfil_widget.dart'
     show InfoPerfilWidget;
 export '/user_u_i/info_cliente/editar_cliente/editar_cliente_widget.dart'
     show EditarClienteWidget;
-export '/user_u_i/maquillaje/info_maquillaje/info_maquillaje_widget.dart'
-    show InfoMaquillajeWidget;
 export '/user_u_i/categoria_maquillaje/cate_maquillaje/cate_maquillaje_widget.dart'
     show CateMaquillajeWidget;
 export '/admin_u_i/products_home/products_home_widget.dart'

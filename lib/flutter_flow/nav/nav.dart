@@ -131,11 +131,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => EditarClienteWidget(),
         ),
         FFRoute(
-          name: 'infoMaquillaje',
-          path: '/infoMaquillaje',
-          builder: (context, params) => InfoMaquillajeWidget(),
-        ),
-        FFRoute(
           name: 'cateMaquillaje',
           path: '/cateMaquillaje',
           builder: (context, params) => CateMaquillajeWidget(),

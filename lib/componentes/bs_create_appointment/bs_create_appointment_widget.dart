@@ -109,8 +109,7 @@ class _BsCreateAppointmentWidgetState extends State<BsCreateAppointmentWidget> {
                               FlutterFlowTheme.of(context).secondaryBackground,
                           pickerForegroundColor:
                               FlutterFlowTheme.of(context).primaryText,
-                          selectedDateTimeBackgroundColor:
-                              FlutterFlowTheme.of(context).primary,
+                          selectedDateTimeBackgroundColor: Color(0xFFFA8FB1),
                           selectedDateTimeForegroundColor:
                               FlutterFlowTheme.of(context).info,
                           actionButtonForegroundColor:
@@ -145,8 +144,7 @@ class _BsCreateAppointmentWidgetState extends State<BsCreateAppointmentWidget> {
                                 .secondaryBackground,
                             pickerForegroundColor:
                                 FlutterFlowTheme.of(context).primaryText,
-                            selectedDateTimeBackgroundColor:
-                                FlutterFlowTheme.of(context).primary,
+                            selectedDateTimeBackgroundColor: Color(0xFFFA8FB1),
                             selectedDateTimeForegroundColor:
                                 FlutterFlowTheme.of(context).info,
                             actionButtonForegroundColor:

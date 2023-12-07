@@ -577,25 +577,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
-  // infoMaquillaje
-  {
-    '0gdv6rei': {
-      'es': 'Skincare',
-      'en': '',
-    },
-    'pwt9irhk': {
-      'es': 'Maquillaje',
-      'en': '',
-    },
-    'viv3fsun': {
-      'es': 'Tips',
-      'en': '',
-    },
-    'ydvu910k': {
-      'es': 'Home',
-      'en': '',
-    },
-  },
   // cateMaquillaje
   {
     'xlgez939': {
@@ -688,7 +669,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'du0c4qs6': {
-      'es': 'No sabes que productos usar, contactame y yo te ayudo ',
+      'es': 'No sabes que productos usar, contactame y yo te ayudo. ',
       'en': '',
     },
     'e2voppo4': {
@@ -747,11 +728,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'x06ysezj': {
-      'es': 'No dejes de lado tu piel, busca los mejores productos aqui.',
+      'es': 'No dejes de lado tu piel, busca los mejores productos aquí.',
       'en': '',
     },
     'dgb2xpza': {
-      'es': 'Ver catalogo',
+      'es': 'Ver Catalogo',
       'en': '',
     },
     '3loa2i49': {
@@ -770,7 +751,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'cn85esz6': {
-      'es': 'Ver catalogo',
+      'es': 'Ver Catalogo',
       'en': '',
     },
     'su11qsgj': {
@@ -1384,15 +1365,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // FormData
   {
-    '7wt5wlya': {
+    '52eert5m': {
       'es': 'Información de Formularios',
       'en': '',
     },
-    '2olvzsi2': {
+    'tf11814x': {
       'es': 'Alergias: ',
       'en': '',
     },
-    'nf1in359': {
+    'zpwi2nle': {
       'es': 'Home',
       'en': '',
     },

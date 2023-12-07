@@ -411,6 +411,7 @@ class _InfoPerfilWidgetState extends State<InfoPerfilWidget> {
                             controller: _model.txtCorreoController,
                             focusNode: _model.txtCorreoFocusNode,
                             autofocus: true,
+                            readOnly: true,
                             obscureText: false,
                             decoration: InputDecoration(
                               labelText: FFLocalizations.of(context).getText(
@@ -525,9 +526,13 @@ class _InfoPerfilWidgetState extends State<InfoPerfilWidget> {
                                     20.0, 20.0, 20.0, 20.0),
                               ),
                               style: FlutterFlowTheme.of(context).bodyMedium,
-                              keyboardType: TextInputType.number,
+                              keyboardType: TextInputType.phone,
                               validator: _model.txtTelefonoControllerValidator
                                   .asValidator(context),
+                              inputFormatters: [
+                                FilteringTextInputFormatter.allow(
+                                    RegExp('[0-9]'))
+                              ],
                             ),
                           ),
                         ),
@@ -557,14 +562,26 @@ class _InfoPerfilWidgetState extends State<InfoPerfilWidget> {
                             });
                           }
                         },
-                        text: valueOrDefault<String>(
-                          dateTimeFormat(
-                            'd/M/y',
-                            currentUserDocument?.birthday,
-                            locale: FFLocalizations.of(context).languageCode,
-                          ),
-                          'Fecha de Nacimiento',
-                        ),
+                        text: dateTimeFormat(
+                                  'd/M/y',
+                                  currentUserDocument?.birthday,
+                                  locale:
+                                      FFLocalizations.of(context).languageCode,
+                                ) ==
+                                valueOrDefault<String>(
+                                  '',
+                                  'Fecha de Nacimiento',
+                                )
+                            ? 'Fecha de Nacimiento'
+                            : valueOrDefault<String>(
+                                dateTimeFormat(
+                                  'd/M/y',
+                                  currentUserDocument?.birthday,
+                                  locale:
+                                      FFLocalizations.of(context).languageCode,
+                                ),
+                                'Fecha de de Nacimiento',
+                              ),
                         options: FFButtonOptions(
                           width: 340.0,
                           height: 40.0,

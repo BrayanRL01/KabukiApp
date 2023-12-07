@@ -269,7 +269,7 @@ class _VentaMaquillajeWidgetState extends State<VentaMaquillajeWidget> {
                             context.pushNamed('productos');
                           },
                           text: FFLocalizations.of(context).getText(
-                            'cn85esz6' /* Ver catalogo */,
+                            'cn85esz6' /* Ver Catalogo */,
                           ),
                           options: FFButtonOptions(
                             height: 40.0,
